@@ -1,0 +1,21 @@
+    <div class="w3-row w3-light-grey w3-border-bottom"
+    	style="background: url( {{ INDEX_INTRO_IMAGE }} ); background-position: center; height: 18em;"> <!-- 425px -->
+      <aside id="intro" class="w3-container w3-center w3-padding-32">
+        
+        <div style="background-color: rgba(0, 0, 0, 0.6); color: white; padding-top: 8px; padding-bottom: 8px;">
+          <!-- <span id="intro-description" style="font-size: 2em;"><b>{{ AUTHOR_INTRO }}</b></span> -->
+          <h1 style="margin-left: 0.8em; margin-right: 0.8em;"><b>{{ AUTHOR_INTRO }}</b></h1>
+          {% if SOCIAL %}
+          <ul class="social" style="margin: 0; margin-top: 10px; padding: 0;">
+            {% for name, link in SOCIAL %}
+            <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        
+        <div style="line-height: 180px;">
+          <a href="{{ AUTHOR_WEB }}" target="_blank"><img class="avatar" alt="Avatar" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></a>
+        </div>
+      </aside>
+    </div>

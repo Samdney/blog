@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Powers of 2 and k-digits structures</title>
+
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+   
+   	<!-- Icon -->     
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Social -->
+    <meta property="article:author" content="Carolin Zöbelein" />
+   	<meta property="article:section" content="Math" />
+   	<meta property="article:published_time" content="2022-06-01" />
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Powers of 2 and k-digits structures"/>
+    <meta property="og:description" content="Powers of 2 and some of their k-digit structures."/>
+    <meta property="og:site_name" content="Carolin's Blog" />
+	<meta property="og:url" content="https://blog.carolin-zoebelein.de/2022/06/powers-of-2-and-k-digits-structures.html"/>
+  	<meta name="og:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
+    
+	<meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@SamdneyTweet" />
+    <meta name="twitter:creator" content="@SamdneyTweet" />
+    <meta name="twitter:title" content="Powers of 2 and k-digits structures" />
+    <meta name="twitter:description" content="<p>Powers of 2 and some of their k-digit structures.</p>" />
+    <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
+
+    <!-- Feed -->
+    <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Carolin's Blog Atom Feed" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygments-highlight-github.css">
+    <link rel="stylesheet" type="text/css" href="/static/custom.css">
+
+  </head>
+
+  <body>
+    <div class="w3-row w3-card w3-white">
+      <header id="header">
+        <a href="/index.html" id="header-logo" title="Home">CZ</a>
+        <nav id="header-menu">
+          <ul>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="/archives.html">Archives</a></li>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="/categories.html">Categories</a></li>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+
+
+    <br><br><br>
+
+    <article>
+      <header class="w3-container col-main">
+        <h1>Powers of 2 and k-digits structures</h1>
+        <div class="post-info">
+          <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+            <span><time datetime="2022-06-01T14:00:00+02:00">Mi 01 Juni 2022</time> in <a href="/category/math.html" title="All articles in category Math">Math</a></span>
+          </div>
+          <div>
+            <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+              <a href="/tag/number-theory.html" title="All articles with Number Theory tag">#number theory</a>
+            </span>
+            <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+              <a href="/tag/powers-of-2.html" title="All articles with Powers Of 2 tag">#powers of 2</a>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <br>
+
+
+      <div class="col-main w3-container">
+        <section id="content">
+          <p>In my paper <i>Powers of <span class="math">\(2\)</span> whose digits are powers of <span class="math">\(2\)</span></i> (see also <a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>), I'm discussing digits of powers of 2, and which conditions are necessary to get for them powers of 2, too.</p>
+<p>Given be the set of powers of <span class="math">\(2\)</span> by <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>. It is unknown if, apart from <span class="math">\(P_{y=0} = 2^{0} = 1\)</span>, <span class="math">\(P_{y=1} = 2^{1} = 2\)</span>, <span class="math">\(P_{y=2} = 2^{2} = 4\)</span>, <span class="math">\(P_{y=3} = 2^{3} = 8\)</span> and <span class="math">\(P_{y=7} = 2^{7} = 128\)</span>, there exist more <span class="math">\(P_{y}\)</span>'s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line Encyclopedia of Integer Sequences (OEIS) <a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a> [Dre07]) [Wel97], too.</p>
+<p>Looking at the set of powers of <span class="math">\(2\)</span>'s [Slo], we know that a <span class="math">\(m\)</span>-digit power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of <span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span> digits, starting at <span class="math">\(2^{k}\)</span> [YY64]. Taking the known periodicity of the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
+<p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the <span class="math">\(k\)</span>'th digit (counted from right to left, starting counting by <span class="math">\(1\)</span>) of <span class="math">\(2^{y}\)</span>, in base <span class="math">\(10\)</span> representation. For step sizes we write <span class="math">\(d^{k + 1}_{y,k}\)</span>, meaning the step size of the <span class="math">\(k + 1\)</span>-digit, starting by <span class="math">\(2^{y}\)</span>, with a <span class="math">\(k\)</span>-digit periodicity. Furthermore, we will denote the set of all one-digit powers of <span class="math">\(2\)</span> by <span class="math">\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)</span>.</p>
+<p>For this, at first, we also considered <span class="math">\(k\)</span>-digit structures of powers of <span class="math">\(2\)</span> in generally, and used the following two lemmas as starting point for our proofs in the mentioned paper.</p>
+<p><br /></p>
+<p><b>Lemma 2.1</b> (<span class="math">\(k\)</span>-digits structure). <i>Let be <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with <span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all <span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>, <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>, the last <span class="math">\(k\)</span>-digits are given by <span class="math">\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)</span>, with <span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span> leading zeros for <span class="math">\(k \geq 2\)</span>, and at least one leading zero for <span class="math">\(k \geq 3\)</span>.</i></p>
+<p><i>Proof.</i> We know, that for the last <span class="math">\(k\)</span>-digits <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)</span>, which have <span class="math">\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)</span> digits. Since, we also have the periodicity <span class="math">\(\varphi\left(5^{k}\right)\)</span>, we directly get <span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span> for the number of leading zeros. Looking at <span class="math">\(0 \leq k - x\)</span>, we receive <span class="math">\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)</span>, and hence <span class="math">\(k \geq 2\)</span> by the constraint <span class="math">\(k^{\star} \geq 2\)</span>, and for <span class="math">\(1 \geq k - x\)</span>, with <span class="math">\(k = k^{\star}\)</span>, we recive <span class="math">\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)</span>, and hence <span class="math">\(k \geq 3\)</span>. Finally it is easy to see, that the statement is always satisfied for <span class="math">\(k \geq k^{\star}\)</span>, because of <span class="math">\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)</span> for <span class="math">\(k = k^{*}\)</span>.</p>
+<p><br /></p>
+<p><b>Lemma 2.2</b> (<span class="math">\(k^{\star}\)</span>-digits fixed structure). <i> Let be <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with <span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all <span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>, <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>, the last <span class="math">\(k + 1\)</span> to <span class="math">\(k + \delta k\)</span>-digits are fixed for at least <span class="math">\(\delta k = k^{\star}\)</span> digits. </i></p>
+<p><i>Proof.</i>
+    Consider <span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \\ \cdot 10^{-\left(k + 1\right)} \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \\ \cdot 5^{-1}\)</span>, for which we can equating the coefficients with approximation. We look at <span class="math">\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)</span>, and receive <span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>. Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
+<h3>References</h3>
+<p>[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits are powers of 2. <a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank">http://oeis.org/A130693</a>, 07 2007. (Accessed on 2021/07/18).<br />
+[Slo] N. J. A. Sloane. Table of n, 2 n for n = 0..1000 - OEIS. <a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank">http://oeis.org/A000079/b000079.txt</a>. (Accessed on 2021/08/08).<br />
+[Wel97] David Wells. The Penguin dictionary of curious and interesting numbers. Penguin, 1997.<br />
+[YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with elementary solutions. I, 1964.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+        </section>
+
+        <br><br><br>
+
+        <footer>
+          <div class="adjust-width">
+          
+            <!--
+            <div id="author-block" class="w3-light-grey w3-border">
+              <div id="author-info">
+                <a href="https://research.carolin-zoebelein.de"><img class="avatar" src="/images/avatar.jpg" onerror="this.src='theme/images/avatar.png'" alt="Avatar"></a>
+                <div style="margin-left: 20px;">
+                  <a href="https://research.carolin-zoebelein.de"><span id="author-name" class="w3-hover-text-dark-grey">Carolin Zöbelein</span></a>
+                  <p id="author-story">Hello world! I’m John Doe. I like coffee, birds and Python.</p>
+                </div>
+              </div>
+            </div>
+            -->
+            
+            <div id="author-block" class="w3-white w3-border w3-border-green" style="padding: 24px;">
+            
+				<div style="display: flex; align-items: center;">
+				  <span>
+				  <p class="w3-hover-text-dark-grey" style="font-size: 16pt; font-weight: bold; margin-left: 20px;">Carolin Zöbelein</p>
+				  <p style="font-size: 12pt; font-style: italic; margin-top: 36px; margin-left: 20px;">Hello world! I’m John Doe. I like coffee, birds and Python.</p>
+				  </span>
+				</div>
+
+				<div style="display: flex; flex-wrap: wrap;">
+				  <ul class="social" style="flex-grow: 1; padding: 0px;  margin-top: 12px; margin-bottom: 0px;">
+				    <li style="font-size: 18pt;"><a class="sc-twitter" href="https://twitter.com/SamdneyTweet" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-github" href="https://github.com/Samdney" target="_blank"><i class="fa fa-github"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-linkedin" href="https://www.linkedin.com/in/carolin-zoebelein/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-youtube-square" href="https://www.youtube.com/channel/UChKn7j071KPz3QNYldPKH1g" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-superscript" href="https://research.carolin-zoebelein.de" target="_blank"><i class="fa fa-superscript"></i></a></li>
+				  </ul>      
+				</div>
+			  </div>           
+            
+          </div>
+
+          <br><br>
+
+		  <!-- TODO: Check generated link -->
+          <p style="font-size:10pt; font-style: italic;">Did you like this article? Share it with your friends!<br />(Opens in new tab on Twitter)</p>
+          <div id="share" class="share">
+            <a href="https://twitter.com/share?url=/2022/06/powers-of-2-and-k-digits-structures.html&amp;text=Carolin%27s%20Blog%3A%20Powers%20of%202%20and%20k-digits%20structures" target="_blank" class="w3-btn w3-blue">
+              <i class="fa fa-twitter"></i> <span>Twitter</span>
+            </a>
+          </div>
+
+          <br><br><br>
+
+
+
+        </footer>
+      </div>
+    </article>
+
+
+	<footer id="footer">
+      <div id="footer-copyright" class="w3-center w3-medium w3-text-color-white w3-link w3-footer-hover w3-padding-48">
+      	<span>
+        	ʕ•́ᴥ•̀ʔ <i>--{I'm sorry. This blog needs JavaScript for math rendering}</i><br /><br />
+        	The acquisition of wealth is no longer the driving force in our lives. ...We work to better ourselves ...and the rest of humanity.<br />
+			- Jean-Luc Picard, Star Trek: First Contact, 1996 -
+        </span>
+        <br /><br />
+		<!-- <span>
+			<a href="/mailinglists.html" title="Mailing Lists">Mailing Lists</a> |
+			<a href="/keys.html" title="Keys">Keys</a> |
+			<a href="/qanda.html" title="Q&A">Q&A</a><br />
+		</span> -->
+        <span>
+            PGP signing key (NOT for communication!): 8F31 C7C6 E67E 9ACE 8E12 E2EF 0DE3 A4D3 BA87 2A8B<br />
+        </span>
+        <span>
+        	<a href="/keys.html" title="Keys">Keys</a> |
+            <a href="/archives.html" title="Archives">Archives</a> |
+            <!-- <a href="/categories.html" title="Categories">Categories</a> | -->
+            <a href="/tags.html" title="Tags">Tags</a> |
+            <a href="/authors.html" title="Authors">Authors</a><br />
+        </span>
+        <span>
+            <a href="/legal-disclosure.html" title="Legal Disclosure">Legal Disclosure</a> | 
+            <a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a> | 
+            <a href="/disclaimer.html" title="Disclaimer">Disclaimer</a><br />
+            <!-- Sitemap<br /> -->
+        </span>
+        <span>
+          &copy;
+          2016&dash;2022          Carolin Zöbelein<br />
+<a href="/feeds/all.atom.xml">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a> <!-- - --><!--#LeonardoV2 -->
+        </span>
+      </div>
+    </footer>
+
+
+
+  </body>
+</html>

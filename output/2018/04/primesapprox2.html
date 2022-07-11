@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Primes matrix: Approximation 2</title>
+
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+   
+   	<!-- Icon -->     
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Social -->
+    <meta property="article:author" content="Carolin Zöbelein" />
+   	<meta property="article:section" content="Math" />
+   	<meta property="article:published_time" content="2018-04-05" />
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Primes matrix: Approximation 2"/>
+    <meta property="og:description" content="Since I wasn&#39;t happy about the final sum in my last post, I think about an alternative way."/>
+    <meta property="og:site_name" content="Carolin's Blog" />
+	<meta property="og:url" content="https://blog.carolin-zoebelein.de/2018/04/primesapprox2.html"/>
+  	<meta name="og:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
+    
+	<meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@SamdneyTweet" />
+    <meta name="twitter:creator" content="@SamdneyTweet" />
+    <meta name="twitter:title" content="Primes matrix: Approximation 2" />
+    <meta name="twitter:description" content="<p>Since I wasn't happy about the final sum in my last post, I think about an alternative way.</p>" />
+    <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
+
+    <!-- Feed -->
+    <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Carolin's Blog Atom Feed" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygments-highlight-github.css">
+    <link rel="stylesheet" type="text/css" href="/static/custom.css">
+
+  </head>
+
+  <body>
+    <div class="w3-row w3-card w3-white">
+      <header id="header">
+        <a href="/index.html" id="header-logo" title="Home">CZ</a>
+        <nav id="header-menu">
+          <ul>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="/archives.html">Archives</a></li>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="/categories.html">Categories</a></li>
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+
+
+    <br><br><br>
+
+    <article>
+      <header class="w3-container col-main">
+        <h1>Primes matrix: Approximation 2</h1>
+        <div class="post-info">
+          <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+            <span><time datetime="2018-04-05T07:37:00+02:00">Do 05 April 2018</time> in <a href="/category/math.html" title="All articles in category Math">Math</a></span>
+          </div>
+          <div>
+            <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+              <a href="/tag/primes.html" title="All articles with Primes tag">#primes</a>
+            </span>
+            <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+              <a href="/tag/number-theory.html" title="All articles with Number Theory tag">#number theory</a>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <br>
+
+
+      <div class="col-main w3-container">
+        <section id="content">
+          <p>Since I wasn't happy about the final sum in my last post
+<a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a>, I think about an alternative way.  </p>
+<p>We had 
+</p>
+<div class="math">$$
+    x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
+    = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$</div>
+<p>in which we made the product over all <span class="math">\(\exp\)</span>-functions for each <span class="math">\(x_{i}\)</span>. Now,
+instead we will do the product over the arguments of the <span class="math">\(\exp\)</span>-functions</p>
+<div class="math">$$
+     x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \exp\left(\prod_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$</div>
+<p>Let's look at the qualities of this product</p>
+<div class="math">$$
+    \prod_{i = a}^{b} \frac{k - x_{i}}{2x_{i} + 1}
+$$</div>
+<p>and under which conditions we receive integers. From my work
+<a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a>
+we already know that we get troubles if at least one of the <span class="math">\(2x_{i} + 1\)</span> is
+a divisible number. Hence, we always asume that all our
+numbers <span class="math">\(2x_{i} + 1\)</span> are primes.</p>
+<p>We receive integer values in the following cases</p>
+<ul>
+<li>
+<p><strong>Case 1:</strong> For all <span class="math">\(k\)</span>-values which are also solutions for every single
+    <span class="math">\(\exp\)</span>-equation.</p>
+</li>
+<li>
+<p><strong>Case 2:</strong> For all <span class="math">\(k\)</span>-values which is a solution for at least one single
+    <span class="math">\(\exp\)</span>-equation and also leads to the trivial solution with
+    <span class="math">\(x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)\)</span>, <span class="math">\(N \in \mathbb{N}\)</span>.</p>
+</li>
+</ul>
+<p>For the second case, we take the example of two equations with <span class="math">\(x_{1} = 2\)</span> and
+<span class="math">\(x_{2} = 3\)</span></p>
+<div class="math">$$
+    \frac{k - x_{1}}{2x_{1} + 1} \frac{k - x_{2}}{2x_{2} + 1} = \frac{\left(k - 2\right)\left(k - 3\right)}{5
+    \cdot 7}
+$$</div>
+<p>Here we receive one solution for <span class="math">\(k = 37\)</span>, <span class="math">\(\frac{35 \cdot 34}{35} = 34\)</span>, which is also a solution for
+<span class="math">\(\frac{37 - 2}{5} = 7\)</span> and an other solution for <span class="math">\(k = 38\)</span>, <span class="math">\(\frac{36 \cdot
+35}{35} = 36\)</span> which is also a solution for <span class="math">\(\frac{38 - 3}{7} = 5\)</span>. We see that
+<span class="math">\(k\)</span> leads to the trivial case in which <span class="math">\(x_{j}\)</span> of one single <span class="math">\(\exp\)</span>-equation is equal to the prime value of an other single <span class="math">\(\exp\)</span>-equation or the product of primes of several single <span class="math">\(\exp\)</span>-equations.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+        </section>
+
+        <br><br><br>
+
+        <footer>
+          <div class="adjust-width">
+          
+            <!--
+            <div id="author-block" class="w3-light-grey w3-border">
+              <div id="author-info">
+                <a href="https://research.carolin-zoebelein.de"><img class="avatar" src="/images/avatar.jpg" onerror="this.src='theme/images/avatar.png'" alt="Avatar"></a>
+                <div style="margin-left: 20px;">
+                  <a href="https://research.carolin-zoebelein.de"><span id="author-name" class="w3-hover-text-dark-grey">Carolin Zöbelein</span></a>
+                  <p id="author-story">Hello world! I’m John Doe. I like coffee, birds and Python.</p>
+                </div>
+              </div>
+            </div>
+            -->
+            
+            <div id="author-block" class="w3-white w3-border w3-border-green" style="padding: 24px;">
+            
+				<div style="display: flex; align-items: center;">
+				  <span>
+				  <p class="w3-hover-text-dark-grey" style="font-size: 16pt; font-weight: bold; margin-left: 20px;">Carolin Zöbelein</p>
+				  <p style="font-size: 12pt; font-style: italic; margin-top: 36px; margin-left: 20px;">Hello world! I’m John Doe. I like coffee, birds and Python.</p>
+				  </span>
+				</div>
+
+				<div style="display: flex; flex-wrap: wrap;">
+				  <ul class="social" style="flex-grow: 1; padding: 0px;  margin-top: 12px; margin-bottom: 0px;">
+				    <li style="font-size: 18pt;"><a class="sc-twitter" href="https://twitter.com/SamdneyTweet" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-github" href="https://github.com/Samdney" target="_blank"><i class="fa fa-github"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-linkedin" href="https://www.linkedin.com/in/carolin-zoebelein/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-youtube-square" href="https://www.youtube.com/channel/UChKn7j071KPz3QNYldPKH1g" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
+				    <li style="font-size: 18pt;"><a class="sc-superscript" href="https://research.carolin-zoebelein.de" target="_blank"><i class="fa fa-superscript"></i></a></li>
+				  </ul>      
+				</div>
+			  </div>           
+            
+          </div>
+
+          <br><br>
+
+		  <!-- TODO: Check generated link -->
+          <p style="font-size:10pt; font-style: italic;">Did you like this article? Share it with your friends!<br />(Opens in new tab on Twitter)</p>
+          <div id="share" class="share">
+            <a href="https://twitter.com/share?url=/2018/04/primesapprox2.html&amp;text=Carolin%27s%20Blog%3A%20Primes%20matrix%3A%20Approximation%202" target="_blank" class="w3-btn w3-blue">
+              <i class="fa fa-twitter"></i> <span>Twitter</span>
+            </a>
+          </div>
+
+          <br><br><br>
+
+
+
+        </footer>
+      </div>
+    </article>
+
+
+	<footer id="footer">
+      <div id="footer-copyright" class="w3-center w3-medium w3-text-color-white w3-link w3-footer-hover w3-padding-48">
+      	<span>
+        	ʕ•́ᴥ•̀ʔ <i>--{I'm sorry. This blog needs JavaScript for math rendering}</i><br /><br />
+        	The acquisition of wealth is no longer the driving force in our lives. ...We work to better ourselves ...and the rest of humanity.<br />
+			- Jean-Luc Picard, Star Trek: First Contact, 1996 -
+        </span>
+        <br /><br />
+		<!-- <span>
+			<a href="/mailinglists.html" title="Mailing Lists">Mailing Lists</a> |
+			<a href="/keys.html" title="Keys">Keys</a> |
+			<a href="/qanda.html" title="Q&A">Q&A</a><br />
+		</span> -->
+        <span>
+            PGP signing key (NOT for communication!): 8F31 C7C6 E67E 9ACE 8E12 E2EF 0DE3 A4D3 BA87 2A8B<br />
+        </span>
+        <span>
+        	<a href="/keys.html" title="Keys">Keys</a> |
+            <a href="/archives.html" title="Archives">Archives</a> |
+            <!-- <a href="/categories.html" title="Categories">Categories</a> | -->
+            <a href="/tags.html" title="Tags">Tags</a> |
+            <a href="/authors.html" title="Authors">Authors</a><br />
+        </span>
+        <span>
+            <a href="/legal-disclosure.html" title="Legal Disclosure">Legal Disclosure</a> | 
+            <a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a> | 
+            <a href="/disclaimer.html" title="Disclaimer">Disclaimer</a><br />
+            <!-- Sitemap<br /> -->
+        </span>
+        <span>
+          &copy;
+          2016&dash;2022          Carolin Zöbelein<br />
+<a href="/feeds/all.atom.xml">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a> <!-- - --><!--#LeonardoV2 -->
+        </span>
+      </div>
+    </footer>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,3 @@
+rm -r output/*.html
+rm -r output/201* output/202*
+rm -r output/author output/blog output/category output/feeds output/files output/images output/tag output/theme

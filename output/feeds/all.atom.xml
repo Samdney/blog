@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Carolin's Blog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-06-01T14:00:00+02:00</updated><entry><title>Powers of 2 and k-digits structures</title><link href="/2022/06/powers-of-2-and-k-digits-structures.html" rel="alternate"></link><published>2022-06-01T14:00:00+02:00</published><updated>2022-06-01T14:00:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2022-06-01:/2022/06/powers-of-2-and-k-digits-structures.html</id><summary type="html">&lt;p&gt;Powers of 2 and some of their k-digit structures.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my paper &lt;i&gt;Powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt; whose digits are powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt;&lt;/i&gt; (see also &lt;a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank"&gt;https://research.carolin-zoebelein.de/public.html#bib6&lt;/a&gt;), I'm discussing digits of powers of 2, and which conditions are necessary to get for them powers of 2, too.&lt;/p&gt;
+&lt;p&gt;Given be the set of powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt; by &lt;span class="math"&gt;\(P_{y} = 2^{y}\)&lt;/span&gt;, &lt;span class="math"&gt;\(y \in \mathbb{N}_{0}\)&lt;/span&gt;. It is unknown if, apart from &lt;span class="math"&gt;\(P_{y=0} = 2^{0} = 1\)&lt;/span&gt;, &lt;span class="math"&gt;\(P_{y=1} = 2^{1} = 2\)&lt;/span&gt;, &lt;span class="math"&gt;\(P_{y=2} = 2^{2} = 4\)&lt;/span&gt;, &lt;span class="math"&gt;\(P_{y=3} = 2^{3} = 8\)&lt;/span&gt; and &lt;span class="math"&gt;\(P_{y=7} = 2^{7} = 128\)&lt;/span&gt;, there exist more &lt;span class="math"&gt;\(P_{y}\)&lt;/span&gt;'s whose digits are powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt; (&lt;i&gt;A130693&lt;/i&gt; in the On-line Encyclopedia of Integer Sequences (OEIS) &lt;a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank"&gt;http://oeis.org/A130693&lt;/a&gt; [Dre07]) [Wel97], too.&lt;/p&gt;
+&lt;p&gt;Looking at the set of powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt;'s [Slo], we know that a &lt;span class="math"&gt;\(m\)&lt;/span&gt;-digit power of &lt;span class="math"&gt;\(2\)&lt;/span&gt; by &lt;span class="math"&gt;\(P_{y}\)&lt;/span&gt;, has a periodicity of &lt;span class="math"&gt;\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)&lt;/span&gt; for the last &lt;span class="math"&gt;\(k \leq m\)&lt;/span&gt; digits, starting at &lt;span class="math"&gt;\(2^{k}\)&lt;/span&gt; [YY64]. Taking the known periodicity of the last &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits into account, we want to discuss properties for the last &lt;span class="math"&gt;\(k^{\prime} &amp;gt; k\)&lt;/span&gt; digits, for fixed last &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits of &lt;span class="math"&gt;\(P_{y}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Notation.&lt;/b&gt; If we write &lt;span class="math"&gt;\(2^{y}_{k}\)&lt;/span&gt;, we are talking about the &lt;span class="math"&gt;\(k\)&lt;/span&gt;'th digit (counted from right to left, starting counting by &lt;span class="math"&gt;\(1\)&lt;/span&gt;) of &lt;span class="math"&gt;\(2^{y}\)&lt;/span&gt;, in base &lt;span class="math"&gt;\(10\)&lt;/span&gt; representation. For step sizes we write &lt;span class="math"&gt;\(d^{k + 1}_{y,k}\)&lt;/span&gt;, meaning the step size of the &lt;span class="math"&gt;\(k + 1\)&lt;/span&gt;-digit, starting by &lt;span class="math"&gt;\(2^{y}\)&lt;/span&gt;, with a &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digit periodicity. Furthermore, we will denote the set of all one-digit powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt; by &lt;span class="math"&gt;\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For this, at first, we also considered &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digit structures of powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt; in generally, and used the following two lemmas as starting point for our proofs in the mentioned paper.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Lemma 2.1&lt;/b&gt; (&lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits structure). &lt;i&gt;Let be &lt;span class="math"&gt;\(P_{y} = 2^{y}\)&lt;/span&gt;, &lt;span class="math"&gt;\(y \in \mathbb{N}_{0}\)&lt;/span&gt;, and the last &lt;span class="math"&gt;\(k^{\star}\)&lt;/span&gt;-digits periodical with &lt;span class="math"&gt;\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)&lt;/span&gt;, for all &lt;span class="math"&gt;\(2^{y} \geq 2^{k^{\star}}\)&lt;/span&gt;, &lt;span class="math"&gt;\(k^{\star} \geq 2\)&lt;/span&gt;. Then for &lt;span class="math"&gt;\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)&lt;/span&gt;, &lt;span class="math"&gt;\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)&lt;/span&gt;, the last &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits are given by &lt;span class="math"&gt;\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)&lt;/span&gt;, with &lt;span class="math"&gt;\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)&lt;/span&gt; leading zeros for &lt;span class="math"&gt;\(k \geq 2\)&lt;/span&gt;, and at least one leading zero for &lt;span class="math"&gt;\(k \geq 3\)&lt;/span&gt;.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Proof.&lt;/i&gt; We know, that for the last &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits &lt;span class="math"&gt;\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)&lt;/span&gt;, which have &lt;span class="math"&gt;\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)&lt;/span&gt; digits. Since, we also have the periodicity &lt;span class="math"&gt;\(\varphi\left(5^{k}\right)\)&lt;/span&gt;, we directly get &lt;span class="math"&gt;\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)&lt;/span&gt; for the number of leading zeros. Looking at &lt;span class="math"&gt;\(0 \leq k - x\)&lt;/span&gt;, we receive &lt;span class="math"&gt;\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)&lt;/span&gt;, and hence &lt;span class="math"&gt;\(k \geq 2\)&lt;/span&gt; by the constraint &lt;span class="math"&gt;\(k^{\star} \geq 2\)&lt;/span&gt;, and for &lt;span class="math"&gt;\(1 \geq k - x\)&lt;/span&gt;, with &lt;span class="math"&gt;\(k = k^{\star}\)&lt;/span&gt;, we recive &lt;span class="math"&gt;\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)&lt;/span&gt;, and hence &lt;span class="math"&gt;\(k \geq 3\)&lt;/span&gt;. Finally it is easy to see, that the statement is always satisfied for &lt;span class="math"&gt;\(k \geq k^{\star}\)&lt;/span&gt;, because of &lt;span class="math"&gt;\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)&lt;/span&gt; for &lt;span class="math"&gt;\(k = k^{*}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Lemma 2.2&lt;/b&gt; (&lt;span class="math"&gt;\(k^{\star}\)&lt;/span&gt;-digits fixed structure). &lt;i&gt; Let be &lt;span class="math"&gt;\(P_{y} = 2^{y}\)&lt;/span&gt;, &lt;span class="math"&gt;\(y \in \mathbb{N}_{0}\)&lt;/span&gt;, and the last &lt;span class="math"&gt;\(k^{\star}\)&lt;/span&gt;-digits periodical with &lt;span class="math"&gt;\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)&lt;/span&gt;, for all &lt;span class="math"&gt;\(2^{y} \geq 2^{k^{\star}}\)&lt;/span&gt;, &lt;span class="math"&gt;\(k^{\star} \geq 2\)&lt;/span&gt;. Then for &lt;span class="math"&gt;\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)&lt;/span&gt;, &lt;span class="math"&gt;\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)&lt;/span&gt;, the last &lt;span class="math"&gt;\(k + 1\)&lt;/span&gt; to &lt;span class="math"&gt;\(k + \delta k\)&lt;/span&gt;-digits are fixed for at least &lt;span class="math"&gt;\(\delta k = k^{\star}\)&lt;/span&gt; digits. &lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Proof.&lt;/i&gt;
+    Consider &lt;span class="math"&gt;\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \\ \cdot 10^{-\left(k + 1\right)} \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \\ \cdot 5^{-1}\)&lt;/span&gt;, for which we can equating the coefficients with approximation. We look at &lt;span class="math"&gt;\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)&lt;/span&gt;, and receive &lt;span class="math"&gt;\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)&lt;/span&gt;. Finally, we can conclude &lt;span class="math"&gt;\(\delta k \gtrsim k^{\star}\)&lt;/span&gt; for &lt;span class="math"&gt;\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;p&gt;[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits are powers of 2. &lt;a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank"&gt;http://oeis.org/A130693&lt;/a&gt;, 07 2007. (Accessed on 2021/07/18).&lt;br /&gt;
+[Slo] N. J. A. Sloane. Table of n, 2 n for n = 0..1000 - OEIS. &lt;a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank"&gt;http://oeis.org/A000079/b000079.txt&lt;/a&gt;. (Accessed on 2021/08/08).&lt;br /&gt;
+[Wel97] David Wells. The Penguin dictionary of curious and interesting numbers. Penguin, 1997.&lt;br /&gt;
+[YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with elementary solutions. I, 1964.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="number theory"></category><category term="powers of 2"></category></entry><entry><title>Patent applications: Link list</title><link href="/2021/10/patent-applications-link-list.html" rel="alternate"></link><published>2021-10-28T19:13:00+02:00</published><updated>2021-10-28T19:13:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2021-10-28:/2021/10/patent-applications-link-list.html</id><summary type="html">&lt;p&gt;A useful living link list for patent applications.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a list of useful links in context of patent applications. I'm based in Germany, hence maybe not all links are also useful for you. Furthermore, it's a living document, means, from time to time, I add new links.&lt;/p&gt;
+&lt;p&gt;Patent search&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Patent Search: &lt;a href="https://www.google.com/?tbm=pts" title="External: Google Patent Search" target="_blank"&gt;https://www.google.com/?tbm=pts&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;European Patent Office: &lt;a href="https://worldwide.espacenet.com" title="External: European Patent Office - Search" target="_blank"&gt;https://worldwide.espacenet.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;United States Patent and Trademark Office: &lt;a href="https://patft.uspto.gov/netahtml/PTO/search-bool.html" title="External: United States Patent and Trademark Office - Search" target="_blank"&gt;https://patft.uspto.gov/netahtml/PTO/search-bool.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;German Patent and Trademark Office:&lt;ul&gt;
+&lt;li&gt;DPMAregister - Official Publications and Register Database: &lt;a href="https://register.dpma.de/DPMAregister/Uebersicht" title="External: DPMAregister" target="_blank"&gt;https://register.dpma.de/DPMAregister/Uebersicht&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DEPATISnet - Database for online searches on patent publications from around the world: &lt;a href="https://depatisnet.dpma.de/DepatisNet/depatisnet" title="External: DEPATISnet" target="_blank"&gt;https://depatisnet.dpma.de/DepatisNet/depatisnet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Patent offices&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;European Patent Office: &lt;a href="https://www.epo.org/" title="External: European Patent Office" target="_blank"&gt;https://www.epo.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;United States Patent and Trademark Office: &lt;a href="https://www.uspto.gov/" title="External: United States Patent and Trademark Office" target="_blank"&gt;https://www.uspto.gov/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;German Patent and Trademark Office: &lt;a href="https://www.dpma.de/" title="External: German Patent and Trademark Office" target="_blank"&gt;https://www.dpma.de/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Legal texts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;European Patent Office (EPO) - Legal texts: &lt;a href="https://www.epo.org/law-practice/legal-texts.html" title="External: European Patent Office (EPO) - Legal texts" target="_blank"&gt;https://www.epo.org/law-practice/legal-texts.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;US Consolidated Patent Laws: &lt;a href="https://www.uspto.gov/web/offices/pac/mpep/consolidated_laws.pdf" title="External: US Consolidated Patent Laws, United States Patent and Trademark Office" target="_blank"&gt;https://www.uspto.gov/web/offices/pac/mpep/consolidated_laws.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Patentgesetz (German Patent Law): &lt;a href="https://www.gesetze-im-internet.de/patg/BJNR201170936.html" title="External: Patentgesetz (German Patent Law), Bundesamt für Justiz" target="blank"&gt;https://www.gesetze-im-internet.de/patg/BJNR201170936.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;WIPANO (German government, Patent application funding program)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bundesministerium für Wirtschaft und Klimaschutz: WIPANO (Wissens- und Technologietransfer durch Patente und Normen): &lt;a href="https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/Patentierung-Unternehmen/patentierung-unternehmen.html" title="External: WIPANO, Bundesministerium für Wirtschaft und Klimaschutz" target="_blank"&gt;https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/Patentierung-Unternehmen/patentierung-unternehmen.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;WIPANO - Programminformation: &lt;a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-programminformation-2021.pdf" title="External: WIPANO Programminformation, Bundesministerium für Wirtschaft und Energie" target="_blank"&gt;https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-programminformation-2021.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;WIPANO - Änderung der Richtlinien: &lt;a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-aenderung-richtlinie_29-03-2021.pdf" title="External: WIPANO Änderung der Richtlinien, Bundesministerium der Justiz und für Verbraucherschutz" target="_blank"&gt;https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-aenderung-richtlinie_29-03-2021.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Brochüre "Von der Idee zum Markterfolg": &lt;a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/broschuere_von-der-idee-zum-markterfolg.pdf" title="External: Von der Idee zum Markterfolg, Bundesministerium für Wirtschaft und Energie" target="_blank"&gt;https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/broschuere_von-der-idee-zum-markterfolg.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Patents"></category><category term="link list"></category><category term="patent"></category><category term="patent application"></category></entry><entry><title>Eulerian cycles for combinatorial independent sets determination</title><link href="/2020/06/adhocindependentsets-euleriancycles.html" rel="alternate"></link><published>2020-06-12T19:30:00+02:00</published><updated>2020-06-12T19:30:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2020-06-12:/2020/06/adhocindependentsets-euleriancycles.html</id><summary type="html">&lt;p&gt;In the last post, we described a naive algorithm to determine independent sets and got a terrible complexity. Now, we want to grab this algorithm to use it as a base for an alternative way of independent set generation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post is the second part of a series regarding combinatorial independent sets determination.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First post of this series: &lt;a href="https://blog.carolin-zoebelein.de/2020/05/adhocindependentsets.html"&gt;Ad hoc method for independent sets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the last post, we described a naive algorithm to determine independent sets and got a terrible complexity. Now, we want to grab this algorithm to use it as a base for an alternative way of independent set generation. Instead of putting edges in an arbitrary order into our algorithm, we will consider properties of the set of edges &lt;span class="math"&gt;\(E\)&lt;/span&gt;, given by Eulerian cycles.&lt;/p&gt;
+&lt;h2&gt;Eulerian cycle expansions&lt;/h2&gt;
+&lt;p&gt;For improving our algorithm, we will need Eulerian cycles.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 1&lt;/strong&gt; (Eulerian cycle)&lt;br&gt;
+&lt;em&gt;An Eulerian cycle in an undirected graph is a cycle that uses each edge exactly once. A graph which owns such a cycle is called Eulerian.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If &lt;span class="math"&gt;\(G\)&lt;/span&gt; is a connected graph, then the following statements are equivalent:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;span class="math"&gt;\(G\)&lt;/span&gt; is Eulerian&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Every vertex &lt;span class="math"&gt;\(v \in V\)&lt;/span&gt; of &lt;span class="math"&gt;\(G\)&lt;/span&gt; have an even degree &lt;span class="math"&gt;\(\deg\left(v\right)\)&lt;/span&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;The set &lt;span class="math"&gt;\(E\)&lt;/span&gt; of &lt;span class="math"&gt;\(G\)&lt;/span&gt; is the set union of all edges of pairwise disjunct cycles&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;This was proofed by Hierholzer [1].&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;So, what we need is a connected graph which only has vertices with even degree. Because, of course, not all graphs statisfy this conditions by default, we will now think, how we can map a given graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; to a graph &lt;span class="math"&gt;\(G^{\prime}\)&lt;/span&gt; which statisfies the conditions, but still gives us the searched independent sets of &lt;span class="math"&gt;\(G\)&lt;/span&gt;, without increasing noticeable the full algorithm complexity, finally.&lt;/p&gt;
+&lt;h3&gt;Connectivity&lt;/h3&gt;
+&lt;p&gt;At first, let's check if the graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; is connected. This can be done by breadth-first search with &lt;span class="math"&gt;\(\mathcal{O}\left(|V| + |E|\right)\)&lt;/span&gt;. If yes, we don't have to do anything anymore regarding connectivity. In the case of no, we have several independent, pairwise disconnected, subgraphs &lt;span class="math"&gt;\(G_{0}, G_{1}, \dots\)&lt;/span&gt; which we can handle without much work. We determine the independent sets &lt;span class="math"&gt;\(S_{G_{i}}\)&lt;/span&gt; for each &lt;span class="math"&gt;\(G_{i}\)&lt;/span&gt; separately. After determining all independet sets, we finally have simply to combine all of this &lt;span class="math"&gt;\(S_{G_{i}}\)&lt;/span&gt; with each other. To find all strongly components of a graph we can use Tarjan's algorithm [2] which also works with &lt;span class="math"&gt;\(\mathcal{O}\left(|V| + |E|\right)\)&lt;/span&gt;. Later, we will see that the final independent sets can be easily derived from our partial results.&lt;/p&gt;
+&lt;h3&gt;Even degrees&lt;/h3&gt;
+&lt;p&gt;The second condition for an Eulerian graph is regarding even degrees. At first, let's check the degree of each vertex in &lt;span class="math"&gt;\(G\)&lt;/span&gt;. This is a trivial thing with linear complexity. If yes, we don't have to do anything anymore regarding even degrees. In the case of no, we have to do some modification of &lt;span class="math"&gt;\(G\)&lt;/span&gt;. From basic graph theory we know that for every graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; we have &lt;span class="math"&gt;\(2|E| = \sum_{v_{i} \in V} \deg\left(v_{i}\right)\)&lt;/span&gt;. Hence, we know that we always have an even number of vertices with odd degree. With this we can simply map our graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; to an Eulerian graph by connecting always two of our odd degree vertices &lt;span class="math"&gt;\(\{u,v\}\)&lt;/span&gt; by one new introduced helper vertex &lt;span class="math"&gt;\(h \in H\)&lt;/span&gt; (be &lt;span class="math"&gt;\(H\)&lt;/span&gt; the set of helper vertices) and hence we get the two new edges &lt;span class="math"&gt;\(\left(u,h\right)\)&lt;/span&gt; and &lt;span class="math"&gt;\(\left(h,v\right)\)&lt;/span&gt;.
+So, what will be the consequences of adding an helper vertex to our graph, regarding the independent sets? We have two possible cases here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The helper vertex &lt;span class="math"&gt;\(h\)&lt;/span&gt; connects two vertices &lt;span class="math"&gt;\(u\)&lt;/span&gt; and &lt;span class="math"&gt;\(v\)&lt;/span&gt; which belong to the same independent set &lt;span class="math"&gt;\(S\)&lt;/span&gt; which means &lt;span class="math"&gt;\(u \in S \wedge v \in S\)&lt;/span&gt; and hence &lt;span class="math"&gt;\(\left(u,v\right) \notin E\)&lt;/span&gt;.&lt;br&gt;
+&lt;em&gt;Consequence:&lt;/em&gt; Since &lt;span class="math"&gt;\(u\)&lt;/span&gt; and &lt;span class="math"&gt;\(v\)&lt;/span&gt; are still not directly connected with each other, they will still belong to the same independent set. Since, each of them have a connection to &lt;span class="math"&gt;\(h\)&lt;/span&gt;, &lt;span class="math"&gt;\(h\)&lt;/span&gt; will become a member of an other, second, independent set. So, we will get our original independent set &lt;span class="math"&gt;\(S\)&lt;/span&gt; unchanged and any other second independent set with &lt;span class="math"&gt;\(S^{\prime} \cup \{h\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The helper vertex &lt;span class="math"&gt;\(h\)&lt;/span&gt; connects two vertices &lt;span class="math"&gt;\(u\)&lt;/span&gt; and &lt;span class="math"&gt;\(v\)&lt;/span&gt; which belong to two different independent sets &lt;span class="math"&gt;\(S_{i}, S_{j}\)&lt;/span&gt; with &lt;span class="math"&gt;\(S_{i} \nsubseteq S_{j}\)&lt;/span&gt;, which means &lt;span class="math"&gt;\(u \in S_{i} \wedge v \in S_{j}\)&lt;/span&gt; and hence &lt;span class="math"&gt;\(\left(u,v\right) \in E\)&lt;/span&gt;.&lt;br&gt;
+&lt;em&gt;Consequence:&lt;/em&gt; Since &lt;span class="math"&gt;\(u\)&lt;/span&gt; and &lt;span class="math"&gt;\(v\)&lt;/span&gt; are already directly connected, also with a connection to &lt;span class="math"&gt;\(h\)&lt;/span&gt; they will still both belong to two different sets. Since, each of them have a connection to &lt;span class="math"&gt;\(h\)&lt;/span&gt;, &lt;span class="math"&gt;\(h\)&lt;/span&gt; will become a member of an other, third, independent set. So, we will get our original two independent sets &lt;span class="math"&gt;\(S_{i}\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_{j}\)&lt;/span&gt; unchanged and any other third independent set with &lt;span class="math"&gt;\(S_{k} \cup \{h\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will come back to this, later.&lt;/p&gt;
+&lt;h2&gt;Eulerian cycle partitioning&lt;/h2&gt;
+&lt;p&gt;After mapping our graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; to an Eulerian one, we determine the Eulerian cycles with Hierholzer's algorithm [1] and complexity &lt;span class="math"&gt;\(\mathcal{O}\left(|E|\right)\)&lt;/span&gt;. Like already mentioned, a graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; can be disconnected into several subgraphs &lt;span class="math"&gt;\(G_{0}, G_{1}, \dots\)&lt;/span&gt;. For each of them we have to identify the Euler cycles. The outcome of this can be written in a general way like as the following example:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+    \underbrace{\left(\overbrace{\underset{0}{a_{1}},\underset{1}{b_{1}},\underset{2}{c_{1}}}^{C_{0}}, \overbrace{a_{2},\underset{3}{d_{1}},\underset{4}{e_{1}},\underset{5}{f_{1}}}^{C_{1}},\overbrace{b_{2}}^{C_{2}},\overbrace{e_{2}}^{C_{3}},\overbrace{a_{3}}^{C_{4}}\right)}_{G_{0}} \underbrace{\left(\overbrace{\underset{0}{g_{1}},\underset{1}{h_{1}},\underset{2}{i_{1}}}^{C^{\prime}_{0}},\overbrace{\underset{3}{g_{2}}}^{C^{\prime}_{1}}\right)}_{G_{1}}\cdots
+\label{eq:eulercycles}
+\end{equation}&lt;/div&gt;
+&lt;p&gt;Here, &lt;span class="math"&gt;\(a_{i}, b_{i}, \cdots, h_{i}, i_{i}\)&lt;/span&gt; are vertices of &lt;span class="math"&gt;\(V\)&lt;/span&gt;, their indices are the numbers of their appeareance and the numbers below them are the numbering of the first appeareance order within the Eulerian graph. In each graph we can find inner cycles &lt;span class="math"&gt;\(C_{i}\)&lt;/span&gt; which are recognized through an additional appeareance of an already in the sequence existing vertex. For our further steps, we will see, that it is useful to cut a graph sequence exactly at this points.&lt;/p&gt;
+&lt;p&gt;What we want to do now, is to put this information of one graph &lt;span class="math"&gt;\(G_{i}\)&lt;/span&gt; in a more helpful data structure. For this we use a list of linked lists for each &lt;span class="math"&gt;\(G_{i}\)&lt;/span&gt; in which we save for each cycle its size &lt;span class="math"&gt;\(s\)&lt;/span&gt;, its first element and the the position of this first element within the sequence of all first appearences of numbers of the whole Eulerian sequence, (see table 1), at all.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitHub Logo" src="/blog/images/adhocindependentsets-euleriancycles/table1AdjacenceList.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;We know the maximum number of edges of a graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; is &lt;span class="math"&gt;\(\frac{1}{2}\left(|V|^{2} - |V|\right)\)&lt;/span&gt; and that we have this value plus one for entries of &lt;span class="math"&gt;\(G\)&lt;/span&gt;, like in (\ref{eq:eulercycles}). So we have a total complexity of &lt;span class="math"&gt;\(\mathcal{O}\left(\left(\frac{1}{2}\left(|V|^{2} - |V|\right) + 1\right)^{2}\right) = \mathcal{O}\left(|V|^{4}\right)\)&lt;/span&gt; for generating all lists of linked lists of a given &lt;span class="math"&gt;\(G\)&lt;/span&gt;, like that.&lt;/p&gt;
+&lt;h2&gt;Outlook&lt;/h2&gt;
+&lt;p&gt;In the next post, we will use this information given by the eulerian cycle to define an appropriate representation for a combinatorial approach for determination of independent sets.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[1] Carl Hierholzer and Chr Wiener, &lt;em&gt;Über die Möglichkeit, einen Linienzug ohne Wiederholung
+und ohne Unterbrechung zu umfahren&lt;/em&gt;, Mathematische Annalen &lt;strong&gt;6&lt;/strong&gt; (1873), no. 1, 30–32.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[2] Robert Tarjan, &lt;em&gt;Depth-first search and linear graph algorithms&lt;/em&gt;, SIAM journal on computing &lt;strong&gt;1&lt;/strong&gt;
+(1972), no. 2, 146–160.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="graph theory"></category><category term="independent sets"></category><category term="algorithm"></category><category term="complexity"></category><category term="combinatorial"></category><category term="eulerian cycles"></category></entry><entry><title>Basic conditions for a mathematical forced decentralized network protocol (MfDN-Protocol)</title><link href="/2020/06/mfdn-protocol-basicconditions.html" rel="alternate"></link><published>2020-06-07T19:30:00+02:00</published><updated>2020-06-07T19:30:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2020-06-07:/2020/06/mfdn-protocol-basicconditions.html</id><summary type="html">&lt;p&gt;A mathematical forced decentralized network protocol needs a set of basic conditions which has to be considered. To get more clear about it, we discuss the differences of this concept regarding to classical decentralized systems and give a first starting point for further design steps.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The following was published as research notes on &lt;a href="https://research.carolin-zoebelein.de/Public/Publications/Notes-Basic-conditions-for-a-mathematical-forced-decentralized-network-protocol-MfDN-Protocol.html" target="_blank"&gt;https://research.carolin-zoebelein.de/Public/Publications/Notes-Basic-conditions-for-a-mathematical-forced-decentralized-network-protocol-MfDN-Protocol.html&lt;/a&gt; at 2020/02/20, for the first time.&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this notes, we will discuss the main basic conditions which are necessary for a mathematical forced decentralized network protocol, short &lt;em&gt;MfDN-Protocol&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;What does MfDN-Protocol mean?&lt;/h2&gt;
+&lt;p&gt;Decentralization is given by distributing computation power, or by 'sharing splited' data or information with each other on a technical, computer science level. All of this could theoretically be happen also on only one device. Also the common shared data, can be centralized without any problem on only a few or even one machine.&lt;/p&gt;
+&lt;p&gt;Hence, &lt;em&gt;Mathematical forced dececentralization&lt;/em&gt; means a protocol which follows a mathematical structure which needs mandatory decentralization to be able to work. To understand this concept better, we want to introduce it by having a look at the differences between a centralized service, a classical decentralized service and a mathematical forced decentralized service, at first.&lt;/p&gt;
+&lt;h3&gt;Centralized service&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Situation.&lt;/em&gt; The service is maintained by a single party on a centralized computer network.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Main design points.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;One single party maintains the service&lt;/li&gt;
+&lt;li&gt;The service runs on a centralized computer network&lt;/li&gt;
+&lt;li&gt;3 Every user of the service have to connect to this centralized network&lt;/li&gt;
+&lt;li&gt;4 Data is saved centralized&lt;/li&gt;
+&lt;li&gt;5 Traffic is centralized to the service computer network&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Disadvantages.&lt;/em&gt; The service itself, the collected data and the generated traffic, the user traffic as well as the service traffic, is centralized and hence in the power of the single party who runs the service. This makes acquisition of data and censorship of information very easy. Additionally, centralized networks have limited scalability.&lt;/p&gt;
+&lt;h3&gt;Classical decentralized service&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Situation.&lt;/em&gt; The service is maintained by a bunch of parties on a decentralized computer network.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Main design points.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Several parties maintain the service&lt;/li&gt;
+&lt;li&gt;The service runs in a decentralized computer network&lt;/li&gt;
+&lt;li&gt;Every user of the service connects to the decentralized network&lt;/li&gt;
+&lt;li&gt;Data can be saved decentralized&lt;/li&gt;
+&lt;li&gt;Traffic is centralized to the members of the whole decentralized computer network&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Disadvantages.&lt;/em&gt; Even if we have a decentralized service, a centralization on a deeper level is still possible. Services itself, can be designed as centralized services itself, only running as several instances on several computers, data can, but not have, to be saved decentralized and even if users connect to a decentralized service, their individuell traffic can still be distributed within the network in the same way like within a centralized network, without mandatory anonymization and identifiable information about the origin. Their individual traffic can be still centralized, too.&lt;/p&gt;
+&lt;h3&gt;Mathematical forced decentralized service&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Situation.&lt;/em&gt; A mathematical forced decentralized network protocol is maintained by a bunch of parties on a decentralized computer network. The service is run on the top of this protocol.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Main design points.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Several parties maintain the protocol network for the service&lt;/li&gt;
+&lt;li&gt;The service runs on the top of the mathematical forced decentralized network protocol in a decentralized computer network&lt;/li&gt;
+&lt;li&gt;Every user of the service connect to this protocol which coordinates the decentralization itself&lt;/li&gt;
+&lt;li&gt;All data is decentralized saved, organized by the protocol&lt;/li&gt;
+&lt;li&gt;The protocol manages the partition of user and server traffic within the network&lt;/li&gt;
+&lt;li&gt;The protocol is designed in such a way, that each service which runs on the top of it, can't be centralized, without loosing the ability to work. This forced decentralization is given by mathematical design aspects of the protocol, not by the technical, physical decentralization on computer level, alone.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Disadvantages.&lt;/em&gt; A given service has to be designed in such a way, that it is able to work on top of our given protocol (the protocol should support as much service designs as possible but it will be necessary that a service fulfills at least a minimum amount of design constraints.&lt;/p&gt;
+&lt;h2&gt;Critical design questions&lt;/h2&gt;
+&lt;p&gt;For our protocol, we have to take care of the following critical design questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Defining the minimum amount of design contraints which a service has to fulfill&lt;/li&gt;
+&lt;li&gt;How to take care of avoiding a 'fake' decentralization by e.g. running several virtual machines on the same centralized server?&lt;/li&gt;
+&lt;li&gt;Best way of handling and coordinating network members, synchronization, concurrency control, ....    &lt;/li&gt;
+&lt;li&gt;Best way of handling recovery problems because of user errors, application errors or partial system failures&lt;/li&gt;
+&lt;li&gt;The given hardware and infrastrucutre have to be able to handle the amount of traffic, synchronization, ....&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Main decentralization points&lt;/h2&gt;
+&lt;p&gt;If we look at the mentioned concepts of networks, it crystallizes the following main decentralization points for our MfDN-Protocol:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A mathematical forced decentralization of the running service&lt;/li&gt;
+&lt;li&gt;A mathematical forced decentralization of data&lt;/li&gt;
+&lt;li&gt;A mathematical forced decentralization of user and service traffic&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We will more clarify this in the further research discussion notes. For the moment, we will simple keep this in mind, at first.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;After having a look at the basic conditions for our mathematicial forced decentralized protocol, we want to put this in a more clear design in the next notes. There we will discuss the basic protocol design and the deeper parts with the mathematical aspects of our work.&lt;/p&gt;
+&lt;h2&gt;Acknowledgement&lt;/h2&gt;
+&lt;p&gt;Special thanks to the individual donators for supporting this work.&lt;/p&gt;</content><category term="Decentralization"></category><category term="decentralization"></category><category term="networks"></category><category term="protocol"></category><category term="mathematical"></category><category term="privacy"></category><category term="MfDN-Protocol"></category><category term="Combsee"></category></entry><entry><title>Ad hoc method for independent sets</title><link href="/2020/05/adhocindependentsets.html" rel="alternate"></link><published>2020-05-20T19:30:00+02:00</published><updated>2020-05-20T19:30:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2020-05-20:/2020/05/adhocindependentsets.html</id><summary type="html">&lt;p&gt;Today, we want to determine indpendent sets of an arbitrary undirected graph. Which can be done by a trivial ad hoc method, described as follows...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, we want to determine indpendent sets of an arbitrary undirected graph. Which can be done by a trivial ad hoc method, described as follows.&lt;/p&gt;
+&lt;h2&gt;Algorithm&lt;/h2&gt;
+&lt;p&gt;We have given an arbitrary undireced graph &lt;span class="math"&gt;\(G = \left(V, E\right)\)&lt;/span&gt; with &lt;span class="math"&gt;\(\deg\left(u_{i}\right) \geq 1\)&lt;/span&gt; for all &lt;span class="math"&gt;\(u_{i} \in V\)&lt;/span&gt;. The set &lt;span class="math"&gt;\(V_{0} \subseteq V\)&lt;/span&gt; of vertices with &lt;span class="math"&gt;\(\deg\left(u_{i}\right) = 0\)&lt;/span&gt; will not be considered. Since, we are interested in the independent sets of &lt;span class="math"&gt;\(G\)&lt;/span&gt;, the set &lt;span class="math"&gt;\(V_{0}\)&lt;/span&gt; is a trivial case which, and it's subsets, can be simply added to any final solution of independent sets. Our following considerations will work for every arbitrary kind of graph, so we don't have to make any other further assumption regarding possible special kinds of graphs respectively sub-graphs, at the moment.&lt;/p&gt;
+&lt;p&gt;We start our independent set generation with the assumption that all edges &lt;span class="math"&gt;\(\left(u_{i}, u_{j}\right) \in E\)&lt;/span&gt; are removed from our graph &lt;span class="math"&gt;\(G\)&lt;/span&gt;. For this trivial case, we would have the one largest independet set easy given by &lt;span class="math"&gt;\(S_{0} := \{u_{1}, u_{2}, u_{3}, u_{4}, \dots, u_{|V|-1}, u_{|V|}\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Now, we take an arbitrary edge &lt;span class="math"&gt;\(e_{1} := \left(u_{1}, u_{2}\right)\)&lt;/span&gt; from the set of the belonging edges &lt;span class="math"&gt;\(E\)&lt;/span&gt; of &lt;span class="math"&gt;\(G\)&lt;/span&gt;. From the definition of an independent set follows that &lt;span class="math"&gt;\(u_{1}\)&lt;/span&gt; and &lt;span class="math"&gt;\(u_{2}\)&lt;/span&gt; can not be element of the same independent set of the same time. Since &lt;span class="math"&gt;\(u_{1} \in S_{0} \wedge u_{2} \in S_{0}\)&lt;/span&gt; is given, we have to split &lt;span class="math"&gt;\(S_{0}\)&lt;/span&gt; into the two new independet sets &lt;span class="math"&gt;\(S_{0} = \{u_{1}, u_{3}, u_{4}, \dots, u_{|V|-1}, u_{|V|}\}\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_{1} = \{u_{2}, u_{3}, u_{4}, \dots, u_{|V|-1}, u_{|V|}\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In the next step, we take edge &lt;span class="math"&gt;\(e_{2}\)&lt;/span&gt;. Here, we have now to differ between three cases. The two vertices of &lt;span class="math"&gt;\(e_{2}\)&lt;/span&gt; both lies completely in &lt;span class="math"&gt;\(S_{0}\)&lt;/span&gt; or both lies in &lt;span class="math"&gt;\(S_{1}\)&lt;/span&gt; or in &lt;span class="math"&gt;\(S_{0}\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_{1}\)&lt;/span&gt;, at the same time. Which means our possible outcome for &lt;span class="math"&gt;\(e_{2} := \left(u_{1}, u_{3}\right)\)&lt;/span&gt; would be &lt;span class="math"&gt;\(S_{0} \setminus \{u_{1}\}\)&lt;/span&gt;, &lt;span class="math"&gt;\(S_{0} \setminus \{u_{3}\}\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_{1}\)&lt;/span&gt;, or for &lt;span class="math"&gt;\(e_{2} := \left(u_{2}, u_{3}\right)\)&lt;/span&gt; we get &lt;span class="math"&gt;\(S_{0}\)&lt;/span&gt;, &lt;span class="math"&gt;\(S_{1} \setminus \{u_{2}\}\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_{1} \setminus \{u_{3}\}\)&lt;/span&gt;, or finally for &lt;span class="math"&gt;\(e_{2} := \left(u_{3},u_{4}\right)\)&lt;/span&gt; we get &lt;span class="math"&gt;\(S_{0} \setminus \{u_{3}\}\)&lt;/span&gt;, &lt;span class="math"&gt;\(S_{0} \setminus \{u_{4}\}\)&lt;/span&gt;, &lt;span class="math"&gt;\(S_{1} \setminus \{u_{3}\}\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_{1} \setminus \{u_{4}\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;So, we see that we can generate all of our independent sets by a simple, naive way of taking an edge of &lt;span class="math"&gt;\(E\)&lt;/span&gt; and looking if this edge is an element of an already generated independet set &lt;span class="math"&gt;\(S_{i}\)&lt;/span&gt;. If yes then split this set into two new ones, by copy &lt;span class="math"&gt;\(S_{i}\)&lt;/span&gt; to a second set &lt;span class="math"&gt;\(S_{j}\)&lt;/span&gt; and removing the first vertex of &lt;span class="math"&gt;\(e\)&lt;/span&gt; from &lt;span class="math"&gt;\(S_{i}\)&lt;/span&gt; and removing the second vertex of &lt;span class="math"&gt;\(e\)&lt;/span&gt; from &lt;span class="math"&gt;\(S_{j}\)&lt;/span&gt;, else nothing has to be done.&lt;/p&gt;
+&lt;p&gt;By doing this for all edges &lt;span class="math"&gt;\(e\)&lt;/span&gt; of &lt;span class="math"&gt;\(E\)&lt;/span&gt;, we finally get all independent sets of &lt;span class="math"&gt;\(G\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h2&gt;Complexity&lt;/h2&gt;
+&lt;p&gt;The complexity of this algorithm is easy to determine. Assume we have given the worst case scenario of a complete graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; (a graph in which every pair of distinct vertices is connected by an unique edge) with &lt;span class="math"&gt;\(|V|\)&lt;/span&gt; vertices and edges whose number is given by &lt;span class="math"&gt;\(|E| = \tbinom{|V|}{2} = \frac{1}{2}|V|^{2} - \frac{1}{2}|V|\)&lt;/span&gt;. To determine all independent sets, we have to do our algorithm for &lt;span class="math"&gt;\(|E|\)&lt;/span&gt; steps, in which we will have to check for this edge in every already existing independent set and finally split it into two. Hence, in the &lt;span class="math"&gt;\(|E|\)&lt;/span&gt;'th step, we have to check &lt;span class="math"&gt;\(2^{|E|}\)&lt;/span&gt; independent sets for the current edge. For the complexity we get with this &lt;span class="math"&gt;\(\mathcal{O}\left(2^{|V|^{2}}\right)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h2&gt;Outlook&lt;/h2&gt;
+&lt;p&gt;All of this seems not to look very exciting, but we will see that we can derive nice things from it, in future blog posts.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="graph theory"></category><category term="independent sets"></category><category term="algorithm"></category><category term="complexity"></category></entry><entry><title>Status report #1: Getting ordered, collecting money</title><link href="/2019/10/status-report-01.html" rel="alternate"></link><published>2019-10-24T01:00:00+02:00</published><updated>2019-10-24T01:00:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2019-10-24:/2019/10/status-report-01.html</id><summary type="html">&lt;p&gt;Status report #1: Un update about my current state of work...&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;This article is the first one of a new series, a kind of newsletter, for updating you what have happened in the last weeks or months related to my work as independent mathematical research scientist and also a bit about my art work. I will try to give my best to publish it as regular as possible, but this will not be always possible. Sometimes because of a leak of time but also sometimes because I work on security and privacy sensitive projects which can’t be make public, at the moment. Nevertheless, I hope you will enjoy this updates and will become a supporter of my work.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stuff which I’m doing currently.&lt;/strong&gt; At the moment, I have mainly a lot of writing tasks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Design draft for project 0055.&lt;/em&gt; (Decentralized privacy preserving search by mathematical design (DePPSMaD)). This document will describe the first draft of the design of the search engine. It’s to bring my messy paper notes in a clearer state and get everything ordered. You can find the current state of document here: &lt;a href="https://github.com/Samdney/project0055-design-draft" title="External: Design Draft (DePPSMaD)" target="_blank"&gt;https://github.com/Samdney/project0055-design-draft&lt;/a&gt; For general information about project 0055 look at: &lt;a href="https://research.carolin-zoebelein.de/Projects/2019/Decentralized-privacy-preserving-search-by-mathematical-design.html" title="Project information" target="_blank"&gt;https://research.carolin-zoebelein.de/Projects/2019/Decentralized-privacy-preserving-search-by-mathematical-design.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;YaCy Intern Concept.&lt;/em&gt; I got the possibility for a grant paid internship at YaCy (&lt;a href="https://yacy.net/" title="External: YaCY" target="_blank"&gt;https://yacy.net/&lt;/a&gt;) decentralized search engine. It will be about bringing more Machine Learning to YaCy. Before, I have to put the working topics on a working plan concept paper, at first.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Patent application.&lt;/em&gt; In the last months, I have worked on a larger practical project which finally led to patent applications. Now, I write technical stuff, handle patent lawyers and figure out how to get money for the patent costs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;overflow.&lt;/em&gt; I signed up at &lt;a href="https://mathoverflow.net/users/147606/samdney" title="External: Mathoverflow" target="_blank"&gt;Mathoverflow&lt;/a&gt; and &lt;a href="https://stackoverflow.com/users/12262987/samdney" title="External: Stackoverflow" target="_blank"&gt;Stackoverflow&lt;/a&gt; for starting a new Q&amp;amp;A career there 😜.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Medium.&lt;/em&gt; Writing several Medium articles about meshnetworks and their meaning for political activism, hashtable in distributed networks, Machine Learning usage by search engines, ….&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Project and fundings.&lt;/em&gt; I have a list of other projects on which I want to work in the future. I will talk about them more in detail in another article. Hence, I’m currently looking for possible grants, fundings, crowdfundings and fellowships which could fit to them and keeping their deadlines in mind.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;The Film Fund.&lt;/em&gt; I found this nice short film funding. Hence, I’m thinking intensevely about the right application sentence for my #Hashtag short film series (&lt;a href="https://youtu.be/K_anslmFTKA" title="External: Youtube #Hashtag Trailer" target="_blank"&gt;https://youtu.be/K_anslmFTKA&lt;/a&gt;). 😄 &lt;a href="https://www.thefilmfund.co/documentary-sentence-entry/" title="External: The film fund" target="_blank"&gt;https://www.thefilmfund.co/documentary-sentence-entry/&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Getting living expenses short term.&lt;/em&gt; Because of private issues, I have to organize very short term income, at the moment, until I get money from my grants. Until now, this hasn’t worked well. 😞&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope you like this short update and see you next time, again! 😉&lt;/p&gt;</content><category term="Status report"></category><category term="status report"></category><category term="research"></category><category term="art"></category><category term="funding"></category><category term="grant"></category><category term="patent"></category><category term="mathoverflow"></category><category term="medium"></category><category term="project"></category><category term="living expenses"></category></entry><entry><title>Cyclotomic polynomials for primes: Appendix</title><link href="/2018/07/cyclotomic-polynomials-for-primes-appendix.html" rel="alternate"></link><published>2018-07-30T13:33:00+02:00</published><updated>2018-07-30T13:33:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-07-30:/2018/07/cyclotomic-polynomials-for-primes-appendix.html</id><summary type="html">&lt;p&gt;Ok, last time, we had ...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ok, last time, we had&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;amp;= \sum_{k = 0}^{p-1} x^{k} \notag \\
+    &amp;amp;= \sum_{k = 0}^{p-1} e^{k\ln\left(x\right)} \notag \\
+    &amp;amp;= e^{0\ln\left(x\right)} + \sum_{k = 1}^{p-1} e^{k\ln\left(x\right)}
+    \notag \\
+    &amp;amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1}
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;. All what I want to add in this small appendix is, that we can, of course,
+also write here&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1} \notag \\
+    &amp;amp;= 1 + \frac{x\left(x^{p-1} - 1\right)}{x - 1} \\
+        &amp;amp;= 1 + \frac{x^{p} - x}{x - 1} \notag
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;Now, if we solve this for p&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;amp;= 1 + \frac{x^{p} - x}{x - 1} \notag \\
+    \phi_{p}\left(x\right) - 1 &amp;amp;= \frac{x^{p} - x}{x - 1} \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) &amp;amp;= x^{p} - x \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x &amp;amp;= x^{p} \notag \\
+    p &amp;amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right).
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;That's it.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="cyclotomic polynomials"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Cyclotomic polynomials for primes</title><link href="/2018/07/cyclotomic-polynomials-for-primes.html" rel="alternate"></link><published>2018-07-18T05:33:00+02:00</published><updated>2018-07-18T05:33:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-07-18:/2018/07/cyclotomic-polynomials-for-primes.html</id><summary type="html">&lt;p&gt;How you can use cyclotomic polynomials for primes number describtion.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Currently, I'm spending my time with cyclotomic polynomials. So, I don't want to
+miss the possibility also to mention a small note about the connection of this
+polynomials to the set of prime numbers.  &lt;/p&gt;
+&lt;p&gt;At first, we have a cyclotomic polynomial in the following way&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+    \phi_{n}\left(x\right) = \prod_{\substack{1 \leq g \leq n \\ ggT\left(g,n\right) = 1}}
+    \left(x - e^{\frac{2\pi i g}{n}}\right)
+\end{equation}&lt;/div&gt;
+&lt;p&gt;with &lt;span class="math"&gt;\(n, g \in \mathbb{N}\)&lt;/span&gt;, respectively&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    x^{n} - 1 &amp;amp;= \prod_{1 \leq g \leq n} \left(x - e^{\frac{2\pi i g}{n}}\right) \notag \\
+    &amp;amp;= \prod_{d | n} \prod_{\substack{1 \leq g \leq n \\ ggT\left(g,n\right) = d}} \left(x - e^{\frac{2\pi i g}{n}}\right) \notag \\
+    &amp;amp;= \prod_{d | n} \phi_{n/d}\left(x\right) \notag \\
+    &amp;amp;= \prod_{d | n} \phi_{d}\left(x\right)
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;. In the case of pime numbers &lt;span class="math"&gt;\(p \in \mathbb{P}\)&lt;/span&gt;, we also have &lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+    \phi_{p}\left(x\right) = 1 + x + x^{2} + \dots + x^{p-1} = \sum_{k =
+    0}^{p-1} x^{k}
+\end{equation}&lt;/div&gt;
+&lt;p&gt;. From this follows the first rewriting&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;amp;= \sum_{k = 0}^{p-1} x^{k} \notag \\
+    &amp;amp;= \sum_{k = 0}^{p-1} e^{k\ln\left(x\right)} \notag \\
+    &amp;amp;= e^{0\ln\left(x\right)} + \sum_{k = 1}^{p-1} e^{k\ln\left(x\right)}
+    \notag \\
+    &amp;amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1}
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;, since &lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{k = 1}^{n} e^{kA} = \frac{e^{A}\left(e^{An} - 1\right)}{e^{A} - 1}
+$$&lt;/div&gt;
+&lt;p&gt;. Now we will solve this equation for &lt;span class="math"&gt;\(p\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1} \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(e^{\ln\left(x\right)} - 1\right) &amp;amp;=
+    e^{\ln\left(x\right)}\left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)
+    \notag \\
+    \frac{\left(\phi_{p}\left(x\right) - 1\right)\left(e^{e^{\ln\left(x\right)}} - 1\right)}{e^{\ln\left(x\right)}} + 1 &amp;amp;= e^{\left(p-1\right)\ln\left(x\right)} \notag \\
+    \left(p-1\right)\ln\left(x\right) &amp;amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(e^{\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)}} + 1\right) \notag \\
+    \left(p-1\right)\ln\left(x\right) &amp;amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right) \notag \\
+    \ln\left(x\right)\left(\left(p-1\right) + 1\right) &amp;amp;=
+    \ln\left(\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x\right) \notag \\
+    p &amp;amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right)
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;Additionally, we have our second, very easy to see, connection for prime numbers&lt;/p&gt;
+&lt;div class="math"&gt;\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;amp;= x^{p} - 1 \notag \\
+    &amp;amp;= \sum_{k' = 0}^{p} x^{k'} - \sum_{k'' = 0}^{p-1} x^{k''} - 1 \notag \\
+    &amp;amp;= \phi_{p+1}\left(x\right) - \phi_{p}\left(x\right) - 1
+\end{alignat}&lt;/div&gt;
+&lt;p&gt;. I have no idea for which this can be useful, but I think it is nice to know :P.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="cyclotomic polynomials"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Some notes</title><link href="/2018/06/somenotes.html" rel="alternate"></link><published>2018-06-19T03:00:00+02:00</published><updated>2018-06-19T03:00:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-06-19:/2018/06/somenotes.html</id><summary type="html">&lt;p&gt;Sometimes, ...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometimes I wish that I would live in the Stone Age. In a world without any stupid borders which divide humans in groups and countries which are the result of wars, destruction and the dead of millions of people.&lt;/p&gt;
+&lt;p&gt;Nationalism is to be proud to be the descendant of people who start wars for religious reason or since they wanted a part of area. They destroyed homes &amp;amp; killed people. And now, today, you are the lucky guy who was born on the right side of this bloody border line(?)&lt;/p&gt;</content><category term="Philosophy"></category><category term="politics"></category><category term="countries"></category><category term="war"></category><category term="human"></category><category term="nationalism"></category></entry><entry><title>Primes matrix: Approximation 2</title><link href="/2018/04/primesapprox2.html" rel="alternate"></link><published>2018-04-05T07:37:00+02:00</published><updated>2018-04-05T07:37:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-04-05:/2018/04/primesapprox2.html</id><summary type="html">&lt;p&gt;Since I wasn't happy about the final sum in my last post, I think about an alternative way.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Since I wasn't happy about the final sum in my last post
+&lt;a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html"&gt;Primes matrix: Approximation&lt;/a&gt;, I think about an alternative way.  &lt;/p&gt;
+&lt;p&gt;We had 
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
+    = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;in which we made the product over all &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-functions for each &lt;span class="math"&gt;\(x_{i}\)&lt;/span&gt;. Now,
+instead we will do the product over the arguments of the &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-functions&lt;/p&gt;
+&lt;div class="math"&gt;$$
+     x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \exp\left(\prod_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;Let's look at the qualities of this product&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \prod_{i = a}^{b} \frac{k - x_{i}}{2x_{i} + 1}
+$$&lt;/div&gt;
+&lt;p&gt;and under which conditions we receive integers. From my work
+&lt;a href="https://github.com/Samdney/primescalc" target="_blank"&gt;https://github.com/Samdney/primescalc&lt;/a&gt;
+we already know that we get troubles if at least one of the &lt;span class="math"&gt;\(2x_{i} + 1\)&lt;/span&gt; is
+a divisible number. Hence, we always asume that all our
+numbers &lt;span class="math"&gt;\(2x_{i} + 1\)&lt;/span&gt; are primes.&lt;/p&gt;
+&lt;p&gt;We receive integer values in the following cases&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Case 1:&lt;/strong&gt; For all &lt;span class="math"&gt;\(k\)&lt;/span&gt;-values which are also solutions for every single
+    &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-equation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Case 2:&lt;/strong&gt; For all &lt;span class="math"&gt;\(k\)&lt;/span&gt;-values which is a solution for at least one single
+    &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-equation and also leads to the trivial solution with
+    &lt;span class="math"&gt;\(x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)\)&lt;/span&gt;, &lt;span class="math"&gt;\(N \in \mathbb{N}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the second case, we take the example of two equations with &lt;span class="math"&gt;\(x_{1} = 2\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(x_{2} = 3\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \frac{k - x_{1}}{2x_{1} + 1} \frac{k - x_{2}}{2x_{2} + 1} = \frac{\left(k - 2\right)\left(k - 3\right)}{5
+    \cdot 7}
+$$&lt;/div&gt;
+&lt;p&gt;Here we receive one solution for &lt;span class="math"&gt;\(k = 37\)&lt;/span&gt;, &lt;span class="math"&gt;\(\frac{35 \cdot 34}{35} = 34\)&lt;/span&gt;, which is also a solution for
+&lt;span class="math"&gt;\(\frac{37 - 2}{5} = 7\)&lt;/span&gt; and an other solution for &lt;span class="math"&gt;\(k = 38\)&lt;/span&gt;, &lt;span class="math"&gt;\(\frac{36 \cdot
+35}{35} = 36\)&lt;/span&gt; which is also a solution for &lt;span class="math"&gt;\(\frac{38 - 3}{7} = 5\)&lt;/span&gt;. We see that
+&lt;span class="math"&gt;\(k\)&lt;/span&gt; leads to the trivial case in which &lt;span class="math"&gt;\(x_{j}\)&lt;/span&gt; of one single &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-equation is equal to the prime value of an other single &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-equation or the product of primes of several single &lt;span class="math"&gt;\(\exp\)&lt;/span&gt;-equations.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Primes matrix: Approximation</title><link href="/2018/03/primes-matrix-approximation.html" rel="alternate"></link><published>2018-03-31T01:44:00+02:00</published><updated>2018-03-31T01:44:00+02:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-03-31:/2018/03/primes-matrix-approximation.html</id><summary type="html">&lt;p&gt;Last week, I wrote about a possibility to represent primes. The negative part of ...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Last week, I wrote in &lt;a href="https://samdney.github.io/2018/03/primes-matrix.html"&gt;Primes matrix&lt;/a&gt; about a possibility to represent primes. The negative part of this was, that there isn't a nice way to generate &lt;span class="math"&gt;\(X_{\left(i\right)}^{n\times n}\)&lt;/span&gt;. Today, I want to add a few lines, how you can approximate it.  &lt;/p&gt;
+&lt;p&gt;Let's look again at &lt;/p&gt;
+&lt;div class="math"&gt;$$
+X_{\left(1\right)}^{n\times n} :=
+\begin{pmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; \cdots \\
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots
+\end{pmatrix}
+= \left(x_{\left(1\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \  \delta_{kj}
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+X_{\left(2\right)}^{n\times n} :=
+\begin{pmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots  \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; \cdots \\
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots
+\end{pmatrix}
+= \left(x_{\left(2\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \  \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;Instead of the definition from my last post, now, we will define
+&lt;span class="math"&gt;\(x_{\left(i\right),kj}\)&lt;/span&gt; in the following way&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    x_{\left(i\right),kj} := \lim_{m \rightarrow \infty} \cos^{2m}\left(2\pi\frac{k - x_{i}}{2x_{i} + 1}\right) \delta_{kj} 
+$$&lt;/div&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\delta_{kj} := \left\{
+    \begin{array}{l@{\quad \quad}l}
+    1 &amp;amp; \mathrm{if} \ k = j \\
+    0 &amp;amp; \mathrm{else}
+    \end{array}
+\right.
+$$&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; Like in our old definition, we always get an '1' at all places
+which presents a divisible number for a given &lt;span class="math"&gt;\(x_{i}\)&lt;/span&gt;. Now, at the other
+positions, we get an value &lt;span class="math"&gt;\(v\)&lt;/span&gt; between &lt;span class="math"&gt;\(0 &amp;lt; |v| &amp;lt; 1\)&lt;/span&gt;, instead of '0' in our old
+definition. To get our '0's, like before, we use &lt;span class="math"&gt;\(\lim_{m \rightarrow \infty}\)&lt;/span&gt;.
+The factor two ensures a positive approxiation value.  &lt;/p&gt;
+&lt;p&gt;With this, we also get
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \overline{x_{\left(i\right),kj}} := \left(1 - x_{\left(i\right),kj}\right)\delta_{kj} \\
+    = \lim_{m \rightarrow \infty} \left(1 - \cos^{2m}\left(2\pi\frac{k- x_{i}}{2x_{i} + 1}\right)\right)\delta_{kj}  
+$$&lt;/div&gt;
+&lt;p&gt;An alternative way also to write this, is given by&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \overline{x_{\left(i\right),kj}} := \lim_{m \rightarrow \infty} \sin^{\frac{2}{m}}\left(2\pi\frac{k - x_{i}}{2x_{i} + 1}\right) \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; We have a similiar situation like for our
+&lt;span class="math"&gt;\(x_{\left(i\right),kj}\)&lt;/span&gt;, but in this case now, we have to use &lt;span class="math"&gt;\(2/m\)&lt;/span&gt; to get an
+approximation for '1'.  &lt;/p&gt;
+&lt;p&gt;We see that we can use &lt;span class="math"&gt;\(\cos\)&lt;/span&gt; and also &lt;span class="math"&gt;\(\sin\)&lt;/span&gt; depending on which values we
+are interested in. Of course, don't forget the different cases for &lt;span class="math"&gt;\(\lim\)&lt;/span&gt; with
+&lt;span class="math"&gt;\(2m\)&lt;/span&gt; respectively &lt;span class="math"&gt;\(2/m\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;So, we can put this together to&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \eta_{\left(i\right),kj}  := \lim_{m \rightarrow \infty} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right) \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(I\)&lt;/span&gt; is the Imaginary unit, with &lt;span class="math"&gt;\(I^{2} = -1\)&lt;/span&gt; and&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\epsilon\left(m\right) := \left\{
+    \begin{array}{l@{\quad \quad}l}
+    2m &amp;amp; \mathrm{for \ real \ part \ Re\left(\eta\right)} \  \\
+    \frac{2}{m} &amp;amp; \mathrm{for \ imaginary \ part \ Im\left(\eta\right)}
+    \end{array}
+\right.
+$$&lt;/div&gt;
+&lt;p&gt;Ok. What do we need, next? We need&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \exp\left(Iz_{1}\right) \cdot \exp\left(Iz_{2}\right) = \exp\left(I\left(z_{1} + z_{2}\right)\right)  = \cos\left(z_{1} + z_{2}\right) + I\sin\left(z_{1} + z_{2}\right)
+$$&lt;/div&gt;
+&lt;p&gt;so let's look at &lt;/p&gt;
+&lt;div class="math"&gt;$$
+    z_{1} + z_{2} = 2\pi \epsilon\left(m\right)\left(\frac{k - x_{1}}{2x_{1} + 1} + \frac{k - x_{2}}{2x_{2} + 1}\right) \\
+    = 2\pi \epsilon\left(m\right) \frac{\left(k - x_{1}\right)\left(2x_{2} + 1\right) + \left(k - x_{2}\right)\left(2x_{1} + 1\right)}{\left(2x_{1} + 1\right)\left(2x_{2} + 1\right)}
+$$&lt;/div&gt;
+&lt;p&gt;In &lt;a href="https://github.com/Samdney/primescalc" target="_blank"&gt;https://github.com/Samdney/primescalc&lt;/a&gt; we already discussed a similiar situation, which showed us that we don't have any problems if &lt;span class="math"&gt;\(2x_{1} + 1\)&lt;/span&gt; and &lt;span class="math"&gt;\(2x_{2} + 1\)&lt;/span&gt; are primes. For more information about this, please read the mentioned paper.  &lt;/p&gt;
+&lt;p&gt;So we can do our final step
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
+    = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;Now we look at the special case of &lt;span class="math"&gt;\(x_{i} = a, a+1, a+2, \dots, b-2, b-1,b\)&lt;/span&gt;
+for the given sum&lt;/p&gt;
+&lt;div class="math"&gt;$$
+  \sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right) = \\
+  = I2\pi\frac{1}{4}\left(2k\psi^{\left(0\right)}\left(b + \frac{3}{2}\right) + \psi^{\left(0\right)}\left(b + \frac{3}{2}\right) - 2k\psi^{\left(0\right)}\left(\left(a - 1\right) + \frac{3}{2}\right) - \psi^{\left(0\right)}\left(\left(a-1\right) + \frac{3}{2}\right)\right)\epsilon\left(m\right)   
+$$&lt;/div&gt;
+&lt;p&gt;since&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{x=1}^{n} \frac{k - x}{2x + 1} =
+    \frac{1}{4}\left(2k\psi^{\left(0\right)} \left(n + \frac{3}{2}\right) -
+    2k\psi^{\left(0\right)}\left(\frac{3}{2}\right) - 2k + \psi^{\left(0\right)}\left(n + \frac{3}{2}\right) - \psi^{\left(0\right)}\left(\frac{3}{2}\right)\right) 
+$$&lt;/div&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\psi^{\left(n\right)}\left(x\right)\)&lt;/span&gt; is the n-the derivate of the digamma
+function.  &lt;/p&gt;
+&lt;p&gt;Finally, a small comment about permitted ranges.&lt;br&gt;
+Since our functions work with fix period &lt;span class="math"&gt;\((k - x_{i})/(2x_{i} + 1)\)&lt;/span&gt;, we have to
+ignore the range &lt;span class="math"&gt;\([1,x_{i}]\)&lt;/span&gt; for each &lt;span class="math"&gt;\(x_{i}\)&lt;/span&gt;-equation, else we will also
+receive invalid results.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Primes matrix</title><link href="/2018/03/primes-matrix.html" rel="alternate"></link><published>2018-03-23T01:30:00+01:00</published><updated>2018-03-23T01:30:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-03-23:/2018/03/primes-matrix.html</id><summary type="html">&lt;p&gt;Some time ago, I already wrote about representation ideas of primes ...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some time ago, I already wrote about representation ideas of primes and we saw
+that we run in troubles with this. Today, I want to present you a similar
+approach.  &lt;/p&gt;
+&lt;p&gt;Let's start again with our equation&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x_{ij} = \left(2x_{i} + 1\right)x_{j} + x_{i} \\
+y_{ij} = \left(2x_{ij} + 1\right)
+$$&lt;/div&gt;
+&lt;p&gt;and the following represenation&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x_{1j} \ \ \ \  | 00010010010010010010 \dots \\  
+x_{2j} \ \  \ \  | 00000010000100001000 \dots \\ 
+x_{\left(1,2\right),j} | 11101101101001100101 \dots
+$$&lt;/div&gt;
+&lt;p&gt;The first line is given by &lt;span class="math"&gt;\(x_{1j} = 3x_{j} + 1 = 4, 7, 10, 13, 16, 19\)&lt;/span&gt;. If
+we look a the numbers from 1 to 20 (from left to right), we represent all numbers which are generated
+by &lt;span class="math"&gt;\(x_{1j}\)&lt;/span&gt;, by '1' and the other numbers by '0'. In the second line, we do
+the same for &lt;span class="math"&gt;\(x_{2j} = 5x_{j} + 2 = 7, 12, 17\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In the third line we see &lt;span class="math"&gt;\(x_{\left(1,2\right),j}\)&lt;/span&gt;, which represents all
+numbers which are not element of &lt;span class="math"&gt;\(x_{1j}\)&lt;/span&gt; and not element of &lt;span class="math"&gt;\(x_{2j}\)&lt;/span&gt; by
+'1' and the others by '0'. So we can write&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x_{\left(1,2\right),j} = \overline{x_{1j}} \cdot \overline{x_{2j}}
+$$&lt;/div&gt;
+&lt;p&gt;
+. Ok. What can we do with this, now?&lt;/p&gt;
+&lt;p&gt;At first, we look at &lt;span class="math"&gt;\(x_{1j}\)&lt;/span&gt; and &lt;span class="math"&gt;\(x_{2j}\)&lt;/span&gt;. We will rewrite them to matrices
+&lt;span class="math"&gt;\(X_{\left(1\right)}^{n\times n}\)&lt;/span&gt; and &lt;span class="math"&gt;\(X_{\left(2\right)}^{n\times n}\)&lt;/span&gt;. This
+matrices, all of the same size &lt;span class="math"&gt;\(n\times n\)&lt;/span&gt;, have the numbers from the
+representation above as diagonal entries. All other entries are '0'.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+X_{\left(1\right)}^{n\times n} := 
+\begin{pmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; \cdots \\
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots 
+\end{pmatrix}
+= \left(x_{\left(1\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \  \delta_{kj}
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+X_{\left(2\right)}^{n\times n} :=
+\begin{pmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots  \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; \cdots \\
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots
+\end{pmatrix}
+= \left(x_{\left(2\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \  \delta_{kj}
+$$&lt;/div&gt;
+&lt;p&gt;Here are
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x_{\left(i\right),kj} := \left\{
+    \begin{array}{l@{\quad \quad}l}
+    1 &amp;amp; \mathrm{if} \ k = \left(2x_{i} + 1\right)x_{l} + x_{i} \\
+    0 &amp;amp; \mathrm{else}
+    \end{array}
+    \right. 
+$$&lt;/div&gt;
+&lt;p&gt;and &lt;/p&gt;
+&lt;div class="math"&gt;$$
+\delta_{kj} := \left\{
+    \begin{array}{l@{\quad \quad}l}
+    1 &amp;amp; \mathrm{if} \ k = j \\
+    0 &amp;amp; \mathrm{else}
+    \end{array}
+\right. 
+$$&lt;/div&gt;
+&lt;p&gt;With this, we get &lt;span class="math"&gt;\(\overline{X_{\left(i\right)}^{n\times n}}\)&lt;/span&gt; by&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\overline{X_{\left(i\right)}^{n\times n}} = \mathbb{1}_{n} - X_{\left(i\right)}^{n\times n}
+$$&lt;/div&gt;
+&lt;p&gt;For an arbitrary number &lt;span class="math"&gt;\(i=a,\dots,b\)&lt;/span&gt;, &lt;span class="math"&gt;\(a,b \in
+\mathbb{N}\)&lt;/span&gt;, &lt;span class="math"&gt;\(a \le b\)&lt;/span&gt;, of equations &lt;span class="math"&gt;\(x_{ij}\)&lt;/span&gt; we receive&lt;/p&gt;
+&lt;div class="math"&gt;$$
+X_{\left(a,\dots,b\right)}^{n \times n} = \prod_{i=a}^{b} \left(\mathbb{1}_{n} -
+X_{\left(i\right)}^{n\times n}\right)
+$$&lt;/div&gt;
+&lt;p&gt;and so&lt;/p&gt;
+&lt;div class="math"&gt;$$
+x_{\left(a,\dots,b\right),kj} = \prod_{i=a}^{b} \left(1 - x_{\left(i\right),kj}\right)\delta_{kj} \\
+$$&lt;/div&gt;
+&lt;p&gt;We received a matrix with '1' entries at the places &lt;span class="math"&gt;\(j=k\)&lt;/span&gt; which represent
+primes and else '0'.  &lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Catch arXiv papers</title><link href="/2018/01/catch-arxiv-papers.html" rel="alternate"></link><published>2018-01-13T10:11:00+01:00</published><updated>2018-01-13T10:11:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-01-13:/2018/01/catch-arxiv-papers.html</id><summary type="html">&lt;p&gt;Get your favorite papers from arXiv.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Have you ever wanted to catch the newest &lt;a href="https://arXiv.org" target="_blank"&gt;arXiv.org&lt;/a&gt; papers from your favorite research
+areas? I do.&lt;/p&gt;
+&lt;p&gt;At first, I was sure that arXiv offers a comfortable way to catch all the
+newest papers or all papers from a particular publication day. Sadly, I was
+wrong. &lt;/p&gt;
+&lt;p&gt;I didn't find such a possibility for an arbitrary day. You can only get an overview over the newest papers (E.g. like this &lt;a href="https://arxiv.org/list/astro-ph/new" target="_blank"&gt;https://arxiv.org/list/astro-ph/new&lt;/a&gt;). But already, only to get a list of publications longer ago than one week isn't possible. That's not nice.&lt;/p&gt;
+&lt;p&gt;The next idea was, to catch the papers by its arXiv-numbers. Nice idea,
+but it doesn't work if you only want papers from a particular area. The
+typical arXiv number consists of two parts. The first one gives you the
+publication date. The second part (the one after the dot) is a counter and
+tells you, this papers was the N'th paper of this day. Sadly, this counter goes
+over all areas. That means paper N belongs to area A, but paper N+1 can belong
+to area B. So we can't use the number for catching only papers from a
+particular research area.  &lt;/p&gt;
+&lt;p&gt;Ok. I had to look for an other way. After some research, I found the
+possibility for subscribing on an arxiv mailing list (See also
+&lt;a href="https://arxiv.org/help/subscribe" target="_blank"&gt;https://arxiv.org/help/subscribe&lt;/a&gt;), which sends you every
+working day an email about the newest papers of your favorite areas. Yeah, I
+subscribed on this about one year ago, so I have a nice overview for each day, now.  &lt;/p&gt;
+&lt;p&gt;The content of this email looks like the following example from Fri, 12 Jan 2018&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;------------------------------------------------------------------------------&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+\\&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;arXiv&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;1801.03894&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Thu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Jan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2018&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;GMT&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="n"&gt;kb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Stability&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;homology&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Deligne&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Mumford&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;compactifications&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Authors&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Philip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Tosteson&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Categories&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GT&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Comments&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;welcome&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+\\&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;theory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FS&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;modules&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;we&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;study&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;asymptotic&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;behavior&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;homology&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;\&lt;span class="n"&gt;overline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;M_&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Deligne&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;Mumford&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;compactification&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moduli&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;space&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;curves&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;$.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;An&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FS&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;contravariant&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;functor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;finite&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sets&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;surjections&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;spaces&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Via&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;maps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;glue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;marked&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;s, we give the homology of $\overline M_{g,n}$ the&lt;/span&gt;
+&lt;span class="n"&gt;structure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;an&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FS&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bound&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;degree&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;generation&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;As&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;consequence&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;we&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;prove&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;generating&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;\&lt;span class="n"&gt;sum_&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\&lt;span class="n"&gt;dim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;H_i&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;\&lt;span class="n"&gt;overline&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;M_&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;}))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rational&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;denominator&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;has&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;roots&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;\&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+\&lt;span class="n"&gt;dots&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;\&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;polynomial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;order&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;O&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;$.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;We&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;also&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;obtain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;restrictions&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;decomposition&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;homology&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;\&lt;span class="n"&gt;overline&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;M_&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;into&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;irreducible&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;S_n&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;representations&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+\\&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;arxiv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;1801.03894&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="n"&gt;kb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;------------------------------------------------------------------------------&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You see, we receive a lot of information which we can use to catch our
+favorite papers, now.  &lt;/p&gt;
+&lt;p&gt;In the following, I wrote a simple script to fetch all pdf-files based on the
+mailing list. You can also find it on &lt;a href="https://github.com/Samdney/scripts/blob/master/arXivPdfs.sh" target="_blank"&gt;https://github.com/Samdney&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="c1"&gt;#******************************&lt;/span&gt;
+&lt;span class="c1"&gt;# Download of arXiv papers (pdf), based on mailing list information&lt;/span&gt;
+&lt;span class="c1"&gt;# Author: Carolin Zöbelein&lt;/span&gt;
+&lt;span class="c1"&gt;#******************************&lt;/span&gt;
+
+&lt;span class="nv"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="c1"&gt;# Email file: arXiv mailing list&lt;/span&gt;
+&lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;     &lt;span class="c1"&gt;# Date of paper submission&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create and go to directory, move email to directory&lt;/span&gt;
+mkdir &lt;span class="nv"&gt;$date&lt;/span&gt;
+mv &lt;span class="nv"&gt;$filename&lt;/span&gt; &lt;span class="nv"&gt;$date&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$date&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Read arXiv-ids from file and download belonging pdfs&lt;/span&gt;
+readarray -t lines &amp;lt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; line &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;lines&lt;/span&gt;&lt;span class="p"&gt;[@]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="nv"&gt;$line&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; arXiv:* &lt;span class="o"&gt;]]&lt;/span&gt;
+        &lt;span class="k"&gt;then&lt;/span&gt;
+        &lt;span class="nv"&gt;temp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$line&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt; - &lt;span class="nv"&gt;$temp&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nv"&gt;temp2&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="p"&gt;*:&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nv"&gt;temp3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;temp2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;6&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$temp3&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;http://arxiv.org/pdf/&lt;span class="nv"&gt;$temp3&lt;/span&gt;.pdf
+        &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$url&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        wget --user-agent&lt;span class="o"&gt;=&lt;/span&gt;Lynx &lt;span class="nv"&gt;$url&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Rename belonging email&lt;/span&gt;
+mv &lt;span class="nv"&gt;$filename&lt;/span&gt; &lt;span class="nv"&gt;$date&lt;/span&gt;.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It's a very easy script. No hardcore hacking, but it makes your life a bit
+nicer :D. Enjoy!&lt;/p&gt;</content><category term="Hacking"></category><category term="arXiv"></category><category term="papers"></category></entry><entry><title>Let`s calculate primes! Part III - Intersection of times tables: sum formula</title><link href="/2018/01/lets-calculate-primes-part-iii-intersection-of-times-tables-sum-formula.html" rel="alternate"></link><published>2018-01-13T06:31:00+01:00</published><updated>2018-01-13T06:31:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2018-01-13:/2018/01/lets-calculate-primes-part-iii-intersection-of-times-tables-sum-formula.html</id><summary type="html">&lt;p&gt;Describtion of prime numbers part 3.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In the post before, we looked at the intersection ot times tables and its problems. Now we will look at the belonging sum formula, which is given by
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{x_{i} = l^\prime}^{u^\prime}  \sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}}  
+$$&lt;/div&gt;
+&lt;p&gt;
+and with our results before as
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{x_{i} = l^\prime}^{u^\prime} \left( - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1} \right)
+$$&lt;/div&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;We are not able to solve this second sum analytical, but it can be interesting to look a bit around this sum. I had a look what &lt;a href="https://www.wolframalpha.com/input/?i=-%2810%5Ex+%2810%5E%28l+%282+x+%2B+1%29%29+-+10%5E%28%28u+%2B+1%29+%282+x+%2B+1%29%29%29%29%2F%2810%5E%282+x+%2B+1%29+-+1%29" target="_blank"&gt;wolframalpha.com&lt;/a&gt; is able to tell me about our first sum result and I found one thing which catched my attention.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \int -\frac{10^{x}\left(10^{l\left(2x + 1\right)} - 10^{\left(u + 1\right)\left(2 x + 1\right)}\right)}{10^{2 x + 1} - 1} \mathrm{d}x
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+    = \frac{10^{x} \left(\frac{10^{2lx + l} {}_{2}F_{1}\left(1, l + \frac{1}{2}, l + \frac{3}{2}, 10^{2 x + 1}\right)}{2l + 1} - \frac{10^{(u + 1)(2 x + 1)} {}_{2}F_{1}\left(1, u + \frac{3}{2}, u + \frac{5}{2}, 10^{2 x + 1}\right)}{2 u + 3}\right)}{\log(10)} + constant,
+$$&lt;/div&gt;
+&lt;p&gt;with&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    {}_{2}F_{1}\left(a, b; c; x\right)
+$$&lt;/div&gt;
+&lt;p&gt;is the hypergeometric function.  &lt;/p&gt;
+&lt;p&gt;It's deeply interesting that we are able to find an integral which is connected to the Gamma-Function
+over the hypergeometric function and hence to primes. Althougth we are not able to do both sums
+exactly, this gives us an hint, that we are maybe able to do the first calculation with a sum and
+the second calculation with the help of an integration.  &lt;/p&gt;
+&lt;p&gt;At the moment, we can't use this information, but we should keep this in mind.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Let`s calculate primes! Part II - Intersection of times tables</title><link href="/2017/12/lets-calculate-primes-part-ii-intersection-of-times-tables.html" rel="alternate"></link><published>2017-12-29T22:32:00+01:00</published><updated>2017-12-29T22:32:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2017-12-29:/2017/12/lets-calculate-primes-part-ii-intersection-of-times-tables.html</id><summary type="html">&lt;p&gt;Describtion of prime numbers part 2.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ok. What is the intersection of two or more times tables in our new representation? That is easy! It is the sum of this times tables. Let`s look a the addition of the two times tables 
+&lt;/p&gt;
+&lt;div class="math"&gt;$$x_{1, j} = 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40 \dots$$&lt;/div&gt;
+&lt;p&gt;
+and
+&lt;/p&gt;
+&lt;div class="math"&gt;$$x_{2, j} = 7, 12, 17, 22, 27, 32, 37, 42, \dots$$&lt;/div&gt;
+&lt;p&gt;. 
+and the result&lt;/p&gt;
+&lt;div class="math"&gt;$$
+001001001001001001001001001001001001001000 \\ 
+100001000010000100001000010000100001000000 \\    
+  \\
+101002001011001101002001011001101002001000
+$$&lt;/div&gt;
+&lt;p&gt;.  &lt;/p&gt;
+&lt;p&gt;Yes, it is easy. At the places, at which we have no integer divisible numbers, we have zeros. That is great!&lt;br&gt;
+At the places, at which we have divisible numbers, we have an 1, that`s also good, but also a 2, at some places. This is not good! It means both times tables have the same divisible number.&lt;br&gt;
+If we only add two numbers, this can still going well. But assume we add more times tables, so that we finally have more than 9 times tables with the same integer divisible number. This leads us to troubles, since in this case we would have a carry, which would falsify the next digits and our final result would have no meaning anymore.  &lt;/p&gt;
+&lt;p&gt;In the next posts, we will see that this is not really a problem, since we have the ability to eliminate the &lt;em&gt;not so nice&lt;/em&gt; numbers.&lt;br&gt;
+But, before we will do this, we will examine the sum formula for the sum over several times tables, at first.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Let`s calculate primes! Part I - Representation of times tables</title><link href="/2017/12/lets-calculate-primes-part-i-representation-of-times-tables.html" rel="alternate"></link><published>2017-12-29T21:21:00+01:00</published><updated>2017-12-29T21:21:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2017-12-29:/2017/12/lets-calculate-primes-part-i-representation-of-times-tables.html</id><summary type="html">&lt;p&gt;Describtion of prime numbers.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some days ago, I had several nice ideas for calculating primes recursively, which I want to share with you in a small series of posts.  &lt;/p&gt;
+&lt;p&gt;I will use some insights of my work &lt;a href="https://github.com/Samdney/primescalc" target="_blank"&gt;https://github.com/Samdney/primescalc&lt;/a&gt; and assume you already know they. If not, please read it sidewise to the following posts.  &lt;/p&gt;
+&lt;p&gt;We have given our already known equation&lt;br&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    x_{i,j}     = 2x_{i}x_{j} + x_{i} + x_{j}\\
+            = \left(2x_{j} + 1\right)x_{i} + x_{j}\\
+            = \left(2x_{i} + 1\right)x_{j} + x_{i}
+$$&lt;/div&gt;
+&lt;p&gt;
+with &lt;span class="math"&gt;\(x_{i}, x_{j} \in \mathbb{N}\)&lt;/span&gt;. Remember that this equation gives us all &lt;span class="math"&gt;\(x_{i,j}\)&lt;/span&gt; for which &lt;span class="math"&gt;\(2x_{i,j} + 1\)&lt;/span&gt; is an integer divisible number. &lt;/p&gt;
+&lt;p&gt;So let`s look, for example on the numbers of &lt;span class="math"&gt;\(x_{i} = 1\)&lt;/span&gt;, which are
+&lt;/p&gt;
+&lt;div class="math"&gt;$$x_{1,j} = 4, 7, 10, 13, 16, 19, 22, 25, 28, \dots$$&lt;/div&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;Now we will choose a simple way of representation of this numbers. Be given the general form of a number in decimal representation:
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{k = 0}^{n} 10^{k}
+$$&lt;/div&gt;
+&lt;p&gt;
+with &lt;span class="math"&gt;\(n+1\)&lt;/span&gt;, &lt;span class="math"&gt;\(n \in \mathbb{N}\)&lt;/span&gt;, digits. Now assume, in our example, the number 4 is represented by the number 1, at the &lt;span class="math"&gt;\(4+1\)&lt;/span&gt; digit, the number 7 by the number 1, at the &lt;span class="math"&gt;\(7+1\)&lt;/span&gt; digit and so on. So we can write (read from right to left) as represenation for &lt;span class="math"&gt;\(x_{1,j}\)&lt;/span&gt;:
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{x_{j}} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = \sum_{x_{j}} 10^{3x_{j} + 1}
+$$&lt;/div&gt;
+&lt;p&gt;
+and
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\dots 10010010010010010010010010000
+$$&lt;/div&gt;
+&lt;p&gt;In this way, we can write every of our times tables which are given by &lt;span class="math"&gt;\(x_{i,j} = \left(2x_{i} + 1\right)x_{j} + x_{i}\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;If we finally calculate this sum, we receive
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+    \sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1}
+$$&lt;/div&gt;
+&lt;p&gt;. See also &lt;a href="https://www.wolframalpha.com/input/?i=sum+z%3Dl,+u,+10%5E%28%282*x+%2B+1%29*z+%2B+x%29#7928802016733054506" target="_blank"&gt;wolframalpha.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But what can we do with this, now?&lt;br&gt;
+In the next post we will look at the intersection of times tables with this kind of representation.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Beautiful primes!</title><link href="/2017/12/beautiful-primes.html" rel="alternate"></link><published>2017-12-11T05:44:00+01:00</published><updated>2017-12-11T05:44:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2017-12-11:/2017/12/beautiful-primes.html</id><summary type="html">&lt;p&gt;Description of primes.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ok guys, I got it! Spending a lot of the lifetime with primes is stupid. But hey, this numbers are so shitty beautiful!  &lt;/p&gt;
+&lt;p&gt;Let`s have a look at the first primes: &lt;/p&gt;
+&lt;div class="math"&gt;$$2, 3, 5, 7$$&lt;/div&gt;
+&lt;p&gt;. You can already write so much only about this few numbers.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;2 is our only even prime. That's fascinating! It is the basis for computers, the symbol of brother and sister, and the number of opposites in our daily life. Or more mathematical it gives us&lt;/p&gt;
+&lt;p&gt;
+&lt;div class="math"&gt;$$2\mathbb{Z} = \{\dots, -4, -2, 0, 2, 4, \dots\}$$&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;
+&lt;div class="math"&gt;$$\mathbb{Z}/2\mathbb{Z} = 2\mathbb{Z} + m, \quad \mathrm{with} \quad m = 0,1$$&lt;/div&gt;.&lt;/p&gt;
+&lt;p&gt;How would our world looks like, if we have more even primes?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3 is our first odd prime. Yeah, you could say somebody is odd (Although, I personal think, nobody on this planet is odd. It's a stupid habit of humans, to say something like that about others.) and an amount of
+  three of anything is mostly prefered by people by psychological reasons. We
+  have the sky, the earth and the water. You only need three chair legs to
+  stand stable. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;5 is our first odd prime of the general shape 6n - 1. A lot of children start
+  their school career at the age of 5. You have 5 fingers at each hand and
+  with our other prime 2, we get 10. Cool! We get our decimal system, based on
+  two primes!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;7 is our first odd prime of the general shape 6n + 1. We have 7 days per
+  week. Caused by biological reasons, the most creatures on our planet prefer
+  this particular period.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Math"></category><category term="primes"></category><category term="number theory"></category></entry><entry><title>Hello World</title><link href="/2017/11/hello-world.html" rel="alternate"></link><published>2017-11-26T15:00:00+01:00</published><updated>2017-11-26T15:00:00+01:00</updated><author><name>Carolin Zöbelein</name></author><id>tag:None,2017-11-26:/2017/11/hello-world.html</id><summary type="html">&lt;p&gt;Hello World!&lt;/p&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Coding"></category><category term="code"></category><category term="python"></category></entry></feed>

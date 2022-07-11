@@ -1,0 +1,124 @@
+    {% extends "base.html" %}
+
+    {% block content_title %}
+        
+    {% if articles_page.number %}
+    {% include 'introduction.html' %}
+    {% endif %}
+    {% endblock %}
+
+    {% block content %}
+
+    <br><br><br>
+
+    <section id="listing">
+      {% for article in articles_page.object_list %}
+      <article class="w3-container w3-card-2 w3-white col-main">
+        <header>
+          {% if article.headerimage %}
+          <div class="headerimage-card">
+            <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ article.headerimage }}" style="width: 100%;"></img></a>
+          </div>
+          {% endif %}
+          <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+          <div class="post-info">
+            <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+              <span><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> in <a href="{{ SITEURL }}/{{ article.category.url }}" title="All articles in category {{ article.category }}">{{ article.category }}</a>, <a href="{{ SITEURL }}/{{ article.author.url }}" title="Go to author {{ article.author }}">{{ article.author }}</a></span>
+            </div>
+            {% if article.tags %}
+            <div class="w3-margin-right">
+              {% for tag in article.tags %}
+              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+                <a href="{{ SITEURL }}/{{ tag.url }}" title="All articles with {{ tag.name.title() }} tag">#{{ tag }}</a>
+              </span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="entry-content">
+          {% if page_name == 'index' %}
+          	{{ article.content }}
+          {% else %}
+            {{ article.summary|striptags }}
+          {% endif %}
+        </div>
+
+        <footer>
+          <a class="w3-btn w3-green w3-right" href="{{ SITEURL }}/{{ article.url }}">Read &#10093;</a>
+        </footer>
+      </article>
+
+      <br><br><br>
+
+      {% endfor %}
+
+      {% if articles_page.has_other_pages() %}
+      	{% if page_name == 'index' %}
+      		{% include 'pagination_index.html' %}
+		{% else %}
+			{% include 'pagination.html' %}
+		{% endif %}
+	  <br>
+      {% endif %}
+		      
+
+	  
+	  {% if articles_page.number %} <!-- if articles_page.number == 1 -->
+	  
+	  <!--
+	  <article class="w3-container w3-card-2 w3-white col-main" style="width: 50%;">
+      
+	  	<h2>Featured</h2>
+
+      	TODO
+
+	  </article>
+	  -->
+
+	  <br />
+
+      <!--
+      <article class="w3-white col-main-entries">
+      
+        <center>
+      
+		<div class="three-columns" style="width: 75%; text-align: center;">
+
+			<div class="w3-container w3-card-2 three-col01">
+			
+				<center style="margin-top: 10%;">
+					<img style="border:0.5px solid #e0e0e0;" width="60%" src="/images/twittercard-art.jpg">   
+				</center>
+			
+				Art
+				
+			</div>
+			
+			<div class="w3-container w3-card-2 three-col02">
+				YouTube
+			</div>
+			
+			<div class="w3-container w3-card-2 three-col03">
+			
+				<center style="margin-top: 10%;">
+					<img style="border:0.5px solid #e0e0e0;" width="60%" src="/images/twittercard-research.jpg">   
+				</center>
+			
+				Research
+				
+			</div>
+
+		</div>
+		
+	  </center>
+      
+      </article>
+      -->
+
+    {% endif %}
+
+    </section>
+
+    {% endblock content %}

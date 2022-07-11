@@ -1,0 +1,6 @@
+# Disallow everything.
+User-agent: *
+Disallow: /contact.html
+Disallow: /legal-disclosure.html
+Disallow: /privacy-policy.html
+Disallow: /disclaimer.html
