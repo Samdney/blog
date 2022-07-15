@@ -61,9 +61,11 @@ MATH_JAX = {
 # TODO: index: avatar, newest article summary
 # TODO: Size of key page code relative to normal text
 
-# TODO: Fontawesome, Academic icons, contact page, q and a
+# TODO: Fontawesome, Fork Awesome, contact page, q and a
+# TODO: icontags
+# TODO: jupyter, python, julia, orcid, arxiv, google-scholar, tor-onion, tex, unity
 # TODO: References
-# TODO: index page
+# TODO: index page: featured, blocks
 
 
 TIMEZONE = 'Europe/Rome'
@@ -112,7 +114,7 @@ SOCIAL = (
     ('twitter', 'https://twitter.com/SamdneyTweet'),
     ('github', 'https://github.com/Samdney'),
     ('linkedin', 'https://www.linkedin.com/in/carolin-zoebelein/'),
-    ('youtube-square', 'https://www.youtube.com/channel/UChKn7j071KPz3QNYldPKH1g'),
+    ('youtube-play', 'https://www.youtube.com/channel/UChKn7j071KPz3QNYldPKH1g'),
     #('youtube', 'https://www.youtube.com/channel/UCqboFicvhrlnPi8eeTv1D1Q'), # art youtube
     ('superscript', 'https://research.carolin-zoebelein.de'),
     #('pencil', 'https://art.carolin-zoebelein.de'), # art website
