@@ -63,7 +63,7 @@ MATH_JAX = {
 
 # TODO: Fontawesome, Fork Awesome, contact page, q and a
 # TODO: icontags
-# TODO: jupyter, python, julia, orcid, arxiv, google-scholar, tor-onion, tex, unity
+# TODO: osf, jupyter, python, julia, orcid, arxiv, google-scholar, tor-onion, tex, unity
 # TODO: References
 # TODO: index page: featured, blocks
 
