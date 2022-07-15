@@ -60,6 +60,65 @@ abbr[title] {
 }
 
 
+/* TODO */
+/* Desktop */
+@media all and (min-width: 1025px) {
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+  display: flex;
+  width: 15%;
+}
+
+.column {
+  flex: 8%;
+  padding: 5px;
+}
+
+
+.row2 {
+  display: flex;
+  width: 30%;
+}
+
+.column2 {
+  flex: 8%;
+  padding: 5px;
+}
+
+}
+
+
+/* TODO */
+/* Mobile */
+@media all and (max-width: 1024px) {
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+  width: 100%;
+}
+
+.column {
+  order: 1;
+  padding-top: 5px;
+  width: 100%;
+}
+
+
+.row2 {
+  width: 100%;
+}
+
+.column2 {
+  order: 1;
+  padding-top: 5px;
+  width: 100%;
+}
+
+}
+
+
 
 /* Classes */
 
