@@ -61,7 +61,6 @@ MATH_JAX = {
 # TODO: index: avatar, newest article summary
 # TODO: Size of key page code relative to normal text
 
-# TODO: contact page, q and a
 # TODO: icontags
 # TODO: osf, jupyter, python, julia, orcid, arxiv, google-scholar, tor-onion, tex, unity
 # TODO: References
