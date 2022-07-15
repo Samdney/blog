@@ -37,9 +37,20 @@ PAGE_URL = '{slug}.html'
 
 # TODO
 # TODO: MathJax Mobile Responsive
+# TODO: MathJax Definition, Theorem, .... environments
+# TODO: Article References
+# TODO: General Reference
 #MATH_JAX = {'tex_extensions': ['color.js','mhchem.js']}
 #MATH_JAX = {'tex_extensions': ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js']}
-MATH_JAX = {'equation_numbering': 'AMS'}
+#MATH_JAX = {'equation_numbering': 'AMS'}
+
+MATH_JAX = {
+	'equation_numbering': 'AMS'
+#	'environments': {
+#	  'braced': ['\\left\\{', '\\right\\}'],
+#	  'ABC': ['(#1)(#2)(', ')', 2, 'X']
+#	}
+}
 
 
 # TODO: favicon
@@ -49,6 +60,7 @@ MATH_JAX = {'equation_numbering': 'AMS'}
 # TODO: locales
 # TODO: Javascript info hinzufuegen
 # TODO: index: avatar, newest article summary
+# TODO: Size of key page code relative to normal text
 
 # TODO: Fontawesome, Academic icons, contact page, q and a
 # TODO: References
