@@ -58,7 +58,6 @@ MATH_JAX = {
 # TODO: Warning Atom feed
 # TODO: Dateformate
 # TODO: locales
-# TODO: Javascript info hinzufuegen
 # TODO: index: avatar, newest article summary
 # TODO: Size of key page code relative to normal text
 
