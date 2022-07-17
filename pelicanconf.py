@@ -60,6 +60,7 @@ MATH_JAX = {
 # TODO: locales
 # TODO: index: avatar, newest article summary
 # TODO: Size of key page code relative to normal text
+# TODO: Mobile responsive: Blocks, col-main, math, keys code
 
 # TODO: icontags
 # TODO: osf, jupyter, python, julia, orcid, arxiv, google-scholar, tor-onion, tex, unity
