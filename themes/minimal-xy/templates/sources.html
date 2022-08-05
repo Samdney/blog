@@ -1,0 +1,5 @@
+{% if article.basename %}
+	{% if article.basename + ".pdf" in PDFSINDIR %}<a href="{{ SITEURL }}/files/pdf/{{ article.basename }}.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; {% if page_name == 'archives' %}font-size: 1em;{% else %}font-size: 1.3em;{% endif %}"></i></a>{% endif %}
+	{% if article.basename + ".bib" in BIBSINDIR %} <a href="{{ SITEURL }}/files/bib/{{ article.basename }}.bib" title="References as bibfile" target="_blank" style="color:#1E90FF; font-size: 1em;">.bib</a>{% endif %}
+	{% if article.basename + "-cite.bib" in CITESINDIR %}{% if article.basename + ".pdf" in PDFSINDIR or article.basename + ".bib" in BIBSINDIR %} {% endif %}<a href="{{ SITEURL }}/files/cite/{{ article.basename }}-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>{% endif %}
+{% endif %}

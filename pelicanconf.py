@@ -8,6 +8,9 @@ from datetime import datetime
 import os
 import sys
 
+sys.path.append(os.curdir)
+from checkfiles import *
+
 
 AUTHOR = 'Carolin Zöbelein'
 SITENAME = "Carolin's Blog"
