@@ -136,7 +136,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = (
 	('Archives', '/archives.html'),
 	('Categories', '/categories.html'),
-	#('References', '/references.html'), # TODO
+	('References', '/references.html'),
 	('Contact', '/contact.html')
 )
 
