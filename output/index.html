@@ -99,7 +99,7 @@
           <div class="post-info">
             <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
               <span><time datetime="2022-06-01T14:00:00+02:00">Mi 01 Juni 2022</time> in <a href="/category/math.html" title="All articles in category Math">Math</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
-<a href="/files/pdf/pow2kdigitstructures.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/cite/pow2kdigitstructures-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
+<a href="/files/pdf/pow2kdigitstructures.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/bib/pow2kdigitstructures.bib" title="References as bibfile" target="_blank" style="color:#1E90FF; font-size: 1em;">.bib</a> <a href="/files/cite/pow2kdigitstructures-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
             </div>
             <div class="w3-margin-right">
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
@@ -125,11 +125,11 @@ to get for them powers of 2, too.</p>
 <span class="math">\(P_{y}\)</span>’s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line
 Encyclopedia of Integer Sequences (OEIS)
 <a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a>
-[Dre07]) [Wel97], too.</p>
-<p>Looking at the set of powers of <span class="math">\(2\)</span>’s [Slo], we know that a <span class="math">\(m\)</span>-digit
+[Dres07]) [Well97], too.</p>
+<p>Looking at the set of powers of <span class="math">\(2\)</span>’s [Sloa], we know that a <span class="math">\(m\)</span>-digit
 power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of
 <span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span>
-digits, starting at <span class="math">\(2^{k}\)</span> [YY64]. Taking the known periodicity of
+digits, starting at <span class="math">\(2^{k}\)</span> [YaYa64]. Taking the known periodicity of
 the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the
 last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
 <p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the
@@ -190,17 +190,23 @@ and receive
 <span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>.
 Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for
 <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
-<h3>References</h3>
-<p>[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits
-are powers of 2.
-<a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank">http://oeis.org/A130693</a>,
-07 2007. (Accessed on 2021/07/18).<br /> [Slo] N. J. A. Sloane. Table
-of n, 2 n for n = 0..1000 - OEIS.
-<a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank">http://oeis.org/A000079/b000079.txt</a>.
-(Accessed on 2021/08/08).<br /> [Wel97] David Wells. The Penguin
-dictionary of curious and interesting numbers. Penguin, 1997.<br />
-[YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with
-elementary solutions. I, 1964.</p>
+<h2>References</h2>
+<p><span class="csl-left-margin">[Dres07] </span><span
+class="csl-right-inline"><span class="smallcaps">Dresden, Gregory
+P.</span>: A130693 - OEIS: Powers of 2 whose digits are powers of
+2.</span></p>
+<p><span class="csl-left-margin">[Sloa] </span><span
+class="csl-right-inline"><span class="smallcaps">Sloane, N. J.
+A.</span>: Table of <em>n</em>, 2<sup><em>n</em></sup> for <em>n</em> = 0..1000 -
+OEIS.</span></p>
+<p><span class="csl-left-margin">[Well97] </span><span
+class="csl-right-inline"><span class="smallcaps">Wells, David</span>:
+<em>The Penguin dictionary of curious and interesting numbers</em> : Penguin,
+1997</span></p>
+<p><span class="csl-left-margin">[YaYa64] </span><span
+class="csl-right-inline"><span class="smallcaps">Yaglom, AM</span> ;
+<span class="smallcaps">Yaglom, IM</span>: Challenging Mathematical
+Problems with Elementary Solutions Bd. I, Holden-Day Inc. (1964)</span></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

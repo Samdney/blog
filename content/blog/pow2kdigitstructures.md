@@ -21,12 +21,12 @@ $P_{y=3} = 2^{3} = 8$ and $P_{y=7} = 2^{7} = 128$, there exist more
 $P_{y}$’s whose digits are powers of $2$ (<i>A130693</i> in the On-line
 Encyclopedia of Integer Sequences (OEIS)
 <a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a>
-\[Dre07\]) \[Wel97\], too.
+\[Dres07\]) \[Well97\], too.
 
-Looking at the set of powers of $2$’s \[Slo\], we know that a $m$-digit
+Looking at the set of powers of $2$’s \[Sloa\], we know that a $m$-digit
 power of $2$ by $P_{y}$, has a periodicity of
 $\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}$ for the last $k \leq m$
-digits, starting at $2^{k}$ \[YY64\]. Taking the known periodicity of
+digits, starting at $2^{k}$ \[YaYa64\]. Taking the known periodicity of
 the last $k$-digits into account, we want to discuss properties for the
 last $k^{\prime} > k$ digits, for fixed last $k$-digits of $P_{y}$.
 
@@ -96,15 +96,24 @@ $\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lf
 Finally, we can conclude $\delta k \gtrsim k^{\star}$ for
 $k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]$.
 
-### References
+## References
 
-\[Dre07\] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits
-are powers of 2.
-<a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank">http://oeis.org/A130693</a>,
-07 2007. (Accessed on 2021/07/18).<br /> \[Slo\] N. J. A. Sloane. Table
-of n, 2 n for n = 0..1000 - OEIS.
-<a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank">http://oeis.org/A000079/b000079.txt</a>.
-(Accessed on 2021/08/08).<br /> \[Wel97\] David Wells. The Penguin
-dictionary of curious and interesting numbers. Penguin, 1997.<br />
-\[YY64\] AM Yaglom and IM Yaglom. Challenging mathematical problems with
-elementary solutions. I, 1964.
+<span class="csl-left-margin">\[Dres07\] </span><span
+class="csl-right-inline"><span class="smallcaps">Dresden, Gregory
+P.</span>: A130693 - OEIS: Powers of 2 whose digits are powers of
+2.</span>
+
+<span class="csl-left-margin">\[Sloa\] </span><span
+class="csl-right-inline"><span class="smallcaps">Sloane, N. J.
+A.</span>: Table of *n*, 2<sup>*n*</sup> for *n* = 0..1000 -
+OEIS.</span>
+
+<span class="csl-left-margin">\[Well97\] </span><span
+class="csl-right-inline"><span class="smallcaps">Wells, David</span>:
+*The Penguin dictionary of curious and interesting numbers* : Penguin,
+1997</span>
+
+<span class="csl-left-margin">\[YaYa64\] </span><span
+class="csl-right-inline"><span class="smallcaps">Yaglom, AM</span> ;
+<span class="smallcaps">Yaglom, IM</span>: Challenging Mathematical
+Problems with Elementary Solutions Bd. I, Holden-Day Inc. (1964)</span>

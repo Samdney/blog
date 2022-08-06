@@ -11,11 +11,11 @@ to get for them powers of 2, too.&lt;/p&gt;
 &lt;span class="math"&gt;\(P_{y}\)&lt;/span&gt;’s whose digits are powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt; (&lt;i&gt;A130693&lt;/i&gt; in the On-line
 Encyclopedia of Integer Sequences (OEIS)
 &lt;a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank"&gt;http://oeis.org/A130693&lt;/a&gt;
-[Dre07]) [Wel97], too.&lt;/p&gt;
-&lt;p&gt;Looking at the set of powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt;’s [Slo], we know that a &lt;span class="math"&gt;\(m\)&lt;/span&gt;-digit
+[Dres07]) [Well97], too.&lt;/p&gt;
+&lt;p&gt;Looking at the set of powers of &lt;span class="math"&gt;\(2\)&lt;/span&gt;’s [Sloa], we know that a &lt;span class="math"&gt;\(m\)&lt;/span&gt;-digit
 power of &lt;span class="math"&gt;\(2\)&lt;/span&gt; by &lt;span class="math"&gt;\(P_{y}\)&lt;/span&gt;, has a periodicity of
 &lt;span class="math"&gt;\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)&lt;/span&gt; for the last &lt;span class="math"&gt;\(k \leq m\)&lt;/span&gt;
-digits, starting at &lt;span class="math"&gt;\(2^{k}\)&lt;/span&gt; [YY64]. Taking the known periodicity of
+digits, starting at &lt;span class="math"&gt;\(2^{k}\)&lt;/span&gt; [YaYa64]. Taking the known periodicity of
 the last &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits into account, we want to discuss properties for the
 last &lt;span class="math"&gt;\(k^{\prime} &amp;gt; k\)&lt;/span&gt; digits, for fixed last &lt;span class="math"&gt;\(k\)&lt;/span&gt;-digits of &lt;span class="math"&gt;\(P_{y}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;Notation.&lt;/b&gt; If we write &lt;span class="math"&gt;\(2^{y}_{k}\)&lt;/span&gt;, we are talking about the
@@ -76,17 +76,23 @@ and receive
 &lt;span class="math"&gt;\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)&lt;/span&gt;.
 Finally, we can conclude &lt;span class="math"&gt;\(\delta k \gtrsim k^{\star}\)&lt;/span&gt; for
 &lt;span class="math"&gt;\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)&lt;/span&gt;.&lt;/p&gt;
-&lt;h3&gt;References&lt;/h3&gt;
-&lt;p&gt;[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits
-are powers of 2.
-&lt;a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank"&gt;http://oeis.org/A130693&lt;/a&gt;,
-07 2007. (Accessed on 2021/07/18).&lt;br /&gt; [Slo] N. J. A. Sloane. Table
-of n, 2 n for n = 0..1000 - OEIS.
-&lt;a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank"&gt;http://oeis.org/A000079/b000079.txt&lt;/a&gt;.
-(Accessed on 2021/08/08).&lt;br /&gt; [Wel97] David Wells. The Penguin
-dictionary of curious and interesting numbers. Penguin, 1997.&lt;br /&gt;
-[YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with
-elementary solutions. I, 1964.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;span class="csl-left-margin"&gt;[Dres07] &lt;/span&gt;&lt;span
+class="csl-right-inline"&gt;&lt;span class="smallcaps"&gt;Dresden, Gregory
+P.&lt;/span&gt;: A130693 - OEIS: Powers of 2 whose digits are powers of
+2.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="csl-left-margin"&gt;[Sloa] &lt;/span&gt;&lt;span
+class="csl-right-inline"&gt;&lt;span class="smallcaps"&gt;Sloane, N. J.
+A.&lt;/span&gt;: Table of &lt;em&gt;n&lt;/em&gt;, 2&lt;sup&gt;&lt;em&gt;n&lt;/em&gt;&lt;/sup&gt; for &lt;em&gt;n&lt;/em&gt; = 0..1000 -
+OEIS.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="csl-left-margin"&gt;[Well97] &lt;/span&gt;&lt;span
+class="csl-right-inline"&gt;&lt;span class="smallcaps"&gt;Wells, David&lt;/span&gt;:
+&lt;em&gt;The Penguin dictionary of curious and interesting numbers&lt;/em&gt; : Penguin,
+1997&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="csl-left-margin"&gt;[YaYa64] &lt;/span&gt;&lt;span
+class="csl-right-inline"&gt;&lt;span class="smallcaps"&gt;Yaglom, AM&lt;/span&gt; ;
+&lt;span class="smallcaps"&gt;Yaglom, IM&lt;/span&gt;: Challenging Mathematical
+Problems with Elementary Solutions Bd. I, Holden-Day Inc. (1964)&lt;/span&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -224,7 +230,7 @@ equivalent:&lt;/em&gt;&lt;/p&gt;
 &lt;li&gt;&lt;em&gt;The set &lt;span class="math"&gt;\(E\)&lt;/span&gt; of &lt;span class="math"&gt;\(G\)&lt;/span&gt; is the set union of all edges of pairwise
     disjunct cycles&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;This was proofed by Hierholzer [1].&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This was proofed by Hierholzer [HiWi73].&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;So, what we need is a connected graph which only has vertices with even
 degree. Because, of course, not all graphs statisfy this conditions by
 default, we will now think, how we can map a given graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; to a graph
@@ -240,9 +246,9 @@ of no, we have several independent, pairwise disconnected, subgraphs
 determine the independent sets &lt;span class="math"&gt;\(S_{G_{i}}\)&lt;/span&gt; for each &lt;span class="math"&gt;\(G_{i}\)&lt;/span&gt; separately.
 After determining all independet sets, we finally have simply to combine
 all of this &lt;span class="math"&gt;\(S_{G_{i}}\)&lt;/span&gt; with each other. To find all strongly components
-of a graph we can use Tarjan’s algorithm [2] which also works with
-&lt;span class="math"&gt;\(\mathcal{O}\left(|V| + |E|\right)\)&lt;/span&gt;. Later, we will see that the final
-independent sets can be easily derived from our partial results.&lt;/p&gt;
+of a graph we can use Tarjan’s algorithm [Tarj72] which also works
+with &lt;span class="math"&gt;\(\mathcal{O}\left(|V| + |E|\right)\)&lt;/span&gt;. Later, we will see that the
+final independent sets can be easily derived from our partial results.&lt;/p&gt;
 &lt;h3&gt;Even degrees&lt;/h3&gt;
 &lt;p&gt;The second condition for an Eulerian graph is regarding even degrees. At
 first, let’s check the degree of each vertex in &lt;span class="math"&gt;\(G\)&lt;/span&gt;. This is a trivial
@@ -288,7 +294,7 @@ possible cases here:&lt;/p&gt;
 &lt;p&gt;We will come back to this, later.&lt;/p&gt;
 &lt;h2&gt;Eulerian cycle partitioning&lt;/h2&gt;
 &lt;p&gt;After mapping our graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; to an Eulerian one, we determine the
-Eulerian cycles with Hierholzer’s algorithm [1] and complexity
+Eulerian cycles with Hierholzer’s algorithm [HiWi73] and complexity
 &lt;span class="math"&gt;\(\mathcal{O}\left(|E|\right)\)&lt;/span&gt;. Like already mentioned, a graph &lt;span class="math"&gt;\(G\)&lt;/span&gt; can
 be disconnected into several subgraphs &lt;span class="math"&gt;\(G_{0}, G_{1}, \dots\)&lt;/span&gt;. For each
 of them we have to identify the Euler cycles. The outcome of this can be
@@ -322,17 +328,16 @@ for generating all lists of linked lists of a given &lt;span class="math"&gt;\(G
 cycle to define an appropriate representation for a combinatorial
 approach for determination of independent sets.&lt;/p&gt;
 &lt;h2&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;[1] Carl Hierholzer and Chr Wiener, &lt;em&gt;Über die Möglichkeit, einen
-    Linienzug ohne Wiederholung und ohne Unterbrechung zu umfahren&lt;/em&gt;,
-    Mathematische Annalen &lt;strong&gt;6&lt;/strong&gt; (1873), no. 1, 30–32.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;[2] Robert Tarjan, &lt;em&gt;Depth-first search and linear graph
-    algorithms&lt;/em&gt;, SIAM journal on computing &lt;strong&gt;1&lt;/strong&gt; (1972), no. 2, 146–160.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;span class="csl-left-margin"&gt;[HiWi73] &lt;/span&gt;&lt;span
+class="csl-right-inline"&gt;&lt;span class="smallcaps"&gt;Hierholzer, Carl&lt;/span&gt;
+; &lt;span class="smallcaps"&gt;Wiener, Chr&lt;/span&gt;: Über die Möglichkeit,
+einen Linienzug ohne Wiederholung und ohne Unterbrechung zu umfahren.
+In: &lt;em&gt;Mathematische Annalen&lt;/em&gt; Bd. 6, Springer-Verlag (1873), Nr. 1,
+S. 30–32&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="csl-left-margin"&gt;[Tarj72] &lt;/span&gt;&lt;span
+class="csl-right-inline"&gt;&lt;span class="smallcaps"&gt;Tarjan, Robert&lt;/span&gt;:
+Depth-first search and linear graph algorithms. In: &lt;em&gt;SIAM journal on
+computing&lt;/em&gt; Bd. 1, SIAM (1972), Nr. 2, S. 146–160&lt;/span&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

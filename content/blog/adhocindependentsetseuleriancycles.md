@@ -38,7 +38,7 @@ equivalent:*
 -   *The set $E$ of $G$ is the set union of all edges of pairwise
     disjunct cycles*
 
-*This was proofed by Hierholzer \[1\].*
+*This was proofed by Hierholzer \[HiWi73\].*
 
 So, what we need is a connected graph which only has vertices with even
 degree. Because, of course, not all graphs statisfy this conditions by
@@ -57,9 +57,9 @@ $G_{0}, G_{1}, \dots$ which we can handle without much work. We
 determine the independent sets $S_{G_{i}}$ for each $G_{i}$ separately.
 After determining all independet sets, we finally have simply to combine
 all of this $S_{G_{i}}$ with each other. To find all strongly components
-of a graph we can use Tarjan’s algorithm \[2\] which also works with
-$\mathcal{O}\left(|V| + |E|\right)$. Later, we will see that the final
-independent sets can be easily derived from our partial results.
+of a graph we can use Tarjan’s algorithm \[Tarj72\] which also works
+with $\mathcal{O}\left(|V| + |E|\right)$. Later, we will see that the
+final independent sets can be easily derived from our partial results.
 
 ### Even degrees
 
@@ -106,7 +106,7 @@ We will come back to this, later.
 ## Eulerian cycle partitioning
 
 After mapping our graph $G$ to an Eulerian one, we determine the
-Eulerian cycles with Hierholzer’s algorithm \[1\] and complexity
+Eulerian cycles with Hierholzer’s algorithm \[HiWi73\] and complexity
 $\mathcal{O}\left(|E|\right)$. Like already mentioned, a graph $G$ can
 be disconnected into several subgraphs $G_{0}, G_{1}, \dots$. For each
 of them we have to identify the Euler cycles. The outcome of this can be
@@ -149,9 +149,14 @@ approach for determination of independent sets.
 
 ## References
 
--   \[1\] Carl Hierholzer and Chr Wiener, *Über die Möglichkeit, einen
-    Linienzug ohne Wiederholung und ohne Unterbrechung zu umfahren*,
-    Mathematische Annalen **6** (1873), no. 1, 30–32.
+<span class="csl-left-margin">\[HiWi73\] </span><span
+class="csl-right-inline"><span class="smallcaps">Hierholzer, Carl</span>
+; <span class="smallcaps">Wiener, Chr</span>: Über die Möglichkeit,
+einen Linienzug ohne Wiederholung und ohne Unterbrechung zu umfahren.
+In: *Mathematische Annalen* Bd. 6, Springer-Verlag (1873), Nr. 1,
+S. 30–32</span>
 
--   \[2\] Robert Tarjan, *Depth-first search and linear graph
-    algorithms*, SIAM journal on computing **1** (1972), no. 2, 146–160.
+<span class="csl-left-margin">\[Tarj72\] </span><span
+class="csl-right-inline"><span class="smallcaps">Tarjan, Robert</span>:
+Depth-first search and linear graph algorithms. In: *SIAM journal on
+computing* Bd. 1, SIAM (1972), Nr. 2, S. 146–160</span>
