@@ -125,60 +125,139 @@
         </header>
 
         <div class="entry-content">
-          	<p>This post is the second part of a series regarding combinatorial independent sets determination.  </p>
+          	<p>This post is the second part of a series regarding combinatorial
+independent sets determination.</p>
 <ul>
-<li>First post of this series: <a href="https://blog.carolin-zoebelein.de/2020/05/adhocindependentsets.html">Ad hoc method for independent sets</a></li>
+<li>First post of this series: <a href="https://blog.carolin-zoebelein.de/2020/05/adhocindependentsets.html">Ad hoc method for independent
+    sets</a></li>
 </ul>
-<p>In the last post, we described a naive algorithm to determine independent sets and got a terrible complexity. Now, we want to grab this algorithm to use it as a base for an alternative way of independent set generation. Instead of putting edges in an arbitrary order into our algorithm, we will consider properties of the set of edges <span class="math">\(E\)</span>, given by Eulerian cycles.</p>
+<p>In the last post, we described a naive algorithm to determine
+independent sets and got a terrible complexity. Now, we want to grab
+this algorithm to use it as a base for an alternative way of independent
+set generation. Instead of putting edges in an arbitrary order into our
+algorithm, we will consider properties of the set of edges <span class="math">\(E\)</span>, given by
+Eulerian cycles.</p>
 <h2>Eulerian cycle expansions</h2>
 <p>For improving our algorithm, we will need Eulerian cycles.</p>
 <p><strong>Definition 1</strong> (Eulerian cycle)<br>
-<em>An Eulerian cycle in an undirected graph is a cycle that uses each edge exactly once. A graph which owns such a cycle is called Eulerian.</em></p>
-<p><em>If <span class="math">\(G\)</span> is a connected graph, then the following statements are equivalent:</em></p>
+<em>An Eulerian cycle in an undirected graph is a cycle that uses each edge
+exactly once. A graph which owns such a cycle is called Eulerian.</em></p>
+<p><em>If <span class="math">\(G\)</span> is a connected graph, then the following statements are
+equivalent:</em></p>
 <ul>
 <li><em><span class="math">\(G\)</span> is Eulerian</em></li>
-<li><em>Every vertex <span class="math">\(v \in V\)</span> of <span class="math">\(G\)</span> have an even degree <span class="math">\(\deg\left(v\right)\)</span></em></li>
-<li><em>The set <span class="math">\(E\)</span> of <span class="math">\(G\)</span> is the set union of all edges of pairwise disjunct cycles</em></li>
+<li><em>Every vertex <span class="math">\(v \in V\)</span> of <span class="math">\(G\)</span> have an even degree
+    <span class="math">\(\deg\left(v\right)\)</span></em></li>
+<li><em>The set <span class="math">\(E\)</span> of <span class="math">\(G\)</span> is the set union of all edges of pairwise
+    disjunct cycles</em></li>
 </ul>
 <p><em>This was proofed by Hierholzer [1].</em></p>
-<p>So, what we need is a connected graph which only has vertices with even degree. Because, of course, not all graphs statisfy this conditions by default, we will now think, how we can map a given graph <span class="math">\(G\)</span> to a graph <span class="math">\(G^{\prime}\)</span> which statisfies the conditions, but still gives us the searched independent sets of <span class="math">\(G\)</span>, without increasing noticeable the full algorithm complexity, finally.</p>
+<p>So, what we need is a connected graph which only has vertices with even
+degree. Because, of course, not all graphs statisfy this conditions by
+default, we will now think, how we can map a given graph <span class="math">\(G\)</span> to a graph
+<span class="math">\(G^{\prime}\)</span> which statisfies the conditions, but still gives us the
+searched independent sets of <span class="math">\(G\)</span>, without increasing noticeable the full
+algorithm complexity, finally.</p>
 <h3>Connectivity</h3>
-<p>At first, let's check if the graph <span class="math">\(G\)</span> is connected. This can be done by breadth-first search with <span class="math">\(\mathcal{O}\left(|V| + |E|\right)\)</span>. If yes, we don't have to do anything anymore regarding connectivity. In the case of no, we have several independent, pairwise disconnected, subgraphs <span class="math">\(G_{0}, G_{1}, \dots\)</span> which we can handle without much work. We determine the independent sets <span class="math">\(S_{G_{i}}\)</span> for each <span class="math">\(G_{i}\)</span> separately. After determining all independet sets, we finally have simply to combine all of this <span class="math">\(S_{G_{i}}\)</span> with each other. To find all strongly components of a graph we can use Tarjan's algorithm [2] which also works with <span class="math">\(\mathcal{O}\left(|V| + |E|\right)\)</span>. Later, we will see that the final independent sets can be easily derived from our partial results.</p>
+<p>At first, let’s check if the graph <span class="math">\(G\)</span> is connected. This can be done by
+breadth-first search with <span class="math">\(\mathcal{O}\left(|V| + |E|\right)\)</span>. If yes,
+we don’t have to do anything anymore regarding connectivity. In the case
+of no, we have several independent, pairwise disconnected, subgraphs
+<span class="math">\(G_{0}, G_{1}, \dots\)</span> which we can handle without much work. We
+determine the independent sets <span class="math">\(S_{G_{i}}\)</span> for each <span class="math">\(G_{i}\)</span> separately.
+After determining all independet sets, we finally have simply to combine
+all of this <span class="math">\(S_{G_{i}}\)</span> with each other. To find all strongly components
+of a graph we can use Tarjan’s algorithm [2] which also works with
+<span class="math">\(\mathcal{O}\left(|V| + |E|\right)\)</span>. Later, we will see that the final
+independent sets can be easily derived from our partial results.</p>
 <h3>Even degrees</h3>
-<p>The second condition for an Eulerian graph is regarding even degrees. At first, let's check the degree of each vertex in <span class="math">\(G\)</span>. This is a trivial thing with linear complexity. If yes, we don't have to do anything anymore regarding even degrees. In the case of no, we have to do some modification of <span class="math">\(G\)</span>. From basic graph theory we know that for every graph <span class="math">\(G\)</span> we have <span class="math">\(2|E| = \sum_{v_{i} \in V} \deg\left(v_{i}\right)\)</span>. Hence, we know that we always have an even number of vertices with odd degree. With this we can simply map our graph <span class="math">\(G\)</span> to an Eulerian graph by connecting always two of our odd degree vertices <span class="math">\(\{u,v\}\)</span> by one new introduced helper vertex <span class="math">\(h \in H\)</span> (be <span class="math">\(H\)</span> the set of helper vertices) and hence we get the two new edges <span class="math">\(\left(u,h\right)\)</span> and <span class="math">\(\left(h,v\right)\)</span>.
-So, what will be the consequences of adding an helper vertex to our graph, regarding the independent sets? We have two possible cases here:</p>
+<p>The second condition for an Eulerian graph is regarding even degrees. At
+first, let’s check the degree of each vertex in <span class="math">\(G\)</span>. This is a trivial
+thing with linear complexity. If yes, we don’t have to do anything
+anymore regarding even degrees. In the case of no, we have to do some
+modification of <span class="math">\(G\)</span>. From basic graph theory we know that for every
+graph <span class="math">\(G\)</span> we have <span class="math">\(2|E| = \sum_{v_{i} \in V} \deg\left(v_{i}\right)\)</span>.
+Hence, we know that we always have an even number of vertices with odd
+degree. With this we can simply map our graph <span class="math">\(G\)</span> to an Eulerian graph
+by connecting always two of our odd degree vertices <span class="math">\(\{u,v\}\)</span> by one new
+introduced helper vertex <span class="math">\(h \in H\)</span> (be <span class="math">\(H\)</span> the set of helper vertices)
+and hence we get the two new edges <span class="math">\(\left(u,h\right)\)</span> and
+<span class="math">\(\left(h,v\right)\)</span>. So, what will be the consequences of adding an
+helper vertex to our graph, regarding the independent sets? We have two
+possible cases here:</p>
 <ul>
 <li>
-<p>The helper vertex <span class="math">\(h\)</span> connects two vertices <span class="math">\(u\)</span> and <span class="math">\(v\)</span> which belong to the same independent set <span class="math">\(S\)</span> which means <span class="math">\(u \in S \wedge v \in S\)</span> and hence <span class="math">\(\left(u,v\right) \notin E\)</span>.<br>
-<em>Consequence:</em> Since <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are still not directly connected with each other, they will still belong to the same independent set. Since, each of them have a connection to <span class="math">\(h\)</span>, <span class="math">\(h\)</span> will become a member of an other, second, independent set. So, we will get our original independent set <span class="math">\(S\)</span> unchanged and any other second independent set with <span class="math">\(S^{\prime} \cup \{h\}\)</span>.</p>
+<p>The helper vertex <span class="math">\(h\)</span> connects two vertices <span class="math">\(u\)</span> and <span class="math">\(v\)</span> which belong
+    to the same independent set <span class="math">\(S\)</span> which means <span class="math">\(u \in S \wedge v \in S\)</span>
+    and hence <span class="math">\(\left(u,v\right) \notin E\)</span>.<br>
+<em>Consequence:</em> Since <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are still not directly connected
+    with each other, they will still belong to the same independent set.
+    Since, each of them have a connection to <span class="math">\(h\)</span>, <span class="math">\(h\)</span> will become a
+    member of an other, second, independent set. So, we will get our
+    original independent set <span class="math">\(S\)</span> unchanged and any other second
+    independent set with <span class="math">\(S^{\prime} \cup \{h\}\)</span>.</p>
 </li>
 <li>
-<p>The helper vertex <span class="math">\(h\)</span> connects two vertices <span class="math">\(u\)</span> and <span class="math">\(v\)</span> which belong to two different independent sets <span class="math">\(S_{i}, S_{j}\)</span> with <span class="math">\(S_{i} \nsubseteq S_{j}\)</span>, which means <span class="math">\(u \in S_{i} \wedge v \in S_{j}\)</span> and hence <span class="math">\(\left(u,v\right) \in E\)</span>.<br>
-<em>Consequence:</em> Since <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are already directly connected, also with a connection to <span class="math">\(h\)</span> they will still both belong to two different sets. Since, each of them have a connection to <span class="math">\(h\)</span>, <span class="math">\(h\)</span> will become a member of an other, third, independent set. So, we will get our original two independent sets <span class="math">\(S_{i}\)</span> and <span class="math">\(S_{j}\)</span> unchanged and any other third independent set with <span class="math">\(S_{k} \cup \{h\}\)</span>.</p>
+<p>The helper vertex <span class="math">\(h\)</span> connects two vertices <span class="math">\(u\)</span> and <span class="math">\(v\)</span> which belong
+    to two different independent sets <span class="math">\(S_{i}, S_{j}\)</span> with
+    <span class="math">\(S_{i} \nsubseteq S_{j}\)</span>, which means
+    <span class="math">\(u \in S_{i} \wedge v \in S_{j}\)</span> and hence
+    <span class="math">\(\left(u,v\right) \in E\)</span>.<br>
+<em>Consequence:</em> Since <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are already directly connected,
+    also with a connection to <span class="math">\(h\)</span> they will still both belong to two
+    different sets. Since, each of them have a connection to <span class="math">\(h\)</span>, <span class="math">\(h\)</span>
+    will become a member of an other, third, independent set. So, we
+    will get our original two independent sets <span class="math">\(S_{i}\)</span> and <span class="math">\(S_{j}\)</span>
+    unchanged and any other third independent set with
+    <span class="math">\(S_{k} \cup \{h\}\)</span>.</p>
 </li>
 </ul>
 <p>We will come back to this, later.</p>
 <h2>Eulerian cycle partitioning</h2>
-<p>After mapping our graph <span class="math">\(G\)</span> to an Eulerian one, we determine the Eulerian cycles with Hierholzer's algorithm [1] and complexity <span class="math">\(\mathcal{O}\left(|E|\right)\)</span>. Like already mentioned, a graph <span class="math">\(G\)</span> can be disconnected into several subgraphs <span class="math">\(G_{0}, G_{1}, \dots\)</span>. For each of them we have to identify the Euler cycles. The outcome of this can be written in a general way like as the following example:</p>
-<div class="math">\begin{equation}
+<p>After mapping our graph <span class="math">\(G\)</span> to an Eulerian one, we determine the
+Eulerian cycles with Hierholzer’s algorithm [1] and complexity
+<span class="math">\(\mathcal{O}\left(|E|\right)\)</span>. Like already mentioned, a graph <span class="math">\(G\)</span> can
+be disconnected into several subgraphs <span class="math">\(G_{0}, G_{1}, \dots\)</span>. For each
+of them we have to identify the Euler cycles. The outcome of this can be
+written in a general way like as the following example:</p>
+<div class="math">$$\begin{equation}
     \underbrace{\left(\overbrace{\underset{0}{a_{1}},\underset{1}{b_{1}},\underset{2}{c_{1}}}^{C_{0}}, \overbrace{a_{2},\underset{3}{d_{1}},\underset{4}{e_{1}},\underset{5}{f_{1}}}^{C_{1}},\overbrace{b_{2}}^{C_{2}},\overbrace{e_{2}}^{C_{3}},\overbrace{a_{3}}^{C_{4}}\right)}_{G_{0}} \underbrace{\left(\overbrace{\underset{0}{g_{1}},\underset{1}{h_{1}},\underset{2}{i_{1}}}^{C^{\prime}_{0}},\overbrace{\underset{3}{g_{2}}}^{C^{\prime}_{1}}\right)}_{G_{1}}\cdots
 \label{eq:eulercycles}
-\end{equation}</div>
-<p>Here, <span class="math">\(a_{i}, b_{i}, \cdots, h_{i}, i_{i}\)</span> are vertices of <span class="math">\(V\)</span>, their indices are the numbers of their appeareance and the numbers below them are the numbering of the first appeareance order within the Eulerian graph. In each graph we can find inner cycles <span class="math">\(C_{i}\)</span> which are recognized through an additional appeareance of an already in the sequence existing vertex. For our further steps, we will see, that it is useful to cut a graph sequence exactly at this points.</p>
-<p>What we want to do now, is to put this information of one graph <span class="math">\(G_{i}\)</span> in a more helpful data structure. For this we use a list of linked lists for each <span class="math">\(G_{i}\)</span> in which we save for each cycle its size <span class="math">\(s\)</span>, its first element and the the position of this first element within the sequence of all first appearences of numbers of the whole Eulerian sequence, (see table 1), at all.</p>
-<p><img alt="GitHub Logo" src="/blog/images/adhocindependentsets-euleriancycles/table1AdjacenceList.jpg"></p>
-<p>We know the maximum number of edges of a graph <span class="math">\(G\)</span> is <span class="math">\(\frac{1}{2}\left(|V|^{2} - |V|\right)\)</span> and that we have this value plus one for entries of <span class="math">\(G\)</span>, like in (\ref{eq:eulercycles}). So we have a total complexity of <span class="math">\(\mathcal{O}\left(\left(\frac{1}{2}\left(|V|^{2} - |V|\right) + 1\right)^{2}\right) = \mathcal{O}\left(|V|^{4}\right)\)</span> for generating all lists of linked lists of a given <span class="math">\(G\)</span>, like that.</p>
+\end{equation}$$</div>
+<p>Here, <span class="math">\(a_{i}, b_{i}, \cdots, h_{i}, i_{i}\)</span> are vertices of <span class="math">\(V\)</span>, their
+indices are the numbers of their appeareance and the numbers below them
+are the numbering of the first appeareance order within the Eulerian
+graph. In each graph we can find inner cycles <span class="math">\(C_{i}\)</span> which are
+recognized through an additional appeareance of an already in the
+sequence existing vertex. For our further steps, we will see, that it is
+useful to cut a graph sequence exactly at this points.</p>
+<p>What we want to do now, is to put this information of one graph <span class="math">\(G_{i}\)</span>
+in a more helpful data structure. For this we use a list of linked lists
+for each <span class="math">\(G_{i}\)</span> in which we save for each cycle its size <span class="math">\(s\)</span>, its first
+element and the the position of this first element within the sequence
+of all first appearences of numbers of the whole Eulerian sequence, (see
+table 1), at all.</p>
+<p><img alt="GitHub
+Logo" src="/blog/images/adhocindependentsets-euleriancycles/table1AdjacenceList.jpg"></p>
+<p>We know the maximum number of edges of a graph <span class="math">\(G\)</span> is
+<span class="math">\(\frac{1}{2}\left(|V|^{2} - |V|\right)\)</span> and that we have this value plus
+one for entries of <span class="math">\(G\)</span>, like in (). So we have a total complexity of
+<span class="math">\(\mathcal{O}\left(\left(\frac{1}{2}\left(|V|^{2} - |V|\right) + 1\right)^{2}\right) = \mathcal{O}\left(|V|^{4}\right)\)</span>
+for generating all lists of linked lists of a given <span class="math">\(G\)</span>, like that.</p>
 <h2>Outlook</h2>
-<p>In the next post, we will use this information given by the eulerian cycle to define an appropriate representation for a combinatorial approach for determination of independent sets.</p>
+<p>In the next post, we will use this information given by the eulerian
+cycle to define an appropriate representation for a combinatorial
+approach for determination of independent sets.</p>
 <h2>References</h2>
 <ul>
 <li>
-<p>[1] Carl Hierholzer and Chr Wiener, <em>Über die Möglichkeit, einen Linienzug ohne Wiederholung
-und ohne Unterbrechung zu umfahren</em>, Mathematische Annalen <strong>6</strong> (1873), no. 1, 30–32.</p>
+<p>[1] Carl Hierholzer and Chr Wiener, <em>Über die Möglichkeit, einen
+    Linienzug ohne Wiederholung und ohne Unterbrechung zu umfahren</em>,
+    Mathematische Annalen <strong>6</strong> (1873), no. 1, 30–32.</p>
 </li>
 <li>
-<p>[2] Robert Tarjan, <em>Depth-first search and linear graph algorithms</em>, SIAM journal on computing <strong>1</strong>
-(1972), no. 2, 146–160.</p>
+<p>[2] Robert Tarjan, <em>Depth-first search and linear graph
+    algorithms</em>, SIAM journal on computing <strong>1</strong> (1972), no. 2, 146–160.</p>
 </li>
 </ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {

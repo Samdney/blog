@@ -113,23 +113,94 @@
         </header>
 
         <div class="entry-content">
-          	<p>In my paper <i>Powers of <span class="math">\(2\)</span> whose digits are powers of <span class="math">\(2\)</span></i> (see also <a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>), I'm discussing digits of powers of 2, and which conditions are necessary to get for them powers of 2, too.</p>
-<p>Given be the set of powers of <span class="math">\(2\)</span> by <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>. It is unknown if, apart from <span class="math">\(P_{y=0} = 2^{0} = 1\)</span>, <span class="math">\(P_{y=1} = 2^{1} = 2\)</span>, <span class="math">\(P_{y=2} = 2^{2} = 4\)</span>, <span class="math">\(P_{y=3} = 2^{3} = 8\)</span> and <span class="math">\(P_{y=7} = 2^{7} = 128\)</span>, there exist more <span class="math">\(P_{y}\)</span>'s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line Encyclopedia of Integer Sequences (OEIS) <a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a> [Dre07]) [Wel97], too.</p>
-<p>Looking at the set of powers of <span class="math">\(2\)</span>'s [Slo], we know that a <span class="math">\(m\)</span>-digit power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of <span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span> digits, starting at <span class="math">\(2^{k}\)</span> [YY64]. Taking the known periodicity of the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
-<p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the <span class="math">\(k\)</span>'th digit (counted from right to left, starting counting by <span class="math">\(1\)</span>) of <span class="math">\(2^{y}\)</span>, in base <span class="math">\(10\)</span> representation. For step sizes we write <span class="math">\(d^{k + 1}_{y,k}\)</span>, meaning the step size of the <span class="math">\(k + 1\)</span>-digit, starting by <span class="math">\(2^{y}\)</span>, with a <span class="math">\(k\)</span>-digit periodicity. Furthermore, we will denote the set of all one-digit powers of <span class="math">\(2\)</span> by <span class="math">\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)</span>.</p>
-<p>For this, at first, we also considered <span class="math">\(k\)</span>-digit structures of powers of <span class="math">\(2\)</span> in generally, and used the following two lemmas as starting point for our proofs in the mentioned paper.</p>
+          	<p>In my paper <i>Powers of <span class="math">\(2\)</span> whose digits are powers of <span class="math">\(2\)</span></i> (see
+also
+<a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>),
+I’m discussing digits of powers of 2, and which conditions are necessary
+to get for them powers of 2, too.</p>
+<p>Given be the set of powers of <span class="math">\(2\)</span> by <span class="math">\(P_{y} = 2^{y}\)</span>,
+<span class="math">\(y \in \mathbb{N}_{0}\)</span>. It is unknown if, apart from
+<span class="math">\(P_{y=0} = 2^{0} = 1\)</span>, <span class="math">\(P_{y=1} = 2^{1} = 2\)</span>, <span class="math">\(P_{y=2} = 2^{2} = 4\)</span>,
+<span class="math">\(P_{y=3} = 2^{3} = 8\)</span> and <span class="math">\(P_{y=7} = 2^{7} = 128\)</span>, there exist more
+<span class="math">\(P_{y}\)</span>’s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line
+Encyclopedia of Integer Sequences (OEIS)
+<a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a>
+[Dre07]) [Wel97], too.</p>
+<p>Looking at the set of powers of <span class="math">\(2\)</span>’s [Slo], we know that a <span class="math">\(m\)</span>-digit
+power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of
+<span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span>
+digits, starting at <span class="math">\(2^{k}\)</span> [YY64]. Taking the known periodicity of
+the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the
+last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
+<p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the
+<span class="math">\(k\)</span>’th digit (counted from right to left, starting counting by <span class="math">\(1\)</span>) of
+<span class="math">\(2^{y}\)</span>, in base <span class="math">\(10\)</span> representation. For step sizes we write
+<span class="math">\(d^{k + 1}_{y,k}\)</span>, meaning the step size of the <span class="math">\(k + 1\)</span>-digit, starting
+by <span class="math">\(2^{y}\)</span>, with a <span class="math">\(k\)</span>-digit periodicity. Furthermore, we will denote
+the set of all one-digit powers of <span class="math">\(2\)</span> by
+<span class="math">\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)</span>.</p>
+<p>For this, at first, we also considered <span class="math">\(k\)</span>-digit structures of powers of
+<span class="math">\(2\)</span> in generally, and used the following two lemmas as starting point
+for our proofs in the mentioned paper.</p>
 <p><br /></p>
-<p><b>Lemma 2.1</b> (<span class="math">\(k\)</span>-digits structure). <i>Let be <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with <span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all <span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>, <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>, the last <span class="math">\(k\)</span>-digits are given by <span class="math">\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)</span>, with <span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span> leading zeros for <span class="math">\(k \geq 2\)</span>, and at least one leading zero for <span class="math">\(k \geq 3\)</span>.</i></p>
-<p><i>Proof.</i> We know, that for the last <span class="math">\(k\)</span>-digits <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)</span>, which have <span class="math">\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)</span> digits. Since, we also have the periodicity <span class="math">\(\varphi\left(5^{k}\right)\)</span>, we directly get <span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span> for the number of leading zeros. Looking at <span class="math">\(0 \leq k - x\)</span>, we receive <span class="math">\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)</span>, and hence <span class="math">\(k \geq 2\)</span> by the constraint <span class="math">\(k^{\star} \geq 2\)</span>, and for <span class="math">\(1 \geq k - x\)</span>, with <span class="math">\(k = k^{\star}\)</span>, we recive <span class="math">\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)</span>, and hence <span class="math">\(k \geq 3\)</span>. Finally it is easy to see, that the statement is always satisfied for <span class="math">\(k \geq k^{\star}\)</span>, because of <span class="math">\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)</span> for <span class="math">\(k = k^{*}\)</span>.</p>
+<p><b>Lemma 2.1</b> (<span class="math">\(k\)</span>-digits structure). <i>Let be <span class="math">\(P_{y} = 2^{y}\)</span>,
+<span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with
+<span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all
+<span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for
+<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>,
+<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>,
+the last <span class="math">\(k\)</span>-digits are given by
+<span class="math">\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)</span>,
+with
+<span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span>
+leading zeros for <span class="math">\(k \geq 2\)</span>, and at least one leading zero for
+<span class="math">\(k \geq 3\)</span>.</i></p>
+<p><i>Proof.</i> We know, that for the last <span class="math">\(k\)</span>-digits
+<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)</span>,
+which have
+<span class="math">\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)</span> digits.
+Since, we also have the periodicity <span class="math">\(\varphi\left(5^{k}\right)\)</span>, we
+directly get
+<span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span>
+for the number of leading zeros. Looking at <span class="math">\(0 \leq k - x\)</span>, we receive
+<span class="math">\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)</span>,
+and hence <span class="math">\(k \geq 2\)</span> by the constraint <span class="math">\(k^{\star} \geq 2\)</span>, and for
+<span class="math">\(1 \geq k - x\)</span>, with <span class="math">\(k = k^{\star}\)</span>, we recive
+<span class="math">\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)</span>, and hence
+<span class="math">\(k \geq 3\)</span>. Finally it is easy to see, that the statement is always
+satisfied for <span class="math">\(k \geq k^{\star}\)</span>, because of
+<span class="math">\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)</span>
+for <span class="math">\(k = k^{*}\)</span>.</p>
 <p><br /></p>
-<p><b>Lemma 2.2</b> (<span class="math">\(k^{\star}\)</span>-digits fixed structure). <i> Let be <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with <span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all <span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>, <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>, the last <span class="math">\(k + 1\)</span> to <span class="math">\(k + \delta k\)</span>-digits are fixed for at least <span class="math">\(\delta k = k^{\star}\)</span> digits. </i></p>
-<p><i>Proof.</i>
-    Consider <span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \\ \cdot 10^{-\left(k + 1\right)} \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \\ \cdot 5^{-1}\)</span>, for which we can equating the coefficients with approximation. We look at <span class="math">\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)</span>, and receive <span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>. Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
+<p><b>Lemma 2.2</b> (<span class="math">\(k^{\star}\)</span>-digits fixed structure). <i> Let be
+<span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits
+periodical with
+<span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all
+<span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for
+<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>,
+<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>,
+the last <span class="math">\(k + 1\)</span> to <span class="math">\(k + \delta k\)</span>-digits are fixed for at least
+<span class="math">\(\delta k = k^{\star}\)</span> digits. </i></p>
+<p><i>Proof.</i> Consider
+<span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \\ \cdot 10^{-\left(k + 1\right)} \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \\ \cdot 5^{-1}\)</span>,
+for which we can equating the coefficients with approximation. We look
+at
+<span class="math">\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)</span>,
+and receive
+<span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>.
+Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for
+<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
 <h3>References</h3>
-<p>[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits are powers of 2. <a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank">http://oeis.org/A130693</a>, 07 2007. (Accessed on 2021/07/18).<br />
-[Slo] N. J. A. Sloane. Table of n, 2 n for n = 0..1000 - OEIS. <a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank">http://oeis.org/A000079/b000079.txt</a>. (Accessed on 2021/08/08).<br />
-[Wel97] David Wells. The Penguin dictionary of curious and interesting numbers. Penguin, 1997.<br />
-[YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with elementary solutions. I, 1964.</p>
+<p>[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits
+are powers of 2.
+<a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank">http://oeis.org/A130693</a>,
+07 2007. (Accessed on 2021/07/18).<br /> [Slo] N. J. A. Sloane. Table
+of n, 2 n for n = 0..1000 - OEIS.
+<a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank">http://oeis.org/A000079/b000079.txt</a>.
+(Accessed on 2021/08/08).<br /> [Wel97] David Wells. The Penguin
+dictionary of curious and interesting numbers. Penguin, 1997.<br />
+[YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with
+elementary solutions. I, 1964.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

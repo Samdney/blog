@@ -100,47 +100,54 @@
 
       <div class="col-main w3-container">
         <section id="content">
-          <p>Some days ago, I had several nice ideas for calculating primes recursively, which I want to share with you in a small series of posts.  </p>
-<p>I will use some insights of my work <a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a> and assume you already know they. If not, please read it sidewise to the following posts.  </p>
-<p>We have given our already known equation<br>
-</p>
+          <p>Some days ago, I had several nice ideas for calculating primes
+recursively, which I want to share with you in a small series of posts.</p>
+<p>I will use some insights of my work
+<a href="https://github.com/Samdney/primescalc"
+target="_blank">https://github.com/Samdney/primescalc</a> and assume you
+already know they. If not, please read it sidewise to the following
+posts.</p>
+<p>We have given our already known equation</p>
 <div class="math">$$
     x_{i,j}     = 2x_{i}x_{j} + x_{i} + x_{j}\\
             = \left(2x_{j} + 1\right)x_{i} + x_{j}\\
             = \left(2x_{i} + 1\right)x_{j} + x_{i}
 $$</div>
-<p>
-with <span class="math">\(x_{i}, x_{j} \in \mathbb{N}\)</span>. Remember that this equation gives us all <span class="math">\(x_{i,j}\)</span> for which <span class="math">\(2x_{i,j} + 1\)</span> is an integer divisible number. </p>
+<p>with <span class="math">\(x_{i}, x_{j} \in \mathbb{N}\)</span>. Remember that this equation gives us
+all <span class="math">\(x_{i,j}\)</span> for which <span class="math">\(2x_{i,j} + 1\)</span> is an integer divisible number.</p>
 <p>So let`s look, for example on the numbers of <span class="math">\(x_{i} = 1\)</span>, which are
 </p>
 <div class="math">$$x_{1,j} = 4, 7, 10, 13, 16, 19, 22, 25, 28, \dots$$</div>
 <p>.</p>
-<p>Now we will choose a simple way of representation of this numbers. Be given the general form of a number in decimal representation:
-</p>
+<p>Now we will choose a simple way of representation of this numbers. Be
+given the general form of a number in decimal representation:</p>
 <div class="math">$$
     \sum_{k = 0}^{n} 10^{k}
 $$</div>
-<p>
-with <span class="math">\(n+1\)</span>, <span class="math">\(n \in \mathbb{N}\)</span>, digits. Now assume, in our example, the number 4 is represented by the number 1, at the <span class="math">\(4+1\)</span> digit, the number 7 by the number 1, at the <span class="math">\(7+1\)</span> digit and so on. So we can write (read from right to left) as represenation for <span class="math">\(x_{1,j}\)</span>:
-</p>
+<p>with <span class="math">\(n+1\)</span>, <span class="math">\(n \in \mathbb{N}\)</span>, digits. Now assume, in our example, the
+number 4 is represented by the number 1, at the <span class="math">\(4+1\)</span> digit, the number
+7 by the number 1, at the <span class="math">\(7+1\)</span> digit and so on. So we can write (read
+from right to left) as represenation for <span class="math">\(x_{1,j}\)</span>:</p>
 <div class="math">$$
     \sum_{x_{j}} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = \sum_{x_{j}} 10^{3x_{j} + 1}
 $$</div>
-<p>
-and
-</p>
+<p>and</p>
 <div class="math">$$
 \dots 10010010010010010010010010000
 $$</div>
-<p>In this way, we can write every of our times tables which are given by <span class="math">\(x_{i,j} = \left(2x_{i} + 1\right)x_{j} + x_{i}\)</span>.  </p>
-<p>If we finally calculate this sum, we receive
-</p>
+<p>In this way, we can write every of our times tables which are given by
+<span class="math">\(x_{i,j} = \left(2x_{i} + 1\right)x_{j} + x_{i}\)</span>.</p>
+<p>If we finally calculate this sum, we receive</p>
 <div class="math">$$
     \sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1}
 $$</div>
-<p>. See also <a href="https://www.wolframalpha.com/input/?i=sum+z%3Dl,+u,+10%5E%28%282*x+%2B+1%29*z+%2B+x%29#7928802016733054506" target="_blank">wolframalpha.com</a>.</p>
+<p>.</p>
+<p>See also <a
+href="https://www.wolframalpha.com/input/?i=sum+z%3Dl,+u,+10%5E%28%282*x+%2B+1%29*z+%2B+x%29#7928802016733054506"
+target="_blank">wolframalpha.com</a>.</p>
 <p>But what can we do with this, now?<br>
-In the next post we will look at the intersection of times tables with this kind of representation.</p>
+In the next post we will look at the intersection of times tables with
+this kind of representation.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

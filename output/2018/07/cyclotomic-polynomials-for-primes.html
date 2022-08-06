@@ -103,40 +103,40 @@
 
       <div class="col-main w3-container">
         <section id="content">
-          <p>Currently, I'm spending my time with cyclotomic polynomials. So, I don't want to
-miss the possibility also to mention a small note about the connection of this
-polynomials to the set of prime numbers.  </p>
+          <p>Currently, I’m spending my time with cyclotomic polynomials. So, I don’t
+want to miss the possibility also to mention a small note about the
+connection of this polynomials to the set of prime numbers.</p>
 <p>At first, we have a cyclotomic polynomial in the following way</p>
-<div class="math">\begin{equation}
+<div class="math">$$\begin{equation}
     \phi_{n}\left(x\right) = \prod_{\substack{1 \leq g \leq n \\ ggT\left(g,n\right) = 1}}
     \left(x - e^{\frac{2\pi i g}{n}}\right)
-\end{equation}</div>
+\end{equation}$$</div>
 <p>with <span class="math">\(n, g \in \mathbb{N}\)</span>, respectively</p>
-<div class="math">\begin{alignat}{3}
+<div class="math">$$\begin{alignat}{3}
     x^{n} - 1 &amp;= \prod_{1 \leq g \leq n} \left(x - e^{\frac{2\pi i g}{n}}\right) \notag \\
     &amp;= \prod_{d | n} \prod_{\substack{1 \leq g \leq n \\ ggT\left(g,n\right) = d}} \left(x - e^{\frac{2\pi i g}{n}}\right) \notag \\
     &amp;= \prod_{d | n} \phi_{n/d}\left(x\right) \notag \\
     &amp;= \prod_{d | n} \phi_{d}\left(x\right)
-\end{alignat}</div>
-<p>. In the case of pime numbers <span class="math">\(p \in \mathbb{P}\)</span>, we also have </p>
-<div class="math">\begin{equation}
+\end{alignat}$$</div>
+<p>. In the case of pime numbers <span class="math">\(p \in \mathbb{P}\)</span>, we also have</p>
+<div class="math">$$\begin{equation}
     \phi_{p}\left(x\right) = 1 + x + x^{2} + \dots + x^{p-1} = \sum_{k =
     0}^{p-1} x^{k}
-\end{equation}</div>
+\end{equation}$$</div>
 <p>. From this follows the first rewriting</p>
-<div class="math">\begin{alignat}{3}
+<div class="math">$$\begin{alignat}{3}
     \phi_{p}\left(x\right) &amp;= \sum_{k = 0}^{p-1} x^{k} \notag \\
     &amp;= \sum_{k = 0}^{p-1} e^{k\ln\left(x\right)} \notag \\
     &amp;= e^{0\ln\left(x\right)} + \sum_{k = 1}^{p-1} e^{k\ln\left(x\right)}
     \notag \\
     &amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1}
-\end{alignat}</div>
-<p>, since </p>
+\end{alignat}$$</div>
+<p>, since</p>
 <div class="math">$$
     \sum_{k = 1}^{n} e^{kA} = \frac{e^{A}\left(e^{An} - 1\right)}{e^{A} - 1}
 $$</div>
 <p>. Now we will solve this equation for <span class="math">\(p\)</span>.</p>
-<div class="math">\begin{alignat}{3}
+<div class="math">$$\begin{alignat}{3}
     \phi_{p}\left(x\right) &amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1} \notag \\
     \left(\phi_{p}\left(x\right) - 1\right)\left(e^{\ln\left(x\right)} - 1\right) &amp;=
     e^{\ln\left(x\right)}\left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)
@@ -147,14 +147,16 @@ $$</div>
     \ln\left(x\right)\left(\left(p-1\right) + 1\right) &amp;=
     \ln\left(\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x\right) \notag \\
     p &amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right)
-\end{alignat}</div>
-<p>Additionally, we have our second, very easy to see, connection for prime numbers</p>
-<div class="math">\begin{alignat}{3}
+\end{alignat}$$</div>
+<p>Additionally, we have our second, very easy to see, connection for prime
+numbers</p>
+<div class="math">$$\begin{alignat}{3}
     \phi_{p}\left(x\right) &amp;= x^{p} - 1 \notag \\
     &amp;= \sum_{k' = 0}^{p} x^{k'} - \sum_{k'' = 0}^{p-1} x^{k''} - 1 \notag \\
     &amp;= \phi_{p+1}\left(x\right) - \phi_{p}\left(x\right) - 1
-\end{alignat}</div>
-<p>. I have no idea for which this can be useful, but I think it is nice to know :P.</p>
+\end{alignat}$$</div>
+<p>. I have no idea for which this can be useful, but I think it is nice to
+know :P.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

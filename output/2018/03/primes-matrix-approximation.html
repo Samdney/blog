@@ -100,8 +100,12 @@
 
       <div class="col-main w3-container">
         <section id="content">
-          <p>Last week, I wrote in <a href="https://samdney.github.io/2018/03/primes-matrix.html">Primes matrix</a> about a possibility to represent primes. The negative part of this was, that there isn't a nice way to generate <span class="math">\(X_{\left(i\right)}^{n\times n}\)</span>. Today, I want to add a few lines, how you can approximate it.  </p>
-<p>Let's look again at </p>
+          <p>Last week, I wrote in <a href="https://samdney.github.io/2018/03/primes-matrix.html">Primes
+matrix</a> about a
+possibility to represent primes. The negative part of this was, that
+there isn’t a nice way to generate <span class="math">\(X_{\left(i\right)}^{n\times n}\)</span>.
+Today, I want to add a few lines, how you can approximate it.</p>
+<p>Let’s look again at</p>
 <div class="math">$$
 X_{\left(1\right)}^{n\times n} :=
 \begin{pmatrix}
@@ -144,13 +148,13 @@ $$</div>
     \end{array}
 \right.
 $$</div>
-<p><strong>Explanation:</strong> Like in our old definition, we always get an '1' at all places
-which presents a divisible number for a given <span class="math">\(x_{i}\)</span>. Now, at the other
-positions, we get an value <span class="math">\(v\)</span> between <span class="math">\(0 &lt; |v| &lt; 1\)</span>, instead of '0' in our old
-definition. To get our '0's, like before, we use <span class="math">\(\lim_{m \rightarrow \infty}\)</span>.
-The factor two ensures a positive approxiation value.  </p>
-<p>With this, we also get
-</p>
+<p><strong>Explanation:</strong> Like in our old definition, we always get an ‘1’ at all
+places which presents a divisible number for a given <span class="math">\(x_{i}\)</span>. Now, at
+the other positions, we get an value <span class="math">\(v\)</span> between <span class="math">\(0 &lt; |v| &lt; 1\)</span>, instead
+of ‘0’ in our old definition. To get our ’0’s, like before, we use
+<span class="math">\(\lim_{m \rightarrow \infty}\)</span>. The factor two ensures a positive
+approxiation value.</p>
+<p>With this, we also get </p>
 <div class="math">$$
     \overline{x_{\left(i\right),kj}} := \left(1 - x_{\left(i\right),kj}\right)\delta_{kj} \\
     = \lim_{m \rightarrow \infty} \left(1 - \cos^{2m}\left(2\pi\frac{k- x_{i}}{2x_{i} + 1}\right)\right)\delta_{kj}  
@@ -160,11 +164,11 @@ $$</div>
     \overline{x_{\left(i\right),kj}} := \lim_{m \rightarrow \infty} \sin^{\frac{2}{m}}\left(2\pi\frac{k - x_{i}}{2x_{i} + 1}\right) \delta_{kj}
 $$</div>
 <p><strong>Explanation:</strong> We have a similiar situation like for our
-<span class="math">\(x_{\left(i\right),kj}\)</span>, but in this case now, we have to use <span class="math">\(2/m\)</span> to get an
-approximation for '1'.  </p>
-<p>We see that we can use <span class="math">\(\cos\)</span> and also <span class="math">\(\sin\)</span> depending on which values we
-are interested in. Of course, don't forget the different cases for <span class="math">\(\lim\)</span> with
-<span class="math">\(2m\)</span> respectively <span class="math">\(2/m\)</span>.  </p>
+<span class="math">\(x_{\left(i\right),kj}\)</span>, but in this case now, we have to use <span class="math">\(2/m\)</span> to
+get an approximation for ‘1’.</p>
+<p>We see that we can use <span class="math">\(\cos\)</span> and also <span class="math">\(\sin\)</span> depending on which values
+we are interested in. Of course, don’t forget the different cases for
+<span class="math">\(\lim\)</span> with <span class="math">\(2m\)</span> respectively <span class="math">\(2/m\)</span>.</p>
 <p>So, we can put this together to</p>
 <div class="math">$$
     \eta_{\left(i\right),kj}  := \lim_{m \rightarrow \infty} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right) \delta_{kj}
@@ -182,36 +186,39 @@ $$</div>
 <div class="math">$$
     \exp\left(Iz_{1}\right) \cdot \exp\left(Iz_{2}\right) = \exp\left(I\left(z_{1} + z_{2}\right)\right)  = \cos\left(z_{1} + z_{2}\right) + I\sin\left(z_{1} + z_{2}\right)
 $$</div>
-<p>so let's look at </p>
+<p>so let’s look at</p>
 <div class="math">$$
     z_{1} + z_{2} = 2\pi \epsilon\left(m\right)\left(\frac{k - x_{1}}{2x_{1} + 1} + \frac{k - x_{2}}{2x_{2} + 1}\right) \\
     = 2\pi \epsilon\left(m\right) \frac{\left(k - x_{1}\right)\left(2x_{2} + 1\right) + \left(k - x_{2}\right)\left(2x_{1} + 1\right)}{\left(2x_{1} + 1\right)\left(2x_{2} + 1\right)}
 $$</div>
-<p>In <a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a> we already discussed a similiar situation, which showed us that we don't have any problems if <span class="math">\(2x_{1} + 1\)</span> and <span class="math">\(2x_{2} + 1\)</span> are primes. For more information about this, please read the mentioned paper.  </p>
-<p>So we can do our final step
-</p>
+<p>In <a href="https://github.com/Samdney/primescalc"
+target="_blank">https://github.com/Samdney/primescalc</a> we already
+discussed a similiar situation, which showed us that we don’t have any
+problems if <span class="math">\(2x_{1} + 1\)</span> and <span class="math">\(2x_{2} + 1\)</span> are primes. For more
+information about this, please read the mentioned paper.</p>
+<p>So we can do our final step </p>
 <div class="math">$$
     x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
     = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
 $$</div>
-<p>Now we look at the special case of <span class="math">\(x_{i} = a, a+1, a+2, \dots, b-2, b-1,b\)</span>
-for the given sum</p>
+<p>Now we look at the special case of
+<span class="math">\(x_{i} = a, a+1, a+2, \dots, b-2, b-1,b\)</span> for the given sum</p>
 <div class="math">$$
   \sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right) = \\
   = I2\pi\frac{1}{4}\left(2k\psi^{\left(0\right)}\left(b + \frac{3}{2}\right) + \psi^{\left(0\right)}\left(b + \frac{3}{2}\right) - 2k\psi^{\left(0\right)}\left(\left(a - 1\right) + \frac{3}{2}\right) - \psi^{\left(0\right)}\left(\left(a-1\right) + \frac{3}{2}\right)\right)\epsilon\left(m\right)   
 $$</div>
 <p>since</p>
 <div class="math">$$
-    \sum_{x=1}^{n} \frac{k - x}{2x + 1} =
-    \frac{1}{4}\left(2k\psi^{\left(0\right)} \left(n + \frac{3}{2}\right) -
+    \sum_{x=1}^{n} \frac{k - x}{2x + 1}\\
+    = \frac{1}{4}\left(2k\psi^{\left(0\right)} \left(n + \frac{3}{2}\right) -
     2k\psi^{\left(0\right)}\left(\frac{3}{2}\right) - 2k + \psi^{\left(0\right)}\left(n + \frac{3}{2}\right) - \psi^{\left(0\right)}\left(\frac{3}{2}\right)\right) 
 $$</div>
-<p><span class="math">\(\psi^{\left(n\right)}\left(x\right)\)</span> is the n-the derivate of the digamma
-function.  </p>
+<p><span class="math">\(\psi^{\left(n\right)}\left(x\right)\)</span> is the n-the derivate of the
+digamma function.</p>
 <p>Finally, a small comment about permitted ranges.<br>
-Since our functions work with fix period <span class="math">\((k - x_{i})/(2x_{i} + 1)\)</span>, we have to
-ignore the range <span class="math">\([1,x_{i}]\)</span> for each <span class="math">\(x_{i}\)</span>-equation, else we will also
-receive invalid results.</p>
+Since our functions work with fix period <span class="math">\((k - x_{i})/(2x_{i} + 1)\)</span>, we
+have to ignore the range <span class="math">\([1,x_{i}]\)</span> for each <span class="math">\(x_{i}\)</span>-equation, else we
+will also receive invalid results.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

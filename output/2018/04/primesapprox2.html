@@ -100,50 +100,58 @@
 
       <div class="col-main w3-container">
         <section id="content">
-          <p>Since I wasn't happy about the final sum in my last post
-<a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a>, I think about an alternative way.  </p>
-<p>We had 
-</p>
+          <p>Since I wasn’t happy about the final sum in my last post <a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix:
+Approximation</a>,
+I think about an alternative way.</p>
+<p>We had </p>
 <div class="math">$$
     x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
     = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
 $$</div>
-<p>in which we made the product over all <span class="math">\(\exp\)</span>-functions for each <span class="math">\(x_{i}\)</span>. Now,
-instead we will do the product over the arguments of the <span class="math">\(\exp\)</span>-functions</p>
+<p>in which we made the product over all <span class="math">\(\exp\)</span>-functions for each <span class="math">\(x_{i}\)</span>.
+Now, instead we will do the product over the arguments of the
+<span class="math">\(\exp\)</span>-functions</p>
 <div class="math">$$
      x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \exp\left(\prod_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
 $$</div>
-<p>Let's look at the qualities of this product</p>
+<p>Let’s look at the qualities of this product</p>
 <div class="math">$$
     \prod_{i = a}^{b} \frac{k - x_{i}}{2x_{i} + 1}
 $$</div>
 <p>and under which conditions we receive integers. From my work
-<a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a>
-we already know that we get troubles if at least one of the <span class="math">\(2x_{i} + 1\)</span> is
-a divisible number. Hence, we always asume that all our
-numbers <span class="math">\(2x_{i} + 1\)</span> are primes.</p>
+<a href="https://github.com/Samdney/primescalc"
+target="_blank">https://github.com/Samdney/primescalc</a> we already
+know that we get troubles if at least one of the <span class="math">\(2x_{i} + 1\)</span> is a
+divisible number. Hence, we always asume that all our numbers
+<span class="math">\(2x_{i} + 1\)</span> are primes.</p>
 <p>We receive integer values in the following cases</p>
 <ul>
 <li>
-<p><strong>Case 1:</strong> For all <span class="math">\(k\)</span>-values which are also solutions for every single
-    <span class="math">\(\exp\)</span>-equation.</p>
+<p><strong>Case 1:</strong> For all <span class="math">\(k\)</span>-values which are also solutions for every
+    single <span class="math">\(\exp\)</span>-equation.</p>
 </li>
 <li>
-<p><strong>Case 2:</strong> For all <span class="math">\(k\)</span>-values which is a solution for at least one single
-    <span class="math">\(\exp\)</span>-equation and also leads to the trivial solution with
-    <span class="math">\(x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)\)</span>, <span class="math">\(N \in \mathbb{N}\)</span>.</p>
+<p><strong>Case 2:</strong> For all <span class="math">\(k\)</span>-values which is a solution for at least one
+    single <span class="math">\(\exp\)</span>-equation and also leads to the trivial solution with
+    <span class="math">\(x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)\)</span>,
+    <span class="math">\(N \in \mathbb{N}\)</span>.</p>
 </li>
 </ul>
-<p>For the second case, we take the example of two equations with <span class="math">\(x_{1} = 2\)</span> and
-<span class="math">\(x_{2} = 3\)</span></p>
+<p>For the second case, we take the example of two equations with
+<span class="math">\(x_{1} = 2\)</span> and <span class="math">\(x_{2} = 3\)</span></p>
 <div class="math">$$
     \frac{k - x_{1}}{2x_{1} + 1} \frac{k - x_{2}}{2x_{2} + 1} = \frac{\left(k - 2\right)\left(k - 3\right)}{5
     \cdot 7}
 $$</div>
-<p>Here we receive one solution for <span class="math">\(k = 37\)</span>, <span class="math">\(\frac{35 \cdot 34}{35} = 34\)</span>, which is also a solution for
-<span class="math">\(\frac{37 - 2}{5} = 7\)</span> and an other solution for <span class="math">\(k = 38\)</span>, <span class="math">\(\frac{36 \cdot
-35}{35} = 36\)</span> which is also a solution for <span class="math">\(\frac{38 - 3}{7} = 5\)</span>. We see that
-<span class="math">\(k\)</span> leads to the trivial case in which <span class="math">\(x_{j}\)</span> of one single <span class="math">\(\exp\)</span>-equation is equal to the prime value of an other single <span class="math">\(\exp\)</span>-equation or the product of primes of several single <span class="math">\(\exp\)</span>-equations.</p>
+<p>Here we receive one solution for <span class="math">\(k = 37\)</span>,
+<span class="math">\(\frac{35 \cdot 34}{35} = 34\)</span>, which is also a solution for
+<span class="math">\(\frac{37 - 2}{5} = 7\)</span> and an other solution for <span class="math">\(k = 38\)</span>,
+<span class="math">\(\frac{36 \cdot
+35}{35} = 36\)</span> which is also a solution for <span class="math">\(\frac{38 - 3}{7} = 5\)</span>. We
+see that <span class="math">\(k\)</span> leads to the trivial case in which <span class="math">\(x_{j}\)</span> of one single
+<span class="math">\(\exp\)</span>-equation is equal to the prime value of an other single
+<span class="math">\(\exp\)</span>-equation or the product of primes of several single
+<span class="math">\(\exp\)</span>-equations.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
