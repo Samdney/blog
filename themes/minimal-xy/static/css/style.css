@@ -393,6 +393,12 @@ ul.social li a:hover {
   margin: 3rem auto 3rem auto;
 }
 
+img {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
 #content p.content-highlight {
   color: #4CAF50;
   font-size: 18pt;

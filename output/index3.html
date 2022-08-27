@@ -96,236 +96,82 @@
     <section id="listing">
       <article class="w3-container w3-card-2 w3-white col-main">
         <header>
-          <h2><a href="/2020/06/adhocindependentsets-euleriancycles.html">Eulerian cycles for combinatorial independent sets determination</a></h2>
+          <h2><a href="/2021/10/patent-applications-link-list.html">Patent applications: Link list</a></h2>
           <div class="post-info">
             <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-              <span><time datetime="2020-06-12T19:30:00+02:00">Fr 12 Juni 2020</time> in <a href="/category/math.html" title="All articles in category Math">Math</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
- <a href="/files/bib/adhocindependentsetseuleriancycles.bib" title="References as bibfile" target="_blank" style="color:#1E90FF; font-size: 1em;">.bib</a> <a href="/files/cite/adhocindependentsetseuleriancycles-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
+              <span><time datetime="2021-10-28T19:13:00+02:00">Do 28 Oktober 2021</time> in <a href="/category/patents.html" title="All articles in category Patents">Patents</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
+<a href="/files/pdf/patentapplicationslinklist.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/cite/patentapplicationslinklist-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
             </div>
             <div class="w3-margin-right">
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/graph-theory.html" title="All articles with Graph Theory tag">#graph theory</a>
+                <a href="/tag/link-list.html" title="All articles with Link List tag">#link list</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/independent-sets.html" title="All articles with Independent Sets tag">#independent sets</a>
+                <a href="/tag/patent.html" title="All articles with Patent tag">#patent</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/algorithm.html" title="All articles with Algorithm tag">#algorithm</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/complexity.html" title="All articles with Complexity tag">#complexity</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/combinatorial.html" title="All articles with Combinatorial tag">#combinatorial</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/eulerian-cycles.html" title="All articles with Eulerian Cycles tag">#eulerian cycles</a>
+                <a href="/tag/patent-application.html" title="All articles with Patent Application tag">#patent application</a>
               </span>
             </div>
           </div>
         </header>
 
         <div class="entry-content">
-          	<p>This post is the second part of a series regarding combinatorial
-independent sets determination.</p>
+          	<p>This is a list of useful links in context of patent applications. I’m
+based in Germany, hence maybe not all links are also useful for you.
+Furthermore, it’s a living document, means, from time to time, I add new
+links.</p>
+<p>Patent search</p>
 <ul>
-<li>First post of this series: <a href="https://blog.carolin-zoebelein.de/2020/05/adhocindependentsets.html">Ad hoc method for independent
-    sets</a></li>
+<li>Google Patent Search:
+    <a href="https://www.google.com/?tbm=pts" title="External: Google Patent Search" target="_blank">https://www.google.com/?tbm=pts</a></li>
+<li>European Patent Office:
+    <a href="https://worldwide.espacenet.com" title="External: European Patent Office - Search" target="_blank">https://worldwide.espacenet.com</a></li>
+<li>United States Patent and Trademark Office:
+    <a href="https://patft.uspto.gov/netahtml/PTO/search-bool.html" title="External: United States Patent and Trademark Office - Search" target="_blank">https://patft.uspto.gov/netahtml/PTO/search-bool.html</a></li>
+<li>German Patent and Trademark Office:<ul>
+<li>DPMAregister - Official Publications and Register Database:
+    <a href="https://register.dpma.de/DPMAregister/Uebersicht" title="External: DPMAregister" target="_blank">https://register.dpma.de/DPMAregister/Uebersicht</a></li>
+<li>DEPATISnet - Database for online searches on patent publications
+    from around the world:
+    <a href="https://depatisnet.dpma.de/DepatisNet/depatisnet" title="External: DEPATISnet" target="_blank">https://depatisnet.dpma.de/DepatisNet/depatisnet</a></li>
 </ul>
-<p>In the last post, we described a naive algorithm to determine
-independent sets and got a terrible complexity. Now, we want to grab
-this algorithm to use it as a base for an alternative way of independent
-set generation. Instead of putting edges in an arbitrary order into our
-algorithm, we will consider properties of the set of edges <span class="math">\(E\)</span>, given by
-Eulerian cycles.</p>
-<h2>Eulerian cycle expansions</h2>
-<p>For improving our algorithm, we will need Eulerian cycles.</p>
-<p><strong>Definition 1</strong> (Eulerian cycle)<br>
-<em>An Eulerian cycle in an undirected graph is a cycle that uses each edge
-exactly once. A graph which owns such a cycle is called Eulerian.</em></p>
-<p><em>If <span class="math">\(G\)</span> is a connected graph, then the following statements are
-equivalent:</em></p>
-<ul>
-<li><em><span class="math">\(G\)</span> is Eulerian</em></li>
-<li><em>Every vertex <span class="math">\(v \in V\)</span> of <span class="math">\(G\)</span> have an even degree
-    <span class="math">\(\deg\left(v\right)\)</span></em></li>
-<li><em>The set <span class="math">\(E\)</span> of <span class="math">\(G\)</span> is the set union of all edges of pairwise
-    disjunct cycles</em></li>
-</ul>
-<p><em>This was proofed by Hierholzer [HiWi73].</em></p>
-<p>So, what we need is a connected graph which only has vertices with even
-degree. Because, of course, not all graphs statisfy this conditions by
-default, we will now think, how we can map a given graph <span class="math">\(G\)</span> to a graph
-<span class="math">\(G^{\prime}\)</span> which statisfies the conditions, but still gives us the
-searched independent sets of <span class="math">\(G\)</span>, without increasing noticeable the full
-algorithm complexity, finally.</p>
-<h3>Connectivity</h3>
-<p>At first, let’s check if the graph <span class="math">\(G\)</span> is connected. This can be done by
-breadth-first search with <span class="math">\(\mathcal{O}\left(|V| + |E|\right)\)</span>. If yes,
-we don’t have to do anything anymore regarding connectivity. In the case
-of no, we have several independent, pairwise disconnected, subgraphs
-<span class="math">\(G_{0}, G_{1}, \dots\)</span> which we can handle without much work. We
-determine the independent sets <span class="math">\(S_{G_{i}}\)</span> for each <span class="math">\(G_{i}\)</span> separately.
-After determining all independet sets, we finally have simply to combine
-all of this <span class="math">\(S_{G_{i}}\)</span> with each other. To find all strongly components
-of a graph we can use Tarjan’s algorithm [Tarj72] which also works
-with <span class="math">\(\mathcal{O}\left(|V| + |E|\right)\)</span>. Later, we will see that the
-final independent sets can be easily derived from our partial results.</p>
-<h3>Even degrees</h3>
-<p>The second condition for an Eulerian graph is regarding even degrees. At
-first, let’s check the degree of each vertex in <span class="math">\(G\)</span>. This is a trivial
-thing with linear complexity. If yes, we don’t have to do anything
-anymore regarding even degrees. In the case of no, we have to do some
-modification of <span class="math">\(G\)</span>. From basic graph theory we know that for every
-graph <span class="math">\(G\)</span> we have <span class="math">\(2|E| = \sum_{v_{i} \in V} \deg\left(v_{i}\right)\)</span>.
-Hence, we know that we always have an even number of vertices with odd
-degree. With this we can simply map our graph <span class="math">\(G\)</span> to an Eulerian graph
-by connecting always two of our odd degree vertices <span class="math">\(\{u,v\}\)</span> by one new
-introduced helper vertex <span class="math">\(h \in H\)</span> (be <span class="math">\(H\)</span> the set of helper vertices)
-and hence we get the two new edges <span class="math">\(\left(u,h\right)\)</span> and
-<span class="math">\(\left(h,v\right)\)</span>. So, what will be the consequences of adding an
-helper vertex to our graph, regarding the independent sets? We have two
-possible cases here:</p>
-<ul>
-<li>
-<p>The helper vertex <span class="math">\(h\)</span> connects two vertices <span class="math">\(u\)</span> and <span class="math">\(v\)</span> which belong
-    to the same independent set <span class="math">\(S\)</span> which means <span class="math">\(u \in S \wedge v \in S\)</span>
-    and hence <span class="math">\(\left(u,v\right) \notin E\)</span>.<br>
-<em>Consequence:</em> Since <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are still not directly connected
-    with each other, they will still belong to the same independent set.
-    Since, each of them have a connection to <span class="math">\(h\)</span>, <span class="math">\(h\)</span> will become a
-    member of an other, second, independent set. So, we will get our
-    original independent set <span class="math">\(S\)</span> unchanged and any other second
-    independent set with <span class="math">\(S^{\prime} \cup \{h\}\)</span>.</p>
-</li>
-<li>
-<p>The helper vertex <span class="math">\(h\)</span> connects two vertices <span class="math">\(u\)</span> and <span class="math">\(v\)</span> which belong
-    to two different independent sets <span class="math">\(S_{i}, S_{j}\)</span> with
-    <span class="math">\(S_{i} \nsubseteq S_{j}\)</span>, which means
-    <span class="math">\(u \in S_{i} \wedge v \in S_{j}\)</span> and hence
-    <span class="math">\(\left(u,v\right) \in E\)</span>.<br>
-<em>Consequence:</em> Since <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are already directly connected,
-    also with a connection to <span class="math">\(h\)</span> they will still both belong to two
-    different sets. Since, each of them have a connection to <span class="math">\(h\)</span>, <span class="math">\(h\)</span>
-    will become a member of an other, third, independent set. So, we
-    will get our original two independent sets <span class="math">\(S_{i}\)</span> and <span class="math">\(S_{j}\)</span>
-    unchanged and any other third independent set with
-    <span class="math">\(S_{k} \cup \{h\}\)</span>.</p>
 </li>
 </ul>
-<p>We will come back to this, later.</p>
-<h2>Eulerian cycle partitioning</h2>
-<p>After mapping our graph <span class="math">\(G\)</span> to an Eulerian one, we determine the
-Eulerian cycles with Hierholzer’s algorithm [HiWi73] and complexity
-<span class="math">\(\mathcal{O}\left(|E|\right)\)</span>. Like already mentioned, a graph <span class="math">\(G\)</span> can
-be disconnected into several subgraphs <span class="math">\(G_{0}, G_{1}, \dots\)</span>. For each
-of them we have to identify the Euler cycles. The outcome of this can be
-written in a general way like as the following example:</p>
-<div class="math">$$\begin{equation}
-    \underbrace{\left(\overbrace{\underset{0}{a_{1}},\underset{1}{b_{1}},\underset{2}{c_{1}}}^{C_{0}}, \overbrace{a_{2},\underset{3}{d_{1}},\underset{4}{e_{1}},\underset{5}{f_{1}}}^{C_{1}},\overbrace{b_{2}}^{C_{2}},\overbrace{e_{2}}^{C_{3}},\overbrace{a_{3}}^{C_{4}}\right)}_{G_{0}} \underbrace{\left(\overbrace{\underset{0}{g_{1}},\underset{1}{h_{1}},\underset{2}{i_{1}}}^{C^{\prime}_{0}},\overbrace{\underset{3}{g_{2}}}^{C^{\prime}_{1}}\right)}_{G_{1}}\cdots
-\label{eq:eulercycles}
-\end{equation}$$</div>
-<p>Here, <span class="math">\(a_{i}, b_{i}, \cdots, h_{i}, i_{i}\)</span> are vertices of <span class="math">\(V\)</span>, their
-indices are the numbers of their appeareance and the numbers below them
-are the numbering of the first appeareance order within the Eulerian
-graph. In each graph we can find inner cycles <span class="math">\(C_{i}\)</span> which are
-recognized through an additional appeareance of an already in the
-sequence existing vertex. For our further steps, we will see, that it is
-useful to cut a graph sequence exactly at this points.</p>
-<p>What we want to do now, is to put this information of one graph <span class="math">\(G_{i}\)</span>
-in a more helpful data structure. For this we use a list of linked lists
-for each <span class="math">\(G_{i}\)</span> in which we save for each cycle its size <span class="math">\(s\)</span>, its first
-element and the the position of this first element within the sequence
-of all first appearences of numbers of the whole Eulerian sequence, (see
-table 1), at all.</p>
-<p><img alt="GitHub
-Logo" src="/blog/images/adhocindependentsets-euleriancycles/table1AdjacenceList.jpg"></p>
-<p>We know the maximum number of edges of a graph <span class="math">\(G\)</span> is
-<span class="math">\(\frac{1}{2}\left(|V|^{2} - |V|\right)\)</span> and that we have this value plus
-one for entries of <span class="math">\(G\)</span>, like in (). So we have a total complexity of
-<span class="math">\(\mathcal{O}\left(\left(\frac{1}{2}\left(|V|^{2} - |V|\right) + 1\right)^{2}\right) = \mathcal{O}\left(|V|^{4}\right)\)</span>
-for generating all lists of linked lists of a given <span class="math">\(G\)</span>, like that.</p>
-<h2>Outlook</h2>
-<p>In the next post, we will use this information given by the eulerian
-cycle to define an appropriate representation for a combinatorial
-approach for determination of independent sets.</p>
-<h2>References</h2>
-<p><span class="csl-left-margin">[HiWi73] </span><span
-class="csl-right-inline"><span class="smallcaps">Hierholzer, Carl</span>
-; <span class="smallcaps">Wiener, Chr</span>: Über die Möglichkeit,
-einen Linienzug ohne Wiederholung und ohne Unterbrechung zu umfahren.
-In: <em>Mathematische Annalen</em> Bd. 6, Springer-Verlag (1873), Nr. 1,
-S. 30–32</span></p>
-<p><span class="csl-left-margin">[Tarj72] </span><span
-class="csl-right-inline"><span class="smallcaps">Tarjan, Robert</span>:
-Depth-first search and linear graph algorithms. In: <em>SIAM journal on
-computing</em> Bd. 1, SIAM (1972), Nr. 2, S. 146–160</span></p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
+<p>Patent offices</p>
+<ul>
+<li>European Patent Office:
+    <a href="https://www.epo.org/" title="External: European Patent Office" target="_blank">https://www.epo.org/</a></li>
+<li>United States Patent and Trademark Office:
+    <a href="https://www.uspto.gov/" title="External: United States Patent and Trademark Office" target="_blank">https://www.uspto.gov/</a></li>
+<li>German Patent and Trademark Office:
+    <a href="https://www.dpma.de/" title="External: German Patent and Trademark Office" target="_blank">https://www.dpma.de/</a></li>
+</ul>
+<p>Legal texts</p>
+<ul>
+<li>European Patent Office (EPO) - Legal texts:
+    <a href="https://www.epo.org/law-practice/legal-texts.html" title="External: European Patent Office (EPO) - Legal texts" target="_blank">https://www.epo.org/law-practice/legal-texts.html</a></li>
+<li>US Consolidated Patent Laws:
+    <a href="https://www.uspto.gov/web/offices/pac/mpep/consolidated_laws.pdf" title="External: US Consolidated Patent Laws, United States Patent and Trademark Office" target="_blank">https://www.uspto.gov/web/offices/pac/mpep/consolidated_laws.pdf</a></li>
+<li>Patentgesetz (German Patent Law):
+    <a href="https://www.gesetze-im-internet.de/patg/BJNR201170936.html" title="External: Patentgesetz (German Patent Law), Bundesamt für Justiz" target="blank">https://www.gesetze-im-internet.de/patg/BJNR201170936.html</a></li>
+</ul>
+<p>WIPANO (German government, Patent application funding program)</p>
+<ul>
+<li>Bundesministerium für Wirtschaft und Klimaschutz: WIPANO (Wissens-
+    und Technologietransfer durch Patente und Normen):
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/Patentierung-Unternehmen/patentierung-unternehmen.html" title="External: WIPANO, Bundesministerium für Wirtschaft und Klimaschutz" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/Patentierung-Unternehmen/patentierung-unternehmen.html</a></li>
+<li>WIPANO - Programminformation:
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-programminformation-2021.pdf" title="External: WIPANO Programminformation, Bundesministerium für Wirtschaft und Energie" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-programminformation-2021.pdf</a></li>
+<li>WIPANO - Änderung der Richtlinien:
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-aenderung-richtlinie_29-03-2021.pdf" title="External: WIPANO Änderung der Richtlinien, Bundesministerium der Justiz und für Verbraucherschutz" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-aenderung-richtlinie_29-03-2021.pdf</a></li>
+<li>Brochüre “Von der Idee zum Markterfolg”:
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/broschuere_von-der-idee-zum-markterfolg.pdf" title="External: Von der Idee zum Markterfolg, Bundesministerium für Wirtschaft und Energie" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/broschuere_von-der-idee-zum-markterfolg.pdf</a></li>
+</ul>
         </div>
 
         <footer>
-          <a class="w3-btn w3-green w3-right" href="/2020/06/adhocindependentsets-euleriancycles.html">Read &#10093;</a>
+          <a class="w3-btn w3-green w3-right" href="/2021/10/patent-applications-link-list.html">Read &#10093;</a>
         </footer>
       </article>
 
