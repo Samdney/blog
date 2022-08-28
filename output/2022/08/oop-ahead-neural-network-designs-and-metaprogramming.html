@@ -150,7 +150,7 @@ limit, often set to <span class="math">\(0\)</span>. Now, we want to look at a s
 this, we define <span class="math">\(x_{1}, x_{2} \in \{ 0, 1\}\)</span> and <span class="math">\(h := 0\)</span>, at first.
 This means we have the possible inputs <span class="math">\(00\)</span>, <span class="math">\(01\)</span>, <span class="math">\(10\)</span>, and <span class="math">\(11\)</span>.
 Furthermore, let’s say <span class="math">\(w_{1} = w_{2} = -0.5\)</span>. So, what do we get with
-that? In fact, that’s a logical NAND.</p>
+that? In fact, that’s a logical NOR.</p>
 <div class="math">$$\begin{equation}
   X\left(x_{1}, x_{2} \right) =
   \begin{cases}
@@ -163,9 +163,9 @@ that? In fact, that’s a logical NAND.</p>
 <p>We see, that the combination of the input and the hidden layer, with
 specific weights and activiation function, can be identified with
 specific logical statements. Well, the question is now, are there also
-other ways to present, in our example NAND, by an other kind of graph
+other ways to present, in our example NOR, by an other kind of graph
 representation. For this, look at the following ones:</p>
-<p><img alt="NAND network" src="/blog/images/disruptivedesignneuralnetworks/ifmaxISs.png"></p>
+<p><img alt="NOR network" src="/blog/images/disruptivedesignneuralnetworks/ifmaxISs.png"></p>
 <p>Given be a graph <span class="math">\(G = \left(V, E\right)\)</span> consisting of the three
 vertices <span class="math">\(v_{1}\)</span>, <span class="math">\(v_{2}\)</span>, and <span class="math">\(v_{3}\)</span>. We want to map the four possible
 <span class="math">\(x_{2}x_{1}\)</span> constellations on the edges <span class="math">\(e_{i}\)</span> of <span class="math">\(G\)</span>. For this, we
@@ -174,9 +174,9 @@ say that <span class="math">\(G\)</span> never has an edge <span class="math">\(
 doesn’t exist, and that the edge <span class="math">\(e_{3} := \{ v_{1}, v_{3} \}\)</span> exists
 iff input <span class="math">\(x_{2} = 1\)</span>, else it doesn’t exist. In this way, we represent
 each possible input by one specific graph.</p>
-<p>We can now identifiy this graphs with an logical NAND by the following
+<p>We can now identifiy this graphs with an logical NOR by the following
 consideration. Assuming <span class="math">\(P\)</span>, be an unique graph property, then we can
-indentify the output of NAND with one specific graph property
+indentify the output of NOR with one specific graph property
 characteristics, or the changing of it, respectively.</p>
 <p>In our case, for example, we will take the maximum independent set of
 each possible input (see also graphic). We can see that for the cases
@@ -186,7 +186,7 @@ and <span class="math">\(10\)</span>, has two maximum independent sets, each, bu
 each other.</p>
 <p>We take this observations, and decide to identify the case of a maximum
 independent set of size <span class="math">\(3\)</span>, as true, else as false. Hence, our graphics
-shows us the belonging NAND graph representation of the neural network
+shows us the belonging NOR graph representation of the neural network
 definition of above.</p>
 <p><img alt="Concept" src="/blog/images/disruptivedesignneuralnetworks/concept.png"></p>
 <p>Well that have been a very primitive example, but in our work (see

@@ -60,7 +60,7 @@ limit, often set to $0$. Now, we want to look at a specific case. For
 this, we define $x_{1}, x_{2} \in \{ 0, 1\}$ and $h := 0$, at first.
 This means we have the possible inputs $00$, $01$, $10$, and $11$.
 Furthermore, let’s say $w_{1} = w_{2} = -0.5$. So, what do we get with
-that? In fact, that’s a logical NAND.
+that? In fact, that’s a logical NOR.
 
 $$\begin{equation}
   X\left(x_{1}, x_{2} \right) =
@@ -75,11 +75,11 @@ $$\begin{equation}
 We see, that the combination of the input and the hidden layer, with
 specific weights and activiation function, can be identified with
 specific logical statements. Well, the question is now, are there also
-other ways to present, in our example NAND, by an other kind of graph
+other ways to present, in our example NOR, by an other kind of graph
 representation. For this, look at the following ones:
 
  
-![NAND network](/blog/images/disruptivedesignneuralnetworks/ifmaxISs.png)
+![NOR network](/blog/images/disruptivedesignneuralnetworks/ifmaxISs.png)
 
 
 Given be a graph $G = \left(V, E\right)$ consisting of the three
@@ -91,9 +91,9 @@ doesn’t exist, and that the edge $e_{3} := \{ v_{1}, v_{3} \}$ exists
 iff input $x_{2} = 1$, else it doesn’t exist. In this way, we represent
 each possible input by one specific graph.
 
-We can now identifiy this graphs with an logical NAND by the following
+We can now identifiy this graphs with an logical NOR by the following
 consideration. Assuming $P$, be an unique graph property, then we can
-indentify the output of NAND with one specific graph property
+indentify the output of NOR with one specific graph property
 characteristics, or the changing of it, respectively.
 
 In our case, for example, we will take the maximum independent set of
@@ -105,7 +105,7 @@ each other.
 
 We take this observations, and decide to identify the case of a maximum
 independent set of size $3$, as true, else as false. Hence, our graphics
-shows us the belonging NAND graph representation of the neural network
+shows us the belonging NOR graph representation of the neural network
 definition of above.
 
 
