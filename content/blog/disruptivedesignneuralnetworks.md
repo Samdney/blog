@@ -2,7 +2,7 @@ title:      OOP Ahead Neural Network Designs and Metaprogramming
 slug:       oop-ahead-neural-network-designs-and-metaprogramming
 date:       2022-08-27 14:00
 category:   Math        
-tags:       neural networks, oop, object oriented programming, metaprogramming, graph theory
+tags:       neural networks, oop, object oriented programming, metaprogramming, graph theory, id: project_0001w
 author:     Carolin Zöbelein
 summary:    A disruptive design concept for neural networks.
 id:         post_0019   
