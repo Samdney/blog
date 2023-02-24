@@ -2,6 +2,9 @@ Title:      References
 Date:       2022/08/06 17:00
 Slug:       references  
 
+<b>This site contains the references mentioned in the blog posts of the blog.<br />
+If you are looking for my research work, visit <a href="https://research.carolin-zoebelein.de" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de</a>.</b>
+
 <a href='https://blog.carolin-zoebelein.de/files/references.pdf' title='References as pdf' target='_blank'><i class='fa-solid fa-file-pdf' style='color:red; font-size: 1.3em;'></i></a><a href='https://blog.carolin-zoebelein.de/files/references.bib' title='References as bibfile' target='_blank' style='color:#1E90FF; font-size: 1em;'>.bib</a><br /><br />
 <span class="csl-left-margin">\[1\] </span><span
 class="csl-right-inline">C. Hierholzer, C. Wiener, Über die möglichkeit,
