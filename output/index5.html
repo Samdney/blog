@@ -97,158 +97,156 @@
     <section id="listing">
       <article class="w3-container w3-card-2 w3-white col-main">
         <header>
-          <h2><a href="/2020/06/mfdn-protocol-basicconditions.html">Basic conditions for a mathematical forced decentralized network protocol (MfDN-Protocol)</a></h2>
+          <h2><a href="/2020/05/adhocindependentsets.html">Ad hoc method for independent sets</a></h2>
           <div class="post-info">
             <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-              <span><time datetime="2020-06-07T19:30:00+02:00">So 07 Juni 2020</time> in <a href="/category/decentralization.html" title="All articles in category Decentralization">Decentralization</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
-<a href="/files/pdf/mfdnprotocolbasicconditions.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/cite/mfdnprotocolbasicconditions-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
+              <span><time datetime="2020-05-20T19:30:00+02:00">Mi 20 Mai 2020</time> in <a href="/category/math.html" title="All articles in category Math">Math</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
+<a href="/files/pdf/adhocindependentsets.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/cite/adhocindependentsets-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
             </div>
             <div class="w3-margin-right">
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/decentralization.html" title="All articles with Decentralization tag">#decentralization</a>
+                <a href="/tag/graph-theory.html" title="All articles with Graph Theory tag">#graph theory</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/networks.html" title="All articles with Networks tag">#networks</a>
+                <a href="/tag/independent-sets.html" title="All articles with Independent Sets tag">#independent sets</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/protocol.html" title="All articles with Protocol tag">#protocol</a>
+                <a href="/tag/algorithm.html" title="All articles with Algorithm tag">#algorithm</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/mathematical.html" title="All articles with Mathematical tag">#mathematical</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/privacy.html" title="All articles with Privacy tag">#privacy</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/mfdn-protocol.html" title="All articles with Mfdn-Protocol tag">#MfDN-Protocol</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/combsee.html" title="All articles with Combsee tag">#Combsee</a>
+                <a href="/tag/complexity.html" title="All articles with Complexity tag">#complexity</a>
               </span>
             </div>
           </div>
         </header>
 
         <div class="entry-content">
-          	<p>The following was published as research notes on <a
-href="https://research.carolin-zoebelein.de/Public/Publications/Notes-Basic-conditions-for-a-mathematical-forced-decentralized-network-protocol-MfDN-Protocol.html"
-target="_blank">https://research.carolin-zoebelein.de/Public/Publications/Notes-Basic-conditions-for-a-mathematical-forced-decentralized-network-protocol-MfDN-Protocol.html</a>
-at 2020/02/20, for the first time.</p>
-<h2>Introduction</h2>
-<p>In this notes, we will discuss the main basic conditions which are
-necessary for a mathematical forced decentralized network protocol,
-short <em>MfDN-Protocol</em>.</p>
-<h2>What does MfDN-Protocol mean?</h2>
-<p>Decentralization is given by distributing computation power, or by
-‘sharing splited’ data or information with each other on a technical,
-computer science level. All of this could theoretically be happen also
-on only one device. Also the common shared data, can be centralized
-without any problem on only a few or even one machine.</p>
-<p>Hence, <em>Mathematical forced dececentralization</em> means a protocol which
-follows a mathematical structure which needs mandatory decentralization
-to be able to work. To understand this concept better, we want to
-introduce it by having a look at the differences between a centralized
-service, a classical decentralized service and a mathematical forced
-decentralized service, at first.</p>
-<h3>Centralized service</h3>
-<p><em>Situation.</em> The service is maintained by a single party on a
-centralized computer network.</p>
-<p><em>Main design points.</em></p>
-<ol>
-<li>One single party maintains the service</li>
-<li>The service runs on a centralized computer network</li>
-<li>3 Every user of the service have to connect to this centralized
-    network</li>
-<li>4 Data is saved centralized</li>
-<li>5 Traffic is centralized to the service computer network</li>
-</ol>
-<p><em>Disadvantages.</em> The service itself, the collected data and the
-generated traffic, the user traffic as well as the service traffic, is
-centralized and hence in the power of the single party who runs the
-service. This makes acquisition of data and censorship of information
-very easy. Additionally, centralized networks have limited scalability.</p>
-<h3>Classical decentralized service</h3>
-<p><em>Situation.</em> The service is maintained by a bunch of parties on a
-decentralized computer network.</p>
-<p><em>Main design points.</em></p>
-<ol>
-<li>Several parties maintain the service</li>
-<li>The service runs in a decentralized computer network</li>
-<li>Every user of the service connects to the decentralized network</li>
-<li>Data can be saved decentralized</li>
-<li>Traffic is centralized to the members of the whole decentralized
-    computer network</li>
-</ol>
-<p><em>Disadvantages.</em> Even if we have a decentralized service, a
-centralization on a deeper level is still possible. Services itself, can
-be designed as centralized services itself, only running as several
-instances on several computers, data can, but not have, to be saved
-decentralized and even if users connect to a decentralized service,
-their individuell traffic can still be distributed within the network in
-the same way like within a centralized network, without mandatory
-anonymization and identifiable information about the origin. Their
-individual traffic can be still centralized, too.</p>
-<h3>Mathematical forced decentralized service</h3>
-<p><em>Situation.</em> A mathematical forced decentralized network protocol is
-maintained by a bunch of parties on a decentralized computer network.
-The service is run on the top of this protocol.</p>
-<p><em>Main design points.</em></p>
-<ol>
-<li>Several parties maintain the protocol network for the service</li>
-<li>The service runs on the top of the mathematical forced decentralized
-    network protocol in a decentralized computer network</li>
-<li>Every user of the service connect to this protocol which coordinates
-    the decentralization itself</li>
-<li>All data is decentralized saved, organized by the protocol</li>
-<li>The protocol manages the partition of user and server traffic within
-    the network</li>
-<li>The protocol is designed in such a way, that each service which runs
-    on the top of it, can’t be centralized, without loosing the ability
-    to work. This forced decentralization is given by mathematical
-    design aspects of the protocol, not by the technical, physical
-    decentralization on computer level, alone.</li>
-</ol>
-<p><em>Disadvantages.</em> A given service has to be designed in such a way, that
-it is able to work on top of our given protocol (the protocol should
-support as much service designs as possible but it will be necessary
-that a service fulfills at least a minimum amount of design constraints.</p>
-<h2>Critical design questions</h2>
-<p>For our protocol, we have to take care of the following critical design
-questions:</p>
-<ol>
-<li>Defining the minimum amount of design contraints which a service has
-    to fulfill</li>
-<li>How to take care of avoiding a ‘fake’ decentralization by
-    e.g. running several virtual machines on the same centralized
-    server?</li>
-<li>Best way of handling and coordinating network members,
-    synchronization, concurrency control, ….  </li>
-<li>Best way of handling recovery problems because of user errors,
-    application errors or partial system failures</li>
-<li>The given hardware and infrastrucutre have to be able to handle the
-    amount of traffic, synchronization, ….</li>
-</ol>
-<h2>Main decentralization points</h2>
-<p>If we look at the mentioned concepts of networks, it crystallizes the
-following main decentralization points for our MfDN-Protocol:</p>
-<ol>
-<li>A mathematical forced decentralization of the running service</li>
-<li>A mathematical forced decentralization of data</li>
-<li>A mathematical forced decentralization of user and service traffic</li>
-</ol>
-<p>We will more clarify this in the further research discussion notes. For
-the moment, we will simple keep this in mind, at first.</p>
-<h2>Conclusion</h2>
-<p>After having a look at the basic conditions for our mathematicial forced
-decentralized protocol, we want to put this in a more clear design in
-the next notes. There we will discuss the basic protocol design and the
-deeper parts with the mathematical aspects of our work.</p>
-<h2>Acknowledgement</h2>
-<p>Special thanks to the individual donators for supporting this work.</p>
+          	<p>Today, we want to determine indpendent sets of an arbitrary undirected
+graph. Which can be done by a trivial ad hoc method, described as
+follows.</p>
+<h2>Algorithm</h2>
+<p>We have given an arbitrary undireced graph <span class="math">\(G = \left(V, E\right)\)</span> with
+<span class="math">\(\deg\left(u_{i}\right) \geq 1\)</span> for all <span class="math">\(u_{i} \in V\)</span>. The set
+<span class="math">\(V_{0} \subseteq V\)</span> of vertices with <span class="math">\(\deg\left(u_{i}\right) = 0\)</span> will
+not be considered. Since, we are interested in the independent sets of
+<span class="math">\(G\)</span>, the set <span class="math">\(V_{0}\)</span> is a trivial case which, and it’s subsets, can be
+simply added to any final solution of independent sets. Our following
+considerations will work for every arbitrary kind of graph, so we don’t
+have to make any other further assumption regarding possible special
+kinds of graphs respectively sub-graphs, at the moment.</p>
+<p>We start our independent set generation with the assumption that all
+edges <span class="math">\(\left(u_{i}, u_{j}\right) \in E\)</span> are removed from our graph <span class="math">\(G\)</span>.
+For this trivial case, we would have the one largest independet set easy
+given by
+<span class="math">\(S_{0} := \{u_{1}, u_{2}, u_{3}, u_{4}, \dots, u_{|V|-1}, u_{|V|}\}\)</span>.</p>
+<p>Now, we take an arbitrary edge <span class="math">\(e_{1} := \left(u_{1}, u_{2}\right)\)</span> from
+the set of the belonging edges <span class="math">\(E\)</span> of <span class="math">\(G\)</span>. From the definition of an
+independent set follows that <span class="math">\(u_{1}\)</span> and <span class="math">\(u_{2}\)</span> can not be element of
+the same independent set of the same time. Since
+<span class="math">\(u_{1} \in S_{0} \wedge u_{2} \in S_{0}\)</span> is given, we have to split
+<span class="math">\(S_{0}\)</span> into the two new independet sets
+<span class="math">\(S_{0} = \{u_{1}, u_{3}, u_{4}, \dots, u_{|V|-1}, u_{|V|}\}\)</span> and
+<span class="math">\(S_{1} = \{u_{2}, u_{3}, u_{4}, \dots, u_{|V|-1}, u_{|V|}\}\)</span>.</p>
+<p>In the next step, we take edge <span class="math">\(e_{2}\)</span>. Here, we have now to differ
+between three cases. The two vertices of <span class="math">\(e_{2}\)</span> both lies completely in
+<span class="math">\(S_{0}\)</span> or both lies in <span class="math">\(S_{1}\)</span> or in <span class="math">\(S_{0}\)</span> and <span class="math">\(S_{1}\)</span>, at the same
+time. Which means our possible outcome for
+<span class="math">\(e_{2} := \left(u_{1}, u_{3}\right)\)</span> would be
+<span class="math">\(S_{0} \setminus \{u_{1}\}\)</span>, <span class="math">\(S_{0} \setminus \{u_{3}\}\)</span> and <span class="math">\(S_{1}\)</span>, or
+for <span class="math">\(e_{2} := \left(u_{2}, u_{3}\right)\)</span> we get <span class="math">\(S_{0}\)</span>,
+<span class="math">\(S_{1} \setminus \{u_{2}\}\)</span> and <span class="math">\(S_{1} \setminus \{u_{3}\}\)</span>, or finally
+for <span class="math">\(e_{2} := \left(u_{3},u_{4}\right)\)</span> we get
+<span class="math">\(S_{0} \setminus \{u_{3}\}\)</span>, <span class="math">\(S_{0} \setminus \{u_{4}\}\)</span>,
+<span class="math">\(S_{1} \setminus \{u_{3}\}\)</span> and <span class="math">\(S_{1} \setminus \{u_{4}\}\)</span>.</p>
+<p>So, we see that we can generate all of our independent sets by a simple,
+naive way of taking an edge of <span class="math">\(E\)</span> and looking if this edge is an
+element of an already generated independet set <span class="math">\(S_{i}\)</span>. If yes then
+split this set into two new ones, by copy <span class="math">\(S_{i}\)</span> to a second set
+<span class="math">\(S_{j}\)</span> and removing the first vertex of <span class="math">\(e\)</span> from <span class="math">\(S_{i}\)</span> and removing
+the second vertex of <span class="math">\(e\)</span> from <span class="math">\(S_{j}\)</span>, else nothing has to be done.</p>
+<p>By doing this for all edges <span class="math">\(e\)</span> of <span class="math">\(E\)</span>, we finally get all independent
+sets of <span class="math">\(G\)</span>.</p>
+<h2>Complexity</h2>
+<p>The complexity of this algorithm is easy to determine. Assume we have
+given the worst case scenario of a complete graph <span class="math">\(G\)</span> (a graph in which
+every pair of distinct vertices is connected by an unique edge) with
+<span class="math">\(|V|\)</span> vertices and edges whose number is given by
+<span class="math">\(|E| = \tbinom{|V|}{2} = \frac{1}{2}|V|^{2} - \frac{1}{2}|V|\)</span>. To
+determine all independent sets, we have to do our algorithm for <span class="math">\(|E|\)</span>
+steps, in which we will have to check for this edge in every already
+existing independent set and finally split it into two. Hence, in the
+<span class="math">\(|E|\)</span>’th step, we have to check <span class="math">\(2^{|E|}\)</span> independent sets for the
+current edge. For the complexity we get with this
+<span class="math">\(\mathcal{O}\left(2^{|V|^{2}}\right)\)</span>.</p>
+<h2>Outlook</h2>
+<p>All of this seems not to look very exciting, but we will see that we can
+derive nice things from it, in future blog posts.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
         </div>
 
         <footer>
-          <a class="w3-btn w3-green w3-right" href="/2020/06/mfdn-protocol-basicconditions.html">Read &#10093;</a>
+          <a class="w3-btn w3-green w3-right" href="/2020/05/adhocindependentsets.html">Read &#10093;</a>
         </footer>
       </article>
 
@@ -288,6 +286,7 @@ deeper parts with the mathematical aspects of our work.</p>
       
 	  
 	  <!-- TODO TODO TODO -->
+	  <!--
 	  <article class="w3-container w3-card-2 w3-white col-main">
 	  <h1>Featured</h1>
 	  <header>
@@ -309,9 +308,9 @@ I’m discussing digits of powers of 2, and which conditions are necessary to ge
           <a class="w3-btn w3-green w3-right" href="/2022/06/powers-of-2-and-k-digits-structures.html">Read &#10093;</a>
         </footer>
 	  </article>
-		      
-	  <br><br><br>      
-		      
+	  
+	  <br><br><br>
+	  -->
 
 	<!-- TODO -->
 	  

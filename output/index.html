@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>OOP Ahead Neural Network Designs and Metaprogramming</title>
+	<title>Powers of 2 and k-digits structures</title>
 
     <!-- Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +15,16 @@
 
     <!-- Social -->
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="OOP Ahead Neural Network Designs and Metaprogramming"/>
-    <meta property="og:description" content="<p>A disruptive design concept for neural networks.</p>"/>
+    <meta property="og:title" content="Powers of 2 and k-digits structures"/>
+    <meta property="og:description" content="<p>Powers of 2 and some of their k-digit structures.</p>"/>
     <meta property="og:site_name" content="Carolin's Blog" />
     <meta property="og:url" content="https://blog.carolin-zoebelein.de"/>
     <meta property="og:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg"/>
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@SamdneyTweet" />
-    <meta name="twitter:title" content="OOP Ahead Neural Network Designs and Metaprogramming" />
-    <meta name="twitter:description" content="<p>A disruptive design concept for neural networks.</p>" />
+    <meta name="twitter:title" content="Powers of 2 and k-digits structures" />
+    <meta name="twitter:description" content="<p>Powers of 2 and some of their k-digit structures.</p>" />
     <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
     <!-- Feed -->
@@ -97,126 +97,118 @@
     <section id="listing">
       <article class="w3-container w3-card-2 w3-white col-main">
         <header>
-          <h2><a href="/2022/08/oop-ahead-neural-network-designs-and-metaprogramming.html">OOP Ahead Neural Network Designs and Metaprogramming</a></h2>
+          <h2><a href="/2022/06/powers-of-2-and-k-digits-structures.html">Powers of 2 and k-digits structures</a></h2>
           <div class="post-info">
             <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-              <span><time datetime="2022-08-27T14:00:00+02:00">Sa 27 August 2022</time> in <a href="/category/math.html" title="All articles in category Math">Math</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
-              </span>
+              <span><time datetime="2022-06-01T14:00:00+02:00">Mi 01 Juni 2022</time> in <a href="/category/math.html" title="All articles in category Math">Math</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
+<a href="/files/pdf/pow2kdigitstructures.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/bib/pow2kdigitstructures.bib" title="References as bibfile" target="_blank" style="color:#1E90FF; font-size: 1em;">.bib</a> <a href="/files/cite/pow2kdigitstructures-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
             </div>
             <div class="w3-margin-right">
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/neural-networks.html" title="All articles with Neural Networks tag">#neural networks</a>
+                <a href="/tag/number-theory.html" title="All articles with Number Theory tag">#number theory</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/oop.html" title="All articles with Oop tag">#oop</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/object-oriented-programming.html" title="All articles with Object Oriented Programming tag">#object oriented programming</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/metaprogramming.html" title="All articles with Metaprogramming tag">#metaprogramming</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/graph-theory.html" title="All articles with Graph Theory tag">#graph theory</a>
-              </span>
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/id-project_0001w.html" title="All articles with Id: Project_0001W tag">#id: project_0001w</a>
+                <a href="/tag/powers-of-2.html" title="All articles with Powers Of 2 tag">#powers of 2</a>
               </span>
             </div>
           </div>
         </header>
 
         <div class="entry-content">
-          	<p><strong>The following research project is seeking for funding.<br>
-Go to
-<a href="https://research.carolin-zoebelein.de/funding.html" title="External: Funding" targe="_blank">https://research.carolin-zoebelein.de/funding.thml</a>
-(Private Investors), for checking for further information, if you are
-interested in supporting this project.</strong></p>
-<p>Today, we want to talk about one of my current projects. Its one of my
-newer work, hence I just want to present the basic research idea.</p>
-<p>Have you ever thought about new, different and disruptive design
-concepts for neural networks (NN), which have the potential to enhanced
-the abilities of NNs? I do.</p>
-<p>In the following graphics, you can see the most basic and known concept
-of an usual NN:</p>
-<p><img alt="Neural Network" src="/blog/images/disruptivedesignneuralnetworks/neuralnetwork.png"></p>
-<p>Given are the three layers <span class="math">\(L_{0}\)</span> (Input), <span class="math">\(L_{1}\)</span> (Hidden), and
-<span class="math">\(L_{2}\)</span> (Ouput), each consisting of several nodes. The NN works in such
-a way, that the output at each neuron is the activation of a weighted
-sum of inputs. So, the on/off switch of each neuron is given by two
-factors: the choosen activation function, and the weights, retrieved by
-training the network.</p>
-<p>Let’s assume for the moment, that we have given just the two input nodes
-<span class="math">\(I_{1}\)</span>, and <span class="math">\(I_{2}\)</span>, and the one hidden node <span class="math">\(H_{1}\)</span>, and asssuming a
-simple hard limit as activation function at <span class="math">\(H_{1}\)</span>. So, mathematical we
-can write for the activation <span class="math">\(v\)</span> for inputs <span class="math">\(x_{1}\)</span>, and <span class="math">\(x_{2}\)</span>, with
-weights <span class="math">\(w_{1}\)</span>, and <span class="math">\(w_{2}\)</span></p>
-<div class="math">$$\begin{equation}
-  v = \sum_{i = 1}^{2} w_{i}x_{i},
-\end{equation}$$</div>
-<p>with the activation function</p>
-<div class="math">$$\begin{equation}
-  \varphi^{\mathrm{hlim}}\left(v\right) =
-  \begin{cases}
-    1 &amp; \mathrm{if } v \geq h \\
-    0 &amp; \mathrm{if } v &lt; h
-  \end{cases}
-\end{equation}$$</div>
-<p>for the neuron <span class="math">\(H_{1}\)</span> (McCulloch-Pitts). Here, <span class="math">\(h\)</span> is the choosen
-limit, often set to <span class="math">\(0\)</span>. Now, we want to look at a specific case. For
-this, we define <span class="math">\(x_{1}, x_{2} \in \{ 0, 1\}\)</span> and <span class="math">\(h := 0\)</span>, at first.
-This means we have the possible inputs <span class="math">\(00\)</span>, <span class="math">\(01\)</span>, <span class="math">\(10\)</span>, and <span class="math">\(11\)</span>.
-Furthermore, let’s say <span class="math">\(w_{1} = w_{2} = -0.5\)</span>. So, what do we get with
-that? In fact, that’s a logical NOR.</p>
-<div class="math">$$\begin{equation}
-  X\left(x_{1}, x_{2} \right) =
-  \begin{cases}
-    00 &amp; v = \left(-0.5\right) \cdot 0 + \left(-0.5\right) \cdot 0 = 0 \Rightarrow 1 \\
-    01 &amp; v = \left(-0.5\right) \cdot 0 + \left(-0.5\right) \cdot 1 = -0.5 \Rightarrow 0 \\
-    10 &amp; v = \left(-0.5\right) \cdot 1 + \left(-0.5\right) \cdot 0 = - 0.5 \Rightarrow 0 \\
-    11 &amp; v = \left(-0.5\right) \cdot 1 + \left(-0.5\right) \cdot 1 = -1 \Rightarrow 0
-  \end{cases}
-\end{equation}$$</div>
-<p>We see, that the combination of the input and the hidden layer, with
-specific weights and activiation function, can be identified with
-specific logical statements. Well, the question is now, are there also
-other ways to present, in our example NOR, by an other kind of graph
-representation. For this, look at the following ones:</p>
-<p><img alt="NOR network" src="/blog/images/disruptivedesignneuralnetworks/ifmaxISs.png"></p>
-<p>Given be a graph <span class="math">\(G = \left(V, E\right)\)</span> consisting of the three
-vertices <span class="math">\(v_{1}\)</span>, <span class="math">\(v_{2}\)</span>, and <span class="math">\(v_{3}\)</span>. We want to map the four possible
-<span class="math">\(x_{2}x_{1}\)</span> constellations on the edges <span class="math">\(e_{i}\)</span> of <span class="math">\(G\)</span>. For this, we
-say that <span class="math">\(G\)</span> never has an edge <span class="math">\(e_{1} := \{ v_{1}, v_{2} \}\)</span>, the edge
-<span class="math">\(e_{2} := \{ v_{2}, v_{3} \}\)</span> exists iff input <span class="math">\(x_{1} = 1\)</span>, else it
-doesn’t exist, and that the edge <span class="math">\(e_{3} := \{ v_{1}, v_{3} \}\)</span> exists
-iff input <span class="math">\(x_{2} = 1\)</span>, else it doesn’t exist. In this way, we represent
-each possible input by one specific graph.</p>
-<p>We can now identifiy this graphs with an logical NOR by the following
-consideration. Assuming <span class="math">\(P\)</span>, be an unique graph property, then we can
-indentify the output of NOR with one specific graph property
-characteristics, or the changing of it, respectively.</p>
-<p>In our case, for example, we will take the maximum independent set of
-each possible input (see also graphic). We can see that for the cases
-<span class="math">\(11\)</span> and <span class="math">\(00\)</span>, each, we only have one maximum set, which we can differ
-between this two cases by its size. Compared to this the inputs <span class="math">\(01\)</span>,
-and <span class="math">\(10\)</span>, has two maximum independent sets, each, but one differently to
-each other.</p>
-<p>We take this observations, and decide to identify the case of a maximum
-independent set of size <span class="math">\(3\)</span>, as true, else as false. Hence, our graphics
-shows us the belonging NOR graph representation of the neural network
-definition of above.</p>
-<p><img alt="Concept" src="/blog/images/disruptivedesignneuralnetworks/concept.png"></p>
-<p>Well that have been a very primitive example, but in our work (see
-graphics), we will show, that it is possible to map much more complex
-classical coding structures on corresponding graph representations, also
-able to act dynamically. Even more, we investigate in an enhancement of
-this concept to object oriented programming and the possibilites of
-metaprogramming, a naturally given application of this new kind of
-neural network approach.</p>
-<p>In future blog posts, we will discuss the current state of research
-regarding this neural network design, as well as the deeper mathematical
-structure of our proposed concept.</p>
-<p>’till then!</p>
+          	<p>In my paper <i>Powers of <span class="math">\(2\)</span> whose digits are powers of <span class="math">\(2\)</span></i> (see
+also
+<a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>),
+I’m discussing digits of powers of 2, and which conditions are necessary
+to get for them powers of 2, too.</p>
+<p>Given be the set of powers of <span class="math">\(2\)</span> by <span class="math">\(P_{y} = 2^{y}\)</span>,
+<span class="math">\(y \in \mathbb{N}_{0}\)</span>. It is unknown if, apart from
+<span class="math">\(P_{y=0} = 2^{0} = 1\)</span>, <span class="math">\(P_{y=1} = 2^{1} = 2\)</span>, <span class="math">\(P_{y=2} = 2^{2} = 4\)</span>,
+<span class="math">\(P_{y=3} = 2^{3} = 8\)</span> and <span class="math">\(P_{y=7} = 2^{7} = 128\)</span>, there exist more
+<span class="math">\(P_{y}\)</span>’s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line
+Encyclopedia of Integer Sequences (OEIS)
+<a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a>
+[Dres07]) [Well97], too.</p>
+<p>Looking at the set of powers of <span class="math">\(2\)</span>’s [Sloa], we know that a <span class="math">\(m\)</span>-digit
+power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of
+<span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span>
+digits, starting at <span class="math">\(2^{k}\)</span> [YaYa64]. Taking the known periodicity of
+the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the
+last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
+<p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the
+<span class="math">\(k\)</span>’th digit (counted from right to left, starting counting by <span class="math">\(1\)</span>) of
+<span class="math">\(2^{y}\)</span>, in base <span class="math">\(10\)</span> representation. For step sizes we write
+<span class="math">\(d^{k + 1}_{y,k}\)</span>, meaning the step size of the <span class="math">\(k + 1\)</span>-digit, starting
+by <span class="math">\(2^{y}\)</span>, with a <span class="math">\(k\)</span>-digit periodicity. Furthermore, we will denote
+the set of all one-digit powers of <span class="math">\(2\)</span> by
+<span class="math">\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)</span>.</p>
+<p>For this, at first, we also considered <span class="math">\(k\)</span>-digit structures of powers of
+<span class="math">\(2\)</span> in generally, and used the following two lemmas as starting point
+for our proofs in the mentioned paper.</p>
+<p><br /></p>
+<p><b>Lemma 2.1</b> (<span class="math">\(k\)</span>-digits structure). <i>Let be <span class="math">\(P_{y} = 2^{y}\)</span>,
+<span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with
+<span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all
+<span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for
+<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>,
+<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>,
+the last <span class="math">\(k\)</span>-digits are given by
+<span class="math">\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)</span>,
+with
+<span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span>
+leading zeros for <span class="math">\(k \geq 2\)</span>, and at least one leading zero for
+<span class="math">\(k \geq 3\)</span>.</i></p>
+<p><i>Proof.</i> We know, that for the last <span class="math">\(k\)</span>-digits
+<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)</span>,
+which have
+<span class="math">\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)</span> digits.
+Since, we also have the periodicity <span class="math">\(\varphi\left(5^{k}\right)\)</span>, we
+directly get
+<span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span>
+for the number of leading zeros. Looking at <span class="math">\(0 \leq k - x\)</span>, we receive
+<span class="math">\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)</span>,
+and hence <span class="math">\(k \geq 2\)</span> by the constraint <span class="math">\(k^{\star} \geq 2\)</span>, and for
+<span class="math">\(1 \geq k - x\)</span>, with <span class="math">\(k = k^{\star}\)</span>, we recive
+<span class="math">\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)</span>, and hence
+<span class="math">\(k \geq 3\)</span>. Finally it is easy to see, that the statement is always
+satisfied for <span class="math">\(k \geq k^{\star}\)</span>, because of
+<span class="math">\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)</span>
+for <span class="math">\(k = k^{*}\)</span>.</p>
+<p><br /></p>
+<p><b>Lemma 2.2</b> (<span class="math">\(k^{\star}\)</span>-digits fixed structure). <i> Let be
+<span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits
+periodical with
+<span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all
+<span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for
+<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>,
+<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>,
+the last <span class="math">\(k + 1\)</span> to <span class="math">\(k + \delta k\)</span>-digits are fixed for at least
+<span class="math">\(\delta k = k^{\star}\)</span> digits. </i></p>
+<p><i>Proof.</i> Consider
+<span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \\ \cdot 10^{-\left(k + 1\right)} \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \\ \cdot 5^{-1}\)</span>,
+for which we can equating the coefficients with approximation. We look
+at
+<span class="math">\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)</span>,
+and receive
+<span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>.
+Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for
+<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
+<h2>References</h2>
+<p><span class="csl-left-margin">[Dres07] </span><span
+class="csl-right-inline"><span class="smallcaps">Dresden, Gregory
+P.</span>: A130693 - OEIS: Powers of 2 whose digits are powers of
+2.</span></p>
+<p><span class="csl-left-margin">[Sloa] </span><span
+class="csl-right-inline"><span class="smallcaps">Sloane, N. J.
+A.</span>: Table of <em>n</em>, 2<sup><em>n</em></sup> for <em>n</em> = 0..1000 -
+OEIS.</span></p>
+<p><span class="csl-left-margin">[Well97] </span><span
+class="csl-right-inline"><span class="smallcaps">Wells, David</span>:
+<em>The Penguin dictionary of curious and interesting numbers</em> : Penguin,
+1997</span></p>
+<p><span class="csl-left-margin">[YaYa64] </span><span
+class="csl-right-inline"><span class="smallcaps">Yaglom, AM</span> ;
+<span class="smallcaps">Yaglom, IM</span>: Challenging Mathematical
+Problems with Elementary Solutions Bd. I, Holden-Day Inc. (1964)</span></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -282,7 +274,7 @@ structure of our proposed concept.</p>
         </div>
 
         <footer>
-          <a class="w3-btn w3-green w3-right" href="/2022/08/oop-ahead-neural-network-designs-and-metaprogramming.html">Read &#10093;</a>
+          <a class="w3-btn w3-green w3-right" href="/2022/06/powers-of-2-and-k-digits-structures.html">Read &#10093;</a>
         </footer>
       </article>
 
@@ -322,6 +314,7 @@ structure of our proposed concept.</p>
       
 	  
 	  <!-- TODO TODO TODO -->
+	  <!--
 	  <article class="w3-container w3-card-2 w3-white col-main">
 	  <h1>Featured</h1>
 	  <header>
@@ -343,9 +336,9 @@ I’m discussing digits of powers of 2, and which conditions are necessary to ge
           <a class="w3-btn w3-green w3-right" href="/2022/06/powers-of-2-and-k-digits-structures.html">Read &#10093;</a>
         </footer>
 	  </article>
-		      
-	  <br><br><br>      
-		      
+	  
+	  <br><br><br>
+	  -->
 
 	<!-- TODO -->
 	  

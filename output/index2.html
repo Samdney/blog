@@ -97,184 +97,82 @@
     <section id="listing">
       <article class="w3-container w3-card-2 w3-white col-main">
         <header>
-          <h2><a href="/2022/06/powers-of-2-and-k-digits-structures.html">Powers of 2 and k-digits structures</a></h2>
+          <h2><a href="/2021/10/patent-applications-link-list.html">Patent applications: Link list</a></h2>
           <div class="post-info">
             <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-              <span><time datetime="2022-06-01T14:00:00+02:00">Mi 01 Juni 2022</time> in <a href="/category/math.html" title="All articles in category Math">Math</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
-<a href="/files/pdf/pow2kdigitstructures.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/bib/pow2kdigitstructures.bib" title="References as bibfile" target="_blank" style="color:#1E90FF; font-size: 1em;">.bib</a> <a href="/files/cite/pow2kdigitstructures-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
+              <span><time datetime="2021-10-28T19:13:00+02:00">Do 28 Oktober 2021</time> in <a href="/category/patents.html" title="All articles in category Patents">Patents</a>, <a href="/author/carolin-zobelein.html" title="Go to author Carolin Zöbelein">Carolin Zöbelein</a><br />
+<a href="/files/pdf/patentapplicationslinklist.pdf" title="Blog post as pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color:red; font-size: 1.3em;"></i></a> <a href="/files/cite/patentapplicationslinklist-cite.bib" title="Cite blog post" target="_blank" style="color:#1E90FF;"><i class="fa fa-quote-right" style="color:#1E90FF; font-size: 0.8em;"></i> Cite</a>              </span>
             </div>
             <div class="w3-margin-right">
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/number-theory.html" title="All articles with Number Theory tag">#number theory</a>
+                <a href="/tag/link-list.html" title="All articles with Link List tag">#link list</a>
               </span>
               <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="/tag/powers-of-2.html" title="All articles with Powers Of 2 tag">#powers of 2</a>
+                <a href="/tag/patent.html" title="All articles with Patent tag">#patent</a>
+              </span>
+              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+                <a href="/tag/patent-application.html" title="All articles with Patent Application tag">#patent application</a>
               </span>
             </div>
           </div>
         </header>
 
         <div class="entry-content">
-          	<p>In my paper <i>Powers of <span class="math">\(2\)</span> whose digits are powers of <span class="math">\(2\)</span></i> (see
-also
-<a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>),
-I’m discussing digits of powers of 2, and which conditions are necessary
-to get for them powers of 2, too.</p>
-<p>Given be the set of powers of <span class="math">\(2\)</span> by <span class="math">\(P_{y} = 2^{y}\)</span>,
-<span class="math">\(y \in \mathbb{N}_{0}\)</span>. It is unknown if, apart from
-<span class="math">\(P_{y=0} = 2^{0} = 1\)</span>, <span class="math">\(P_{y=1} = 2^{1} = 2\)</span>, <span class="math">\(P_{y=2} = 2^{2} = 4\)</span>,
-<span class="math">\(P_{y=3} = 2^{3} = 8\)</span> and <span class="math">\(P_{y=7} = 2^{7} = 128\)</span>, there exist more
-<span class="math">\(P_{y}\)</span>’s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line
-Encyclopedia of Integer Sequences (OEIS)
-<a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a>
-[Dres07]) [Well97], too.</p>
-<p>Looking at the set of powers of <span class="math">\(2\)</span>’s [Sloa], we know that a <span class="math">\(m\)</span>-digit
-power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of
-<span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span>
-digits, starting at <span class="math">\(2^{k}\)</span> [YaYa64]. Taking the known periodicity of
-the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the
-last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
-<p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the
-<span class="math">\(k\)</span>’th digit (counted from right to left, starting counting by <span class="math">\(1\)</span>) of
-<span class="math">\(2^{y}\)</span>, in base <span class="math">\(10\)</span> representation. For step sizes we write
-<span class="math">\(d^{k + 1}_{y,k}\)</span>, meaning the step size of the <span class="math">\(k + 1\)</span>-digit, starting
-by <span class="math">\(2^{y}\)</span>, with a <span class="math">\(k\)</span>-digit periodicity. Furthermore, we will denote
-the set of all one-digit powers of <span class="math">\(2\)</span> by
-<span class="math">\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)</span>.</p>
-<p>For this, at first, we also considered <span class="math">\(k\)</span>-digit structures of powers of
-<span class="math">\(2\)</span> in generally, and used the following two lemmas as starting point
-for our proofs in the mentioned paper.</p>
-<p><br /></p>
-<p><b>Lemma 2.1</b> (<span class="math">\(k\)</span>-digits structure). <i>Let be <span class="math">\(P_{y} = 2^{y}\)</span>,
-<span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with
-<span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all
-<span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for
-<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>,
-<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>,
-the last <span class="math">\(k\)</span>-digits are given by
-<span class="math">\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)</span>,
-with
-<span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span>
-leading zeros for <span class="math">\(k \geq 2\)</span>, and at least one leading zero for
-<span class="math">\(k \geq 3\)</span>.</i></p>
-<p><i>Proof.</i> We know, that for the last <span class="math">\(k\)</span>-digits
-<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)</span>,
-which have
-<span class="math">\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)</span> digits.
-Since, we also have the periodicity <span class="math">\(\varphi\left(5^{k}\right)\)</span>, we
-directly get
-<span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span>
-for the number of leading zeros. Looking at <span class="math">\(0 \leq k - x\)</span>, we receive
-<span class="math">\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)</span>,
-and hence <span class="math">\(k \geq 2\)</span> by the constraint <span class="math">\(k^{\star} \geq 2\)</span>, and for
-<span class="math">\(1 \geq k - x\)</span>, with <span class="math">\(k = k^{\star}\)</span>, we recive
-<span class="math">\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)</span>, and hence
-<span class="math">\(k \geq 3\)</span>. Finally it is easy to see, that the statement is always
-satisfied for <span class="math">\(k \geq k^{\star}\)</span>, because of
-<span class="math">\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)</span>
-for <span class="math">\(k = k^{*}\)</span>.</p>
-<p><br /></p>
-<p><b>Lemma 2.2</b> (<span class="math">\(k^{\star}\)</span>-digits fixed structure). <i> Let be
-<span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits
-periodical with
-<span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all
-<span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for
-<span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>,
-<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>,
-the last <span class="math">\(k + 1\)</span> to <span class="math">\(k + \delta k\)</span>-digits are fixed for at least
-<span class="math">\(\delta k = k^{\star}\)</span> digits. </i></p>
-<p><i>Proof.</i> Consider
-<span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \\ \cdot 10^{-\left(k + 1\right)} \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \\ \cdot 5^{-1}\)</span>,
-for which we can equating the coefficients with approximation. We look
-at
-<span class="math">\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)</span>,
-and receive
-<span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>.
-Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for
-<span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
-<h2>References</h2>
-<p><span class="csl-left-margin">[Dres07] </span><span
-class="csl-right-inline"><span class="smallcaps">Dresden, Gregory
-P.</span>: A130693 - OEIS: Powers of 2 whose digits are powers of
-2.</span></p>
-<p><span class="csl-left-margin">[Sloa] </span><span
-class="csl-right-inline"><span class="smallcaps">Sloane, N. J.
-A.</span>: Table of <em>n</em>, 2<sup><em>n</em></sup> for <em>n</em> = 0..1000 -
-OEIS.</span></p>
-<p><span class="csl-left-margin">[Well97] </span><span
-class="csl-right-inline"><span class="smallcaps">Wells, David</span>:
-<em>The Penguin dictionary of curious and interesting numbers</em> : Penguin,
-1997</span></p>
-<p><span class="csl-left-margin">[YaYa64] </span><span
-class="csl-right-inline"><span class="smallcaps">Yaglom, AM</span> ;
-<span class="smallcaps">Yaglom, IM</span>: Challenging Mathematical
-Problems with Elementary Solutions Bd. I, Holden-Day Inc. (1964)</span></p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
+          	<p>This is a list of useful links in context of patent applications. I’m
+based in Germany, hence maybe not all links are also useful for you.
+Furthermore, it’s a living document, means, from time to time, I add new
+links.</p>
+<p>Patent search</p>
+<ul>
+<li>Google Patent Search:
+    <a href="https://www.google.com/?tbm=pts" title="External: Google Patent Search" target="_blank">https://www.google.com/?tbm=pts</a></li>
+<li>European Patent Office:
+    <a href="https://worldwide.espacenet.com" title="External: European Patent Office - Search" target="_blank">https://worldwide.espacenet.com</a></li>
+<li>United States Patent and Trademark Office:
+    <a href="https://patft.uspto.gov/netahtml/PTO/search-bool.html" title="External: United States Patent and Trademark Office - Search" target="_blank">https://patft.uspto.gov/netahtml/PTO/search-bool.html</a></li>
+<li>German Patent and Trademark Office:<ul>
+<li>DPMAregister - Official Publications and Register Database:
+    <a href="https://register.dpma.de/DPMAregister/Uebersicht" title="External: DPMAregister" target="_blank">https://register.dpma.de/DPMAregister/Uebersicht</a></li>
+<li>DEPATISnet - Database for online searches on patent publications
+    from around the world:
+    <a href="https://depatisnet.dpma.de/DepatisNet/depatisnet" title="External: DEPATISnet" target="_blank">https://depatisnet.dpma.de/DepatisNet/depatisnet</a></li>
+</ul>
+</li>
+</ul>
+<p>Patent offices</p>
+<ul>
+<li>European Patent Office:
+    <a href="https://www.epo.org/" title="External: European Patent Office" target="_blank">https://www.epo.org/</a></li>
+<li>United States Patent and Trademark Office:
+    <a href="https://www.uspto.gov/" title="External: United States Patent and Trademark Office" target="_blank">https://www.uspto.gov/</a></li>
+<li>German Patent and Trademark Office:
+    <a href="https://www.dpma.de/" title="External: German Patent and Trademark Office" target="_blank">https://www.dpma.de/</a></li>
+</ul>
+<p>Legal texts</p>
+<ul>
+<li>European Patent Office (EPO) - Legal texts:
+    <a href="https://www.epo.org/law-practice/legal-texts.html" title="External: European Patent Office (EPO) - Legal texts" target="_blank">https://www.epo.org/law-practice/legal-texts.html</a></li>
+<li>US Consolidated Patent Laws:
+    <a href="https://www.uspto.gov/web/offices/pac/mpep/consolidated_laws.pdf" title="External: US Consolidated Patent Laws, United States Patent and Trademark Office" target="_blank">https://www.uspto.gov/web/offices/pac/mpep/consolidated_laws.pdf</a></li>
+<li>Patentgesetz (German Patent Law):
+    <a href="https://www.gesetze-im-internet.de/patg/BJNR201170936.html" title="External: Patentgesetz (German Patent Law), Bundesamt für Justiz" target="blank">https://www.gesetze-im-internet.de/patg/BJNR201170936.html</a></li>
+</ul>
+<p>WIPANO (German government, Patent application funding program)</p>
+<ul>
+<li>Bundesministerium für Wirtschaft und Klimaschutz: WIPANO (Wissens-
+    und Technologietransfer durch Patente und Normen):
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/Patentierung-Unternehmen/patentierung-unternehmen.html" title="External: WIPANO, Bundesministerium für Wirtschaft und Klimaschutz" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/Patentierung-Unternehmen/patentierung-unternehmen.html</a></li>
+<li>WIPANO - Programminformation:
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-programminformation-2021.pdf" title="External: WIPANO Programminformation, Bundesministerium für Wirtschaft und Energie" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-programminformation-2021.pdf</a></li>
+<li>WIPANO - Änderung der Richtlinien:
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-aenderung-richtlinie_29-03-2021.pdf" title="External: WIPANO Änderung der Richtlinien, Bundesministerium der Justiz und für Verbraucherschutz" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/WIPANO/wipano-aenderung-richtlinie_29-03-2021.pdf</a></li>
+<li>Brochüre “Von der Idee zum Markterfolg”:
+    <a href="https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/broschuere_von-der-idee-zum-markterfolg.pdf" title="External: Von der Idee zum Markterfolg, Bundesministerium für Wirtschaft und Energie" target="_blank">https://www.innovation-beratung-foerderung.de/INNO/Redaktion/DE/Downloads/broschuere_von-der-idee-zum-markterfolg.pdf</a></li>
+</ul>
         </div>
 
         <footer>
-          <a class="w3-btn w3-green w3-right" href="/2022/06/powers-of-2-and-k-digits-structures.html">Read &#10093;</a>
+          <a class="w3-btn w3-green w3-right" href="/2021/10/patent-applications-link-list.html">Read &#10093;</a>
         </footer>
       </article>
 
@@ -315,6 +213,7 @@ Problems with Elementary Solutions Bd. I, Holden-Day Inc. (1964)</span></p>
       
 	  
 	  <!-- TODO TODO TODO -->
+	  <!--
 	  <article class="w3-container w3-card-2 w3-white col-main">
 	  <h1>Featured</h1>
 	  <header>
@@ -336,9 +235,9 @@ I’m discussing digits of powers of 2, and which conditions are necessary to ge
           <a class="w3-btn w3-green w3-right" href="/2022/06/powers-of-2-and-k-digits-structures.html">Read &#10093;</a>
         </footer>
 	  </article>
-		      
-	  <br><br><br>      
-		      
+	  
+	  <br><br><br>
+	  -->
 
 	<!-- TODO -->
 	  
